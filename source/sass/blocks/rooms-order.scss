@@ -1,0 +1,14 @@
+.rooms-order {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1170px;
+}
+
+.rooms-order__card {
+  margin-bottom: 20px;
+  margin-left: 30px;
+
+  &:nth-child(4n+1) {
+    margin-left: 0;
+  }
+}

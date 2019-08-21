@@ -1,0 +1,152 @@
+.card-room {
+  position: relative;
+
+  width: 270px;
+  min-height: 355px;
+  padding-bottom: 30px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+
+.card-room__sale {
+  &--show {
+    position: absolute;
+    top: -18px;
+    left: 40px;
+
+    display: block;
+    width: 190px;
+    height: 70px;
+    padding-top: 5px;
+
+    font-weight: 400;
+    font-size: 14px;
+    font-family: Rubik;
+    text-align: center;
+    color: #ffffff;
+
+    background-color: #ec343c;
+    border-radius: 5px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 40%;
+
+      width: 21px;
+      height: 12px;
+
+      border: 20px solid transparent;
+      border-top: 20px solid #ec343c;
+    }
+  }
+
+  &--hide {
+    display: none;
+  }
+}
+
+.card-room__title {
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+// .card-room__sale-icon {
+//   position: absolute;
+//   top: 150px;
+//   z-index: 1;
+
+//   font-weight: 400;
+//   font-size: 18px;
+//   font-family: "Roboto Slab";
+//   color: #ffffff;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: -10px;
+//     left: -20px;
+//     z-index: 2;
+
+//     width: 44px;
+//     height: 44px;
+
+//     background-image: url("../img/SVG/Shape_5.svg");
+//     background-repeat: no-repeat;
+//     background-position: 0 0;
+//   }
+// }
+
+.card-room__sale-icon {
+  position: absolute;
+  top: 99px;
+  left: 15px;
+
+  width: 44px;
+  height: 44px;
+
+  line-height: 44px;
+  vertical-align: middle;
+  text-align: center;
+  color: #ffffff;
+
+  background-image: url("../img/SVG/Shape_5.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  &--hide {
+    display: none;
+  }
+
+  &--show {
+    display: inline-block;
+  }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: -10px;
+  //   left: -20px;
+  //   z-index: 2;
+
+  //   width: 44px;
+  //   height: 44px;
+
+  //   background-image: url("../img/SVG/Shape_5.svg");
+  //   background-repeat: no-repeat;
+  //   background-position: 0 0;
+  // }
+}
+
+.card-room__price {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.card-room__description {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 18px;
+
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Rubik";
+  text-align: center;
+  color: #000000;
+}
+
+.card-room__button {
+  display: block;
+  width: 160px;
+  margin: 0 auto;
+}

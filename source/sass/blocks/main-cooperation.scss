@@ -1,0 +1,69 @@
+.main-cooperation {
+  padding-right: 70px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+
+  background-color: #f8f8f8;
+}
+
+.main-cooperation__title {
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 38px;
+
+  font-weight: 400;
+  font-size: 30px;
+  /* Style for "Компания Х" */
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+
+  .text--red {
+    font-weight: 700;
+    color: #ec343c;
+  }
+
+  .text--bold {
+    font-weight: 700;
+  }
+}
+
+.main-cooperation__list {
+  @include list-reset();
+
+  display: flex;
+  flex-direction: column;
+  margin-right: 13px;
+  // flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.main-cooperation__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cooperation__description {
+  position: relative;
+  // margin-right: 80px;
+
+  margin-bottom: 42px;
+  padding-left: 55px;
+}
+
+.main-cooperation__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 40px;
+  height: 40px;
+
+  fill: #ec343c;
+
+  &--airplane {
+    // width: 150px;
+    // height: 58px;
+  }
+}

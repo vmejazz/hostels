@@ -1,0 +1,131 @@
+.main-review {
+  margin-top: 63px;
+  padding-bottom: 70px;
+
+  & .row {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-center;
+  }
+}
+
+.main-review__title {
+  margin: 0;
+  margin-bottom: 35px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+.main-review__slider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-review__list {
+  @include list-reset();
+
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 1065px;
+}
+
+.main-review__item {
+  width: 334px;
+  min-height: 500px;
+}
+
+.main-review__button {
+  @include btn-reset();
+
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: #ffffff;
+
+  background-color: #ed343c;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+.card-review {
+  min-height: 500px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+.card-review__header {
+  display: flex;
+  // flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.card-review__avatar {
+  width: 90px;
+  height: 110px;
+  margin: 0;
+  margin-right: 18px;
+}
+
+.card-review__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-review__name {
+  margin: 0;
+  margin-top: 4px;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  color: #000000;
+}
+
+.card-review__town {
+  margin: 0;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  padding: 0;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.card-review__button {
+  width: 120px;
+  height: 34px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12.88px;
+  font-family: Rubik;
+  color: #cccccc;
+
+  background-color: #f6f6f6;
+  border-color: #f6f6f6;
+  border-radius: 5px;
+}
+
+.card-review__main {
+  font-weight: 400;
+  font-size: 16px;
+  // line-height: 19px;
+  font-family: Rubik;
+  color: #666666;
+}

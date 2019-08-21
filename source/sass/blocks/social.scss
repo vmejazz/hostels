@@ -1,0 +1,32 @@
+.social__title {
+  @include MD-reset();
+
+  margin-left: 10px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Rubik";
+  color: #000000;
+}
+
+.social__list {
+  @include list-reset();
+}
+
+.social__item {
+  padding-top: 2px;
+  padding-left: 10px;
+
+  &::before {
+    content: "→";
+
+    width: 10px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 34px;
+    font-family: "Minion Pro";
+    color: #ec343c;
+  }
+}

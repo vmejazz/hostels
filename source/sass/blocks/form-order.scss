@@ -1,0 +1,41 @@
+.form-order {
+  position: relative;
+
+  width: 280px;
+  height: 386px;
+  padding: 30px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+.form-order__modal {
+  position: absolute;
+  top: 48px;
+  left: -140px;
+
+  width: 148px;
+  height: 290px;
+
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Rubik;
+  color: #ffffff;
+
+  background-color: #ec343c;
+  border-radius: 5px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 117px;
+    right: -30px;
+
+    width: 11px;
+    height: 20px;
+
+    border: 20px solid transparent;
+    border-left: 20px solid #ec343c;
+  }
+}

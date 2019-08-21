@@ -1,0 +1,20 @@
+.page-footer__container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  border-top: 1px solid #bcbcbc;
+}
+
+.page-footer__navigation {
+  width: 665px;
+}
+
+.page-footer__social {
+  width: 230px;
+}
+
+.page-footer__feedback {
+  width: 200px;
+}

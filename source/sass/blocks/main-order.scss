@@ -1,0 +1,81 @@
+.main-order {
+  display: flex;
+  justify-content: space-between;
+  height: 550px;
+  margin: 0;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  padding: 0;
+  padding-top: 68px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+
+  background-image: url("../img/bag.png");
+  background-repeat: no-repeat;
+  background-position: 0 -1px;
+  background-size: 1170px 100%;
+}
+
+.main-order__title {
+  @include MD-reset();
+
+  max-width: 440px;
+  margin-bottom: 53px;
+
+  font-weight: 400;
+  font-size: 40px;
+  font-family: "Roboto Slab";
+  color: #000000;
+
+  &--red {
+    font-weight: 700;
+    color: #ec343c;
+  }
+}
+
+.main-order__advantages {
+  @include list-reset();
+
+  padding-left: 60px;
+}
+
+.main-order__advantage {
+  position: relative;
+
+  margin-bottom: 36px;
+
+  // line-height: 18px;
+}
+
+.main-order__icon {
+  position: absolute;
+  top: -2px;
+  left: -60px;
+
+  width: 40px;
+  height: 37px;
+
+  fill: #ec343c;
+}
+
+.main-order__form {
+  margin-left: 160px;
+}
+
+.margin-order__form {
+  margin-top: 12px;
+}
+// &::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: -60px;
+
+//   width: 40px;
+//   height: 37px;
+
+//   background-color: #ec343c;
+//   background-image: url("../img/SVG/family.svg");
+//   filter: invert(100);
+// }

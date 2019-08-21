@@ -1,0 +1,121 @@
+.main-promotion {
+  position: relative;
+
+  height: 462px;
+  margin: 0;
+  margin-top: 35px;
+  padding-top: 47px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+
+  background-color: #ffeee4;;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 1034px;
+    height: 462px;
+
+    background-image: url("../../img/promotion.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.main-promotion__title {
+  max-width: 365px;
+  margin: 0;
+  margin-bottom: 16px;
+
+  font-weight: 400;
+  font-size: 30px;
+  font-family: "Roboto Slab";
+  color: #000000;;
+
+  &--red {
+    font-weight: 700;
+    font-family: "Roboto Slab";
+    color: #ec343c;
+  }
+}
+
+.main-promotion__text {
+  max-width: 280px;
+  margin: 0;
+  margin-bottom: 26px;
+
+  line-height: 24px;
+}
+
+.main-promotion__avantages {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  // padding-left: 60px;
+}
+
+.main-promotion__avantage {
+  position: relative;
+
+  max-width: 120px;
+  margin-bottom: 29px;
+  margin-left: 60px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Rubik;
+  color: #666666;
+
+  &--safe {
+    margin-left: 90px;
+  }
+
+  &--skills {
+    max-width: 280px;
+  }
+}
+
+.main-promotion__input {
+  width: 160px;
+  height: 34px;
+  margin-top: 8px;
+  margin-right: 7px;
+  padding-left: 18px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12.88px;
+  font-family: Rubik;
+  color: #666666;
+
+  background-color: #ffffff;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+}
+
+.main-promotion__button {
+  width: 160px;
+
+  color: #ffffff;
+
+  background-color: #ec343c;
+}
+
+.main-promotion__icon {
+  position: absolute;
+  top: 5px;
+  left: -60px;
+
+  width: 40px;
+  height: 40px;
+
+  fill: #ffeee4;
+
+  &--shield,
+  &--dance {
+    fill: #ec343c;
+  }
+}

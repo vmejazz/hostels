@@ -1,0 +1,158 @@
+.main-advantage__title {
+  margin-top: 43px;
+  margin-bottom: 40px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+.main-advantage__cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-advantage__colum {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 15px);
+}
+
+.card-advantage {
+  position: relative;
+
+  width: 100%;
+  min-height: 170px;
+  padding-left: 40px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  // &--top {
+  //   margin-bottom: 30px;
+  // }
+
+  &--top {
+    // content: "";
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 30px;
+
+    background-image: url("../img/top.png");
+    background-repeat: no-repeat;
+    background-position: right 0;
+  }
+
+  &--alcohol {
+    min-height: 180px;
+
+    background-image: url("../img/alco.png");
+    background-repeat: no-repeat;
+    background-position: right -18px;
+  }
+}
+
+.card-advantage__title {
+  @include MD-reset();
+
+  margin-top: 35px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  color: #000000;
+}
+
+.card-advantage__description {
+  @include MD-reset();
+
+  margin-top: 21px;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Rubik;
+  color: #666666;
+}
+
+.include-card {
+  position: relative;
+
+  height: 100%;
+  padding-top: 35px;
+  padding-left: 40px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 20px;
+
+    width: 212px;
+    height: 254px;
+
+    background-image: url("../img/include.png");
+    background-repeat: 0;;
+  }
+}
+
+.include-card__title {
+  max-width: 260px;
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  color: #000000;
+}
+
+.include-card__list {
+  @include list-reset();
+
+  padding-left: 14px;
+}
+
+.include-card__item {
+  position: relative;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 34px;
+  font-family: Rubik;
+  color: #666666;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -15px;
+
+    width: 10px;
+    height: 10px;
+
+    border-bottom: 2px solid red;;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: -11px;
+
+    width: 10px;
+    height: 10px;
+
+    border-left: 2px solid red;
+    // transform: rotateY(90deg);
+  }
+}

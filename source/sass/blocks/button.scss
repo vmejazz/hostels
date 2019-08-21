@@ -1,0 +1,21 @@
+.button {
+  width: 176px;
+  height: 34px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12.88px;
+  font-family: Rubik;
+  color: #ec343c;
+
+  background: none;
+  border: 1px solid #ed343c;
+  border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    color: white;
+
+    background: #ec343c;
+  }
+}

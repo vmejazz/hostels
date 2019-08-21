@@ -1,0 +1,156 @@
+.main-corporativ {
+  margin-top: 68px;
+  margin-bottom: 30px;
+}
+
+.main-corporativ__title {
+  // margin-top: 43px;
+  margin-bottom: 40px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+.main-corporativ__cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-corporativ__colum {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 15px);
+}
+
+.main-corporativ__description {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Rubik;
+  color: #666666;
+}
+
+.card-corporativ {
+  width: 100%;
+  min-height: 160px;
+  padding-top: 34px;
+  padding-left: 40px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  &--guest {
+    margin-bottom: 30px;
+
+    background-image: url("../img/train.png");
+    background-repeat: no-repeat;
+    background-position: right 0;
+  }
+
+  &--partner {
+    background-image: url("../img/talk.png");
+    background-repeat: no-repeat;
+    background-position: right 0;
+  }
+}
+
+.card-corporativ__title {
+  @include MD-reset();
+  // margin-top: 35px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  color: #000000;
+}
+
+
+
+.card-corporativ__description {
+  @include MD-reset();
+
+  max-width: 260px;
+  margin-top: 18px;
+
+  // line-height: 24px;
+}
+
+.location-card {
+  position: relative;
+
+  height: 100%;
+  padding-top: 32px;
+  padding-left: 40px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 319px;
+    height: 350px;
+
+    background-image: url("../img/moscow.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.location-card__title {
+  max-width: 260px;
+  margin: 0;
+  margin-bottom: 33px;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  color: #000000;
+}
+
+.location-card__list {
+  @include list-reset();
+
+  padding-left: 14px;
+}
+
+.location-card__item {
+  position: relative;
+
+  max-width: 220px;
+  margin-bottom: 16px;
+  padding-left: 10px;
+
+  // line-height: 24px;
+
+  &::before {
+    content: "✓";
+    position: absolute;
+    top: 0;
+    left: -15px;
+
+    width: 10px;
+    height: 10px;
+
+    color: red;
+  }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 13px;
+  //   left: -11px;
+
+  //   width: 10px;
+  //   height: 10px;
+
+  //   border-left: 2px solid red;
+  //   // transform: rotateY(90deg);
+  // }
+}
