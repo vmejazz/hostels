@@ -236,6 +236,12 @@
 
     opacity: 0.5;
   }
+
+  &:hover,
+  &:focus {
+    border-color: #ec343c;
+    outline: none;
+  }
 }
 
 .form-order__tel-input {

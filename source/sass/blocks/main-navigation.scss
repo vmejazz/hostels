@@ -8,6 +8,14 @@
 }
 
 .main-navigation__link {
+  height: 100%;
+  padding-bottom: 2px;
+
   line-height: 20px;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: #ec343c;
+  }
 }

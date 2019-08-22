@@ -18,6 +18,18 @@
   }
 }
 
+.metro-field__input {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover + svg,
+  &:focus + svg {
+    fill: #ec343c;
+  }
+}
+
 .metro-field__box {
   border-color: rgba(0, 0, 0, 0.09);
   border-radius: 5px;
@@ -253,5 +265,14 @@
   background-color: #ffffff;
   border-radius: 50%;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
-  transform: rotate(90deg);;
+  transform: rotate(90deg);
+
+  transition: 0.4s linear;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+
+    background-color: #ed343c;
+  }
 }

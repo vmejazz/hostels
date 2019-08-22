@@ -1,5 +1,6 @@
 .main-promotion {
   position: relative;
+  z-index: 0;
 
   height: 462px;
   margin: 0;
@@ -15,6 +16,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: -1;
 
     width: 1034px;
     height: 462px;
@@ -94,6 +96,12 @@
   background-color: #ffffff;
   border: 1px solid #b2b2b2;
   border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    border-color: #ec343c;
+    outline: none;
+  }
 }
 
 .main-promotion__button {

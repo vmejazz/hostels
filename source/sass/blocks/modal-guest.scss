@@ -58,6 +58,8 @@
 }
 
 .modal-guest__bed {
+  position: relative;
+
   text-align: center;
 
   & input {
@@ -67,11 +69,13 @@
 }
 
 .modal-guest__bed-yes {
+  display: inline-block;
+  padding-top: 24px;
   &::before {
     content: "";
     position: absolute;
-    bottom: 32px;
-    left: 47px;
+    bottom: 13px;
+    left: 17px;
 
     width: 24px;
     height: 24px;
@@ -81,12 +85,11 @@
   }
 }
 
-
 .modal-guest__bed-checkbox:checked + label::after {
   content: "";
   position: absolute;
-  bottom: 38px;
-  left: 51px;
+  bottom: 18px;
+  left: 20px;
 
   width: 16px;
   height: 12px;

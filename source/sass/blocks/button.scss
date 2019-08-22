@@ -11,6 +11,9 @@
   background: none;
   border: 1px solid #ed343c;
   border-radius: 5px;
+  cursor: pointer;
+
+  transition: 0.4s linear;
 
   &:hover,
   &:focus {
