@@ -6,16 +6,10 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Хостелы Рус — Самая крупная сеть хостелов в России</title>
-  <!-- <link rel="preload" href="./fonts/opensans.woff" as="font">
-  <link rel="preload" href="./fonts/opensans.woff2" as="font">
-  <link rel="preload" href="./fonts/opensansbold.woff" as="font">
-  <link rel="preload" href="./fonts/opensansbold.woff2" as="font"> -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Rubik:400,500&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/normalize.css">
-  <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./css/style.min.css">
-  <script src="./js/picturefill.min.js"></script>
 </head>
 
 <body>
@@ -888,7 +882,7 @@
             </div>
             <form action="submit" class="margin-order__form form-order">
               <div class="form-order__check-in">
-                <input type="date" id="input__check-in--default" class="form-order__chek-in--default">
+                <input type="date" id="input__check-in--default" class="form-order__chek-in--default" onchange="mydDateIn()">
                 <input type="text" id="input__check-in--style" class="form-order__chek-in--style" value="24 июля 2019">
                 <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
                   <use xlink:href="#calendar"></use>
@@ -896,7 +890,7 @@
                 <label for="input__check-in--default">Дата заезда</label>
               </div>
               <div class="form-order__check-out">
-                  <input type="date" id="input__check-out--default" class="form-order__chek-in--default">
+                  <input type="date" id="input__check-out--default" class="form-order__chek-in--default" onchange="myDateOut()">
                   <input type="text" id="input__check-out--style" class="form-order__chek-in--style" value="24 июля 2019">
                   <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
                     <use xlink:href="#calendar"></use>
@@ -1544,26 +1538,7 @@
   </footer>
   <!-- FOOTER END -->
 
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/menu.js"></script>
-  <script>
-    function mydate() {
-    //alert("");
-    document.getElementById("dt").hidden = false;
-    document.getElementById("ndt").hidden = true;
-  }
-
-    function mydate1() {
-      d = new Date(document.getElementById("dt").value);
-      dt = d.getDate();
-      mn = d.getMonth();
-      mn++;
-      yy = d.getFullYear();
-      document.getElementById("ndt").value = dt + "/" + mn + "/" + yy
-      document.getElementById("ndt").hidden = false;
-      document.getElementById("dt").hidden = true;
-    }
-  </script>
+  <script src="./js/dateInput.js"></script>
 </body>
 
 </html>
