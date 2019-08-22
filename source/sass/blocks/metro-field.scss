@@ -1,7 +1,208 @@
 .metro-field {
   position: relative;
 
+  width: 670px;
+  height: 60px;
+  margin: 0 auto;
   margin-bottom: 40px;
+
+  &--active {
+    position: absolute;
+    left: 480px;
+    z-index: 5;
+
+    width: 670px;
+    min-height: 470px;
+
+    background-color: #ffffff;
+  }
+}
+
+.metro-field__box {
+  border-color: rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  &--active {
+    position: absolute;
+    left: 0;
+    z-index: 5;
+
+    width: 670px;
+    height: 470px;
+
+    background-color: #ffffff;
+  }
+}
+
+.metro-field__checkbox {
+  &--hide {
+    display: none;
+  }
+}
+
+.metro-field__checkbox-list {
+  @include list-reset();
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 670px;
+  height: 360px;
+  margin-right: 40px;
+  margin-left: 20px;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  border-top: 1px solid #bcbcbc;
+}
+
+.metro-field__checkbox-item {
+  position: relative;
+
+  width: 270px;
+  height: 32px;
+  margin-bottom: 20px;
+
+  & input {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: -2;
+  }
+
+  & input:checked + label {
+    background-color: #eaeaea;
+  }
+
+  & label {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    padding-left: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Roboto Slab";
+    color: #000000;
+
+    background-color: #ffffff;
+    border-radius: 5px;
+
+
+    &:hover,
+    &:focus {
+      background-color: #ffffff;
+      border: 1px solid #bcbcbc;
+    }
+
+    &--active {
+      background-color: #eaeaea;
+    }
+  }
+}
+
+.metro-field__label-svg {
+  padding-bottom: 2px;
+
+  border-radius: 50%;
+
+  fill: #ffffff;;
+
+  &--green {
+    background-color: #99cc33;
+  }
+}
+
+.metro-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+
+  background-image: url("../img/metro-icon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+
+  &--light-green {
+    background-color: #99cc33;
+  }
+
+  &--brown {
+    background-color: #745c2f;
+  }
+
+  &--violet {
+    background-color: #99cc33;
+  }
+
+  &--dark-blue {
+    background-color: #0252a2;
+  }
+
+  &--blue {
+    background-color: #019ee0;
+  }
+
+  &--green {
+    background-color: #029a55;
+  }
+
+  &--orandge {
+    background-color: #fbaa33;
+  }
+}
+
+// .metro-field__checkbox-label {
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 8px;
+//     right: 60px;
+//     z-index: 6;
+
+//     width: 12px;
+//     height: 12px;
+
+//     background-color: #99cc33;
+//     background-image: url("../img/metro-icon.png");
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     border-radius: 50%;
+
+//     &--green {
+//       background-color: #99cc33;
+//     }
+//   }
+// }
+
+.metro-field__checkbox-button {
+  position: relative;
+
+  margin: 0;
+  margin-left: 300px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 34px;
+  font-family: "Rubik";
+  color: #666666;
+
+  background: none;
+  border: none;
+
+  &::before {
+    content: "x";
+    position: relative;
+    top: -1px;
+    left: -5px;
+
+    font-size: 10px;;
+
+    ;
+  }
 }
 
 .metro-field__input {
@@ -9,18 +210,16 @@
 
   width: 670px;
   height: 60px;
-  margin-left: 250px;
+  // margin-left: 250px;
   padding-left: 57px;
 
   font-weight: 400;
   font-size: 16px;
   font-family: "Rubik";
   color: #999999;
+  // background-color: #ffffff;
 
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.09);
-  border-radius: 5px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+  border: none;
 }
 
 .metro-field__icon {
@@ -28,7 +227,7 @@
 
   position: absolute;
   top: 15px;
-  left: 265px;
+  left: 15px;
   z-index: 2;
 
   width: 30px;
@@ -41,7 +240,8 @@
   @include btn-reset();
 
   position: absolute;
-  right: 270px;
+  top: 0;
+  right: 20px;
 
   width: 24px;
   height: 24px;

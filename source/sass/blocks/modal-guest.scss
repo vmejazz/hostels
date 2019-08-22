@@ -1,0 +1,97 @@
+.modal-guest {
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Rubik";
+  color: #ffffff;
+
+  & input {
+    width: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 16px;
+    font-family: "Roboto Slab";
+    text-align: center;
+    color: #ffffff;
+
+    background-color: #ec343c;
+    border: none;
+  }
+
+  & label {
+    text-align: center;
+  }
+}
+
+.modal-guest__button {
+  width: 24px;
+  height: 24px;
+
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Roboto Slab";
+  color: #ec343c;
+
+  background-color: #ffffff;
+  border: none;
+  border-color: #ec343c;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+.modal-guest__adult {
+  text-align: center;
+}
+
+.modal-guest__children {
+  text-align: center;
+  & label {
+    display: inline-block;
+    width: 90px;
+  }
+}
+
+.modal-guest__bed {
+  text-align: center;
+
+  & input {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+}
+
+.modal-guest__bed-yes {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 32px;
+    left: 47px;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: #ffffff;
+    border-radius: 5px;;
+  }
+}
+
+
+.modal-guest__bed-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  bottom: 38px;
+  left: 51px;
+
+  width: 16px;
+  height: 12px;
+
+  background-image: url("../../img/ok.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}

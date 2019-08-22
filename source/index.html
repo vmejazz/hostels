@@ -888,51 +888,160 @@
             </div>
             <form action="submit" class="margin-order__form form-order">
               <div class="form-order__check-in">
-                <input type="date" id="input__check-in" placeholder="Дата заезда">
-                <label for="input__check-in">Дата заезда</label>
+                <input type="date" id="input__check-in--default" class="form-order__chek-in--default">
+                <input type="text" id="input__check-in--style" class="form-order__chek-in--style" value="24 июля 2019">
+                <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
+                  <use xlink:href="#calendar"></use>
+                </svg>
+                <label for="input__check-in--default">Дата заезда</label>
               </div>
               <div class="form-order__check-out">
-                <input type="date" id="input__check-out" placeholder="Дата выезда">
-                <label for="input__check-in">Дата выезда</label>
-              </div>
+                  <input type="date" id="input__check-out--default" class="form-order__chek-in--default">
+                  <input type="text" id="input__check-out--style" class="form-order__chek-in--style" value="24 июля 2019">
+                  <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
+                    <use xlink:href="#calendar"></use>
+                  </svg>
+                  <label for="input__check-out--default">Дата выезда</label>
+                </div>
               <div class="form-order__guest">
-                <input type="number" id="input__guest" placeholder="1" min=1 max=30>
-                <label for="input__guest">Количество человек</label>
+                <input type="text" id="input__guest" value="1" min=1 max=30 class="form-order__guest-all">
+                <label for="input__guest" class="form-order__guest-label">Количество человек:</label>
+                <!-- <button class="form-order__guest-button"></button> -->
               </div>
               <div class="form-order__personal-name">
-                <input type="text" id="input__name">
-                <label for="input__name">Ваше имя</label>
+                <input type="text" id="input__name" class="form-order__name-input" placeholder="Ваше имя">
+                <!-- <label for="input__name" class="form-order__name-label">Ваше имя</label> -->
               </div>
               <div class="form-order__personal-tel">
-                <input type="text" id="input__tel">
-                <label for="input__tel">Номер телефона</label>
+                <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона">
+                <!-- <label for="input__tel" class="form-order__tel-label">Номер телефона</label> -->
               </div>
               <div class="form-order__modal modal-guest">
                 <div class="modal-guest__adult">
-                  <input type="number" id="input__adult"  min=0 max=15>
                   <label for="input__adult">Взрослых:</label>
+                  <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
+                  <input type="text" id="input__adult" value="2">
+                  <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
                 </div>
                 <div class="modal-guest__children">
-                  <input type="number" id="input__children" min=0 max=15>
                   <label for="input__children">Детей:</label>
+                  <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
+                  <input type="text" id="input__children" value="1">
+                  <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
                 </div>
                 <div class="modal-guest__bed">
-                  <input type="checkbox" id="input__bed">
                   <label for="input__bed">Нужна кроватка?</label>
+                  <input type="checkbox" id="input__bed" class="modal-guest__bed-checkbox">
+                  <label for="input__bed" class="modal-guest__bed-yes">Да</label>
                 </div>
               </div>
               <button class="form-order__button button">Отправить заявку</button>
             </form>
           </div>
           <div class="metro-field">
-            <svg class="metro-field__icon metro-field__icon--metro" width="30" height="30">
-              <use xlink:href="#metro"></use>
-            </svg>
-            <input class="metro-field__input" type="list" id="metro-input" placeholder="Выберите станцию метро из списка или введите название">
-            <!-- <label for="metro-input">Выберите станцию метро из списка или введите название</label> -->
-            <button class="metro-field__button">
-              &gt
-            </button>
+            <div class="metro-field__box">
+              <svg class="metro-field__icon metro-field__icon--metro" width="30" height="30">
+                <use xlink:href="#metro"></use>
+              </svg>
+              <input class="metro-field__input" type="text" id="metro-input" placeholder="Выберите станцию метро из списка или введите название">
+              <!-- <label for="metro-input">Выберите станцию метро из списка или введите название</label> -->
+              <button class="metro-field__button">
+                &gt
+              </button>
+              <div class="metro-field__checkbox metro-field__checkbox--hide">
+                <ul class="metro-field__checkbox-list">
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="PetroRazum" value="PetroRazum">
+                    <label class="metro-field__checkbox-label" for="PetroRazum">
+                      Петровско-Разумовская
+                      <span class="metro-icon metro-icon--light-green"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Tushino" value="Tushino">
+                    <label class="metro-field__checkbox-label" for="Tushino">
+                      Тушинская
+                      <span class="metro-icon metro-icon--violet"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Kiev" value="Kiev">
+                    <label class="metro-field__checkbox-label" for="Kiev">
+                      Киевская
+                      <span class="metro-icon metro-icon--brown"></span>
+                      <span class="metro-icon metro-icon--dark-blue"></span>
+                      <span class="metro-icon metro-icon--blue"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Mayakov" value="Mayakov">
+                    <label class="metro-field__checkbox-label" for="Mayakov">
+                      Маяковская
+                      <span class="metro-icon metro-icon--green"></span>
+                  </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="AlexGarden" value="AlexGarden">
+                    <label class="metro-field__checkbox-label" for="AlexGarden">
+                      Александровский сад
+                      <span class="metro-icon metro-icon--blue"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Turgenev" value="Turgenev">
+                    <label class="metro-field__checkbox-label" for="Turgenev">
+                      Тургевская
+                      <span class="metro-icon metro-icon--orandge"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Kiev" value="Kiev">
+                    <label class="metro-field__checkbox-label" for="Kiev">
+                      Киевская
+                      <span class="metro-icon metro-icon--brown"></span>
+                      <span class="metro-icon metro-icon--dark-blue"></span>
+                      <span class="metro-icon metro-icon--blue"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Mayakov" value="Mayakov">
+                    <label class="metro-field__checkbox-label" for="Mayakov">
+                      Маяковская
+                      <span class="metro-icon metro-icon--green"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="AlexGarden" value="AlexGarden">
+                    <label class="metro-field__checkbox-label" for="AlexGarden">
+                      Александровский сад
+                      <span class="metro-icon metro-icon--blue"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Turgenev" value="Turgenev">
+                    <label class="metro-field__checkbox-label" for="Turgenev">
+                      Тургевская
+                      <span class="metro-icon metro-icon--orandge"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="PetroRazum" value="PetroRazum">
+                    <label class="metro-field__checkbox-label" for="PetroRazum">
+                      Петровско-Разумовская
+                      <span class="metro-icon metro-icon--light-green"></span>
+                    </label>
+                  </li>
+                  <li class="metro-field__checkbox-item">
+                    <input type="checkbox" id="Mayakov" value="Mayakov">
+                    <label class="metro-field__checkbox-label" for="Mayakov">
+                      Маяковская
+                      <span class="metro-icon metro-icon--green"></span>
+                    </label>
+                  </li>
+                </ul>
+                <button class="metro-field__checkbox-button" type="reset">Сбросить</button>
+              </div>
+            </div>
           </div>
           <div class="rooms-order">
                 <article class="rooms-order__card card-room">
@@ -1429,11 +1538,32 @@
         </p>
       </div>
     </div>
+    <input type="date" id="dt" onchange="mydate1();" hidden/>
+    <input type="text" id="ndt"  onclick="mydate();" hidden />
+    <input type="button" Value="Date" onclick="mydate();" />
   </footer>
   <!-- FOOTER END -->
 
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/menu.js"></script>
+  <script>
+    function mydate() {
+    //alert("");
+    document.getElementById("dt").hidden = false;
+    document.getElementById("ndt").hidden = true;
+  }
+
+    function mydate1() {
+      d = new Date(document.getElementById("dt").value);
+      dt = d.getDate();
+      mn = d.getMonth();
+      mn++;
+      yy = d.getFullYear();
+      document.getElementById("ndt").value = dt + "/" + mn + "/" + yy
+      document.getElementById("ndt").hidden = false;
+      document.getElementById("dt").hidden = true;
+    }
+  </script>
 </body>
 
 </html>
