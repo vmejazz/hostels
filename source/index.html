@@ -801,17 +801,17 @@
         <nav class="page-header__main-navigation main-navigation">
           <ul class="main-navigation__list">
             <li class="main-navigation__item">
-              <a href="" class="main-navigation__link">
+              <a href="#metro-field" class="main-navigation__link">
                 Адреса хостелов
               </a>
             </li>
             <li class="main-navigation__item">
-              <a href="" class="main-navigation__link">
+              <a href="#main-advantage" class="main-navigation__link">
                 Что включено?
               </a>
             </li>
             <li class="main-navigation__item">
-              <a href="" class="main-navigation__link">
+              <a href="#rooms-order" class="main-navigation__link">
                 Номера и цены
               </a>
             </li>
@@ -821,7 +821,7 @@
               </a>
             </li>
             <li class="main-navigation__item">
-              <a href="" class="main-navigation__link">
+              <a href="#main-review" class="main-navigation__link">
                 Отзывы
               </a>
             </li>
@@ -834,7 +834,7 @@
         </nav>
       </div>
       <div class="page-header__callback callback">
-        <h3 class="callback__tel">8 800 500 61 73</h3>
+        <a class="callback__tel" href="tel: +88005006173">8 800 500 61 73</a>
         <p class="callback__text">Ответим на ваши вопросы!</p>
         <button class="callback__button button">Заказать звонок</button>
       </div>
@@ -882,24 +882,28 @@
             </div>
             <form action="submit" class="margin-order__form form-order">
               <div class="form-order__check-in">
-                <input type="date" id="input__check-in--default" class="form-order__chek-in--default" onchange="mydDateIn()">
-                <input type="text" id="input__check-in--style" class="form-order__chek-in--style" value="24 июля 2019">
+                <!-- <input type="date" id="input__check-in--default" class="form-order__chek-in--default" onchange="mydDateIn()"> -->
+                <input type="text" id="input__check-in--style" class="form-order__chek-in--style">
+                <!-- <input type="text" id="input__check-in--style" class="form-order__chek-in--style" value="24 июля 2019"> -->
                 <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
                   <use xlink:href="#calendar"></use>
                 </svg>
-                <label for="input__check-in--default">Дата заезда</label>
+                <label for="input__check-in--style">Дата заезда</label>
               </div>
               <div class="form-order__check-out">
-                  <input type="date" id="input__check-out--default" class="form-order__chek-in--default" onchange="myDateOut()">
-                  <input type="text" id="input__check-out--style" class="form-order__chek-in--style" value="24 июля 2019">
+                  <!-- <input type="date" id="input__check-out--default" class="form-order__chek-in--default" onchange="myDateOut()"> -->
+                  <input type="text" id="input__check-out--style" class="form-order__check-out--style">
+                  <!-- <input type="text" id="input__check-out--style" class="form-order__chek-in--style" value="24 июля 2019"> -->
                   <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
                     <use xlink:href="#calendar"></use>
                   </svg>
-                  <label for="input__check-out--default">Дата выезда</label>
+                  <label for="input__check-out--style">Дата выезда</label>
                 </div>
               <div class="form-order__guest">
+                  <button type="button" class="form-order__guest-button form-order__guest-button--minus">-</button>
                 <input type="text" id="input__guest" value="1" min=1 max=30 class="form-order__guest-all">
                 <label for="input__guest" class="form-order__guest-label">Количество человек:</label>
+                <button type="button" class="form-order__guest-button form-order__guest-button--plus">+</button>
                 <!-- <button class="form-order__guest-button"></button> -->
               </div>
               <div class="form-order__personal-name">
@@ -910,7 +914,7 @@
                 <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона">
                 <!-- <label for="input__tel" class="form-order__tel-label">Номер телефона</label> -->
               </div>
-              <div class="form-order__modal modal-guest">
+              <div class="form-order__modal modal-guest modal-guest--hide">
                 <div class="modal-guest__adult">
                   <label for="input__adult">Взрослых:</label>
                   <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
@@ -920,7 +924,7 @@
                 <div class="modal-guest__children">
                   <label for="input__children">Детей:</label>
                   <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
-                  <input type="text" id="input__children" value="1">
+                  <input type="text" id="input__children" value="0">
                   <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
                 </div>
                 <div class="modal-guest__bed">
@@ -932,7 +936,7 @@
               <button class="form-order__button button">Отправить заявку</button>
             </form>
           </div>
-          <div class="metro-field">
+          <div class="metro-field" id="metro-field">
             <div class="metro-field__box">
               <input class="metro-field__input" type="text" id="metro-input" placeholder="Выберите станцию метро из списка или введите название">
               <svg class="metro-field__icon metro-field__icon--metro" width="30" height="30">
@@ -1037,7 +1041,7 @@
               </div>
             </div>
           </div>
-          <div class="rooms-order">
+          <div class="rooms-order" id="rooms-order">
                 <article class="rooms-order__card card-room">
                   <a href="" class="card-room__link">
                     <img src="./img/room1.png" alt="" class="card-room__img" width="270" height="160">
@@ -1074,7 +1078,8 @@
                   <div class="card-room__price price">
                     <p class="price__sell">600 руб / сутки</p>
                     <p class="price__old">800 руб / сутки</p>
-                  </div>                  <p class="card-room__description">Цена указана на 1 человека</p>
+                  </div>
+                  <p class="card-room__description">Цена указана на 1 человека</p>
                   <button class="card-room__button button">Забронировать</button>
                 </article>
                 <article class="rooms-order__card card-room">
@@ -1101,7 +1106,7 @@
                     <img src="./img/room4.png" alt="" class="card-room__img" width="270" height="160">
                     <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
                     <div class="card-room__sell"></div>
-                    <div class="card-room__sale card-room__sale--show">
+                    <div class="card-room__sale card-room__sale--show pulse">
                       <p class="card-room__sale-text">
                         Забронируй сейчас<br>
                         и получи скидку <b>10%</b>
@@ -1116,7 +1121,7 @@
                   <button class="card-room__button button">Забронировать</button>
                 </article>
           </div>
-          <div class="main-advantage">
+          <div class="main-advantage" id="main-advantage">
             <div class="main-advantage__title">
                 Почему стоит остановиться<br>
                 в <span class="text--red">Хостелы</span> Рус?
@@ -1209,7 +1214,7 @@
                   </button>
                 </div>
           </div>
-          <div class="main-corporativ">
+          <div class="main-corporativ" id="main-corporativ">
             <div class="main-corporativ__title">
               Корпоративным клиентам
             </div>
@@ -1316,62 +1321,62 @@
               </li>
             </ul>
           </div>
-          <div class="main-customers">
+          <div class="main-customers ">
             <h3 class="main-customers__title">
               У нас бронировали<br>
               для рабочих поездок:
             </h3>
-            <div class="main-customers__slider">
-              <button class="main-customers__button main-customers__button--back">
+            <div class="main-customers__slider swiper-container">
+              <button class="main-customers__button main-customers__button--back swiper-button-prev">
                 &lt
               </button>
-              <ul class="main-customers__list">
-                <li class="main-customers__item">
+              <ul class="main-customers__list swiper-wrapper">
+                <li class="main-customers__item swiper-slide">
                   <a href="" class="main-customers__link">
                     <img src="./img/customers1.png" alt="" class="main-customers__img">
                   </a>
                 </li>
-                <li class="main-customers__item">
+                <li class="main-customers__item swiper-slide">
                   <a href="" class="main-customers__link">
                     <img src="./img/customers2.png" alt="" class="main-customers__img">
                   </a>
                 </li>
-                <li class="main-customers__item">
+                <li class="main-customers__item swiper-slide">
                   <a href="" class="main-customers__link">
                     <img src="./img/customers3.png" alt="" class="main-customers__img">
                   </a>
                 </li>
-                <li class="main-customers__item">
+                <li class="main-customers__item swiper-slide">
                   <a href="" class="main-customers__link">
                     <img src="./img/customers4.png" alt="" class="main-customers__img">
                   </a>
                 </li>
-                <li class="main-customers__item">
+                <li class="main-customers__item swiper-slide">
                   <a href="" class="main-customers__link">
                     <img src="./img/customers5.png" alt="" class="main-customers__img">
                   </a>
                 </li>
-                <li class="main-customers__item">
+                <li class="main-customers__item swiper-slide">
                   <a href="" class="main-customers__link">
                     <img src="./img/customers1.png" alt="" class="main-customers__img">
                   </a>
                 </li>
               </ul>
-              <button class="main-customers__button main-customers__button--next">
+              <button class="main-customers__button main-customers__button--next swiper-button-next">
                 &gt
               </button>
             </div>
           </div>
-          <div class="main-review">
+          <div class="main-review" id="main-review">
             <h3 class="main-review__title">
               Отзывы наших гостей:
             </h3>
-            <div class="main-review__slider">
-              <button class="main-review__button main-review__button--back">
+            <div class="main-review__slider swiper-container">
+              <button class="main-review__button main-review__button--back swiper-button-prev">
                 &lt
               </button>
-              <ul class="main-review__list">
-                <li class="main-review__item">
+              <ul class="main-review__list swiper-wrapper">
+                <li class="main-review__item swiper-slide">
                   <article class="card-review">
                     <div class="card-review__header">
                       <img src="./img/ava1.png" alt="" class="card-review__avatar" width="90" height="110">
@@ -1394,7 +1399,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="main-review__item">
+                <li class="main-review__item swiper-slide">
                   <article class="card-review">
                     <div class="card-review__header">
                       <img src="./img/ava2.png" alt="" class="card-review__avatar" width="90" height="110">
@@ -1417,7 +1422,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="main-review__item">
+                <li class="main-review__item swiper-slide">
                   <article class="card-review">
                     <div class="card-review__header">
                       <img src="./img/ava3.png" alt="" class="card-review__avatar" width="90" height="110">
@@ -1441,7 +1446,7 @@
                   </article>
                 </li>
               </ul>
-              <button class="main-review__button main-review__button--next">
+              <button class="main-review__button main-review__button--next swiper-button-next">
                 &gt
               </button>
             </div>
@@ -1459,7 +1464,7 @@
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="#main-corporativ" class="footer-navigation__link">
             Корпоративным клиентам
           </a>
         </li>
@@ -1501,26 +1506,26 @@
         </h4>
         <ul class="social__list">
           <li class="social__item">
-            <a href="" class="social__link">
+            <a href="https://www.instagram.com/hostelsrus" class="social__link">
               Instagram
             </a>
           </li>
           <li class="social__item">
-            <a href="" class="social__link">
+            <a href="https://vk.com/rushostels" class="social__link">
               Вконтакте
             </a>
           </li>
           <li class="social__item">
-            <a href="" class="social__link">
+            <a href="https://www.facebook.com/hostelsrus/" class="social__link">
               Facebook
             </a>
           </li>
         </ul>
       </div>
       <div class="page-footer__feedback footer-feedback">
-        <p class="footer-feedback__tel">
+        <a class="footer-feedback__tel" href="tel: +88005006173">
           8 800 500 61 73
-        </p>
+        </a>
         <p class="foooter-feedback__requisites">
           ООО «Хостелы Рус»<br>
           ИНН 7725829687<br>
@@ -1528,17 +1533,22 @@
         </p>
         <p class="footer-feedback__copyright">
           Created with <span class="footer-feedback__heart">❤</span> by<br>
-          Landing Heroes
+          <a href="https://landingheroes.ru/" class="footer-feedback__link">
+            Landing Heroes
+          </a>
         </p>
       </div>
     </div>
-    <input type="date" id="dt" onchange="mydate1();" hidden/>
-    <input type="text" id="ndt"  onclick="mydate();" hidden />
-    <input type="button" Value="Date" onclick="mydate();" />
   </footer>
   <!-- FOOTER END -->
 
+  <script src="./js/jquery-3.4.1.min.js"></script>
+  <script src="./js/datepicker.min.js"></script>
   <script src="./js/dateInput.js"></script>
+  <script src="./js/guestRange.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/scrollAnchor.js"></script>
 </body>
 
 </html>

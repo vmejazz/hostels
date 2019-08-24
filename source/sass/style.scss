@@ -1,9 +1,11 @@
 // @import "./fonts.scss";
 @import "./variables.scss";
+@import "./blocks/swiper.min.scss";
 @import "./main.scss";
 @import "./blocks/button.scss";
 @import "./blocks/page-header.scss";
 @import "./blocks/main-navigation.scss";
+@import "./blocks/datapicker.scss";
 @import "./blocks/main-order.scss";
 @import "./blocks/form-order.scss";
 @import "./blocks/rooms-order.scss";
@@ -21,3 +23,4 @@
 @import "./blocks/footer-navigation.scss";
 @import "./blocks/social.scss";
 @import "./blocks/footer-feedback.scss";
+@import "./blocks/animation.scss";

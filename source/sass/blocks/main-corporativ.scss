@@ -141,6 +141,9 @@
   @include list-reset();
 
   padding-left: 14px;
+  padding-left: 19px;
+
+  list-style-image: url("../img/ok.png");
 }
 
 .location-card__item {
@@ -148,21 +151,21 @@
 
   max-width: 220px;
   margin-bottom: 16px;
-  padding-left: 10px;
+  padding-left: 6px;
 
   // line-height: 24px;
 
-  &::before {
-    content: "✓";
-    position: absolute;
-    top: 0;
-    left: -15px;
+  // &::before {
+  //   content: "✓";
+  //   position: absolute;
+  //   top: 0;
+  //   left: -15px;
 
-    width: 10px;
-    height: 10px;
+  //   width: 10px;
+  //   height: 10px;
 
-    color: red;
-  }
+  //   color: red;
+  // }
 
   // &::after {
   //   content: "";

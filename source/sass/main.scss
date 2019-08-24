@@ -13,6 +13,8 @@ body {
   font-size: 16px;
   font-family: "Rubik", "Tahoma", sans-serif;
   color: #666666;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -87,6 +89,8 @@ a {
     @content;
   }
 }
+
+
 
 // @mixin min($device-width) {
 //   @media (min-width: $device-width) {

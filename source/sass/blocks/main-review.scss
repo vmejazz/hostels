@@ -1,12 +1,8 @@
 .main-review {
+  position: relative;
+
   margin-top: 63px;
   padding-bottom: 70px;
-
-  & .row {
-    display: flex;
-    justify-content: space-between;
-    align-content: flex-center;
-  }
 }
 
 .main-review__title {
@@ -21,23 +17,36 @@
 }
 
 .main-review__slider {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   justify-content: space-between;
+  height: 500px;
+  // margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+
+  list-style: none;
 }
 
 .main-review__list {
   @include list-reset();
 
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  width: 1065px;
+  padding-top: 5px;
+  // width: 1065px;
 }
 
 .main-review__item {
+  flex-grow: 0;
   width: 334px;
-  min-height: 500px;
+  height: 500px;
 }
 
 .main-review__button {
@@ -123,7 +132,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 12.88px;
-  font-family: Rubik;
+  font-family: "Rubik";
   color: #cccccc;
 
   background-color: #f6f6f6;
@@ -135,6 +144,6 @@
   font-weight: 400;
   font-size: 16px;
   // line-height: 19px;
-  font-family: Rubik;
+  font-family: "Rubik";
   color: #666666;
 }

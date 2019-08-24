@@ -47,9 +47,11 @@
 .form-order__check-in {
   position: relative;
 
+  height: 40px;
   margin-bottom: 12px;
 
   border-bottom: 1px solid #c5c5c5;
+  cursor: pointer;
 
 
   & label {
@@ -65,6 +67,17 @@
     font-size: 14px;
     font-family: "Rubik";
     color: #666666;
+
+    cursor: pointer;
+  }
+}
+
+.form-order__check-out {
+  height: 40px;
+
+  cursor: pointer;
+  & label {
+    cursor: pointer;
   }
 }
 
@@ -143,8 +156,10 @@
 .form-order__guest {
   position: relative;
 
+  width: 100%;
   margin-top: 52px;
   margin-bottom: 20px;
+  padding-left: 65px;
 
   font-weight: 400;
   font-size: 14px;
@@ -157,7 +172,7 @@
   z-index: 1;
 
   width: 20px;
-  margin-left: 105px;
+  margin-left: 15px;
 
   font-weight: 700;
   font-size: 16px;
@@ -165,6 +180,7 @@
   color: #ec343c;
 
   border: none;
+  outline: none;
 }
 
 .form-order__guest-label {
@@ -174,50 +190,22 @@
   z-index: 10;
 
   width: 100%;
+}
 
-  &::before {
-    content: "-";
-    position: absolute;
-    top: 35px;
-    left: 25px;
+.form-order__guest-button {
+  @include btn-reset();
 
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    padding-top: 4px;
-    padding-left: 8px;
+  width: 24px;
+  height: 24px;
 
-    font-weight: 700;
-    font-size: 14px;
-    font-family: "Roboto Slab";
-    vertical-align: middle;
-    color: #ec343c;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Roboto Slab";
+  color: #ec343c;
 
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
-  }
-
-  &::after {
-    content: "+";
-    position: absolute;
-    top: 35px;
-    right: 105px;
-
-    width: 24px;
-    height: 24px;
-    padding-top: 4px;
-    padding-left: 8px;
-
-    font-weight: 700;
-    font-size: 14px;
-    font-family: "Roboto Slab";
-    color: #ec343c;
-
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
-  }
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
 }
 
 .form-order__name-input,
@@ -258,8 +246,7 @@
 
   &:hover,
   &:focus {
-    color: #ec343c;
-
-    background-color: #ffffff;
+    background-color: #c71019;
+    border-color: #c71019;
   }
 }

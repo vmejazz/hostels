@@ -14,8 +14,12 @@
 }
 
 .main-customers__slider {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
+  // margin-right: 70px;
+  // margin-left: 70px;
 }
 
 .main-customers__list {
@@ -25,8 +29,9 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  width: 1030px;
+  // width: 1030px;
   height: 70px;
+  padding-left: 60px;
 }
 
 .main-customers__link {
@@ -34,12 +39,11 @@
   height: 100%;
 }
 
-.main-customers__img {
-  width: 100%;
-}
-
 .main-customers__button {
   @include btn-reset();
+
+  position: absolute;
+  top: 0;
 
   width: 24px;
   height: 24px;
@@ -52,7 +56,7 @@
   border-radius: 50%;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
 
-  transition: 0.4s linear;
+  transition: 0.2s linear;
 
   &:hover,
   &:focus {

@@ -1,7 +1,7 @@
 .social__title {
   @include MD-reset();
 
-  margin-left: 10px;
+  margin-top: 6px;
 
   font-weight: 400;
   font-size: 16px;
@@ -12,21 +12,27 @@
 
 .social__list {
   @include list-reset();
+
+  margin-top: 16px;
+  margin-left: 15px;
+
+  list-style-image: url("../img/arrow.png");
 }
 
 .social__item {
+  margin-bottom: 5px;
   padding-top: 2px;
   padding-left: 10px;
 
-  &::before {
-    content: "→";
+  // &::before {
+  //   content: "→";
 
-    width: 10px;
+  //   width: 10px;
 
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 34px;
-    font-family: "Minion Pro";
-    color: #ec343c;
-  }
+  //   font-weight: 400;
+  //   font-size: 16px;
+  //   line-height: 34px;
+  //   font-family: "Minion Pro";
+  //   color: #ec343c;
+  // }
 }

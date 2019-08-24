@@ -9,6 +9,14 @@
   font-family: "Rubik";
   color: #ffffff;
 
+  &--hide {
+    display: none;
+  }
+
+  &--show {
+    display: block;
+  }
+
   & input {
     width: 30px;
     margin-top: 20px;
