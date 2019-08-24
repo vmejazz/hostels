@@ -1454,6 +1454,34 @@
     </div>
   </main>
   <!-- MAIN END -->
+  <div class="modal-callback modal-callback--show">
+    <div class="modal-callback__overlay">
+      <div class="modal-callback__container">
+        <button class="modal-callback__button--close button">X</button>
+        <div class="modal-callback__fields">
+          <h3 class="modal-callback__title">
+            Мы перезвоним!
+          </h3>
+          <p class="modal-callback__text">
+            Забронируйте номер или получите консультацию
+          </p>
+          <form action="submit" class="modal-callback__form">
+            <input type="text" class="modal-callback__name" placeholder="Ваше имя">
+            <input type="text" class="modal-callback__phone" placeholder="Номер телефона">
+            <input type="text" class="modal-callback__email" placeholder="E-mail">
+            <div class="modal-callback__rules">
+              <input type="checkbox" required class="modal-callback__policy" id="modal-callback__policy">
+              <label for="modal-callback__policy">
+                Я ознакомился с <a href="" class="modal-callback__link">политикой обработки</a> персональных данных
+              </label>
+            </div>
+            <button class="modal-callback__button button" type="submit">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER START -->
   <footer class="page-footer">
     <div class="container page-footer__container">

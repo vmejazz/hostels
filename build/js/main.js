@@ -17,7 +17,7 @@ var mySwiper = new Swiper ('.main-review__slider', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  spaceBetween: 40,
+  spaceBetween: 30,
 
   // Navigation arrows
   navigation: {

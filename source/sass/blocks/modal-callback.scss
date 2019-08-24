@@ -1,0 +1,258 @@
+.modal-callback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  display: none;
+
+  background-color: #ffffff;
+
+
+  &--show {
+    display: block;
+  }
+}
+
+.modal-callback__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #ed474e;
+  opacity: 0.9;
+}
+
+.modal-callback__container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+
+  width: 470px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 30px;
+
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+  transform: translateX(-170px) translateY(-200px);
+  opacity: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+
+    width: 340px;
+    height: 400px;
+
+    background-image: url("../img/Layer_2.png");
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -44px;
+    bottom: 0;
+    z-index: 5;
+
+    width: 394px;
+    height: 285px;
+
+    background-image: url("../img/turist.png");
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+  }
+}
+
+.modal-callback__fields {
+  position: relative;
+  z-index: 8;
+
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+.modal-callback__button--close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 33px;
+  height: 33px;
+
+  color: #ffffff;
+
+  background-color: #ec343c;
+  border-radius: 50%;
+}
+
+.modal-callback__title {
+  @include MD-reset();
+
+  // margin-top: 30px;
+  // margin-left: 30px;
+}
+
+.modal-callback__text {
+  @include MD-reset();
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Rubik";
+  color: #666666;
+}
+
+.modal-callback__form {
+  position: relative;
+  z-index: 7;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-callback__form input[type=text] {
+  width: 220px;
+  height: 40px;
+
+  border: none;
+  border-bottom: 1px solid #c5c5c5;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Rubik";
+    color: #666666;
+
+    opacity: 0.5;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: #ec343c;
+    outline: none;
+  }
+}
+
+.modal-callback__rules {
+  position: relative;
+
+  width: 230px;
+  margin-top: 19px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Rubik";
+  color: #999999;
+}
+
+.modal-callback__policy {
+  position: absolute;
+  top: 5px;
+  left: -35px;
+}
+
+.modal-callback__rules label {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border-radius: 5px;
+  }
+}
+
+.modal-callback__policy:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -35px;
+
+  width: 16px;
+  height: 12px;
+
+  background-image: url("../../img/ok2.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.modal-callback__link {
+  text-decoration: underline;
+}
+
+.modal-callback__button {
+  width: 220px;
+
+  color: #ffffff;
+
+  background-color: #ec343c;
+
+  &:hover,
+  &:focus {
+    background-color: #c71019;
+    border-color: #c71019;
+  }
+}
+// .modal__overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 3;
+
+//   width: 100vw;
+//   height: 100vh;
+
+//   background-color: #ffffff;
+//   opacity: 0.9;
+// }
+
+// .modal__container {
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   z-index: 5;
+
+//   width: 320px;
+//   min-height: 336px;
+//   padding: 0 30px;
+
+//   background-color: #ffffff;
+//   border: 1px solid #c6c6c6;
+//   box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+//   transform: translateX(-160px) translateY(-170px);
+//   opacity: 1;
+
+
+//   @media (min-width: $tablet) {
+//     top: 50%;
+//     left: 50%;
+
+//     width: 566px;
+//     padding: 0 105px;
+
+//     transform: translateX(-285px) translateY(-170px);
+//   }
+// }
