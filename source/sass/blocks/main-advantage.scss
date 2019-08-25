@@ -16,6 +16,10 @@
 .main-advantage__cards {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+  }
 }
 
 .main-advantage__colum {
@@ -25,6 +29,11 @@
   display: flex;
   flex-direction: column;
   width: calc(50% - 15px);
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .card-advantage {
@@ -56,6 +65,10 @@
     background-image: url("../img/top.png");
     background-repeat: no-repeat;
     background-position: right 0;
+
+    @media (max-width: $desktop) {
+      background-position: 70px bottom;
+    }
   }
 
   &--alcohol {
@@ -82,6 +95,11 @@
       background-image: url("../img/alco.png");
       background-repeat: no-repeat;
       background-position: right 0;
+
+      @media (max-width: $desktop) {
+        background-position: right center;
+        background-size: 50%;
+      }
     }
   }
 }
@@ -100,6 +118,9 @@
 .card-advantage__description {
   @include MD-reset();
 
+  position: relative;
+  z-index: 12;
+
   margin-top: 21px;
 
   font-weight: 400;
@@ -113,6 +134,11 @@
 
   & .text--blue {
     color: #0fb3f0;
+  }
+
+  @media (max-width: $desktop) {
+    max-width: 150px;
+    padding-bottom: 30px;
   }
 }
 
@@ -137,7 +163,16 @@
     height: 254px;
 
     background-image: url("../img/include.png");
-    background-repeat: 0;;
+    background-repeat: no-repeat;
+
+    @media (max-width: $desktop) {
+      // background-position: right bottom;
+      top: 20px;
+      right: -100px;
+
+      background-repeat: no-repeat;
+      background-size: 50%;
+    }
   }
 }
 
@@ -150,12 +185,20 @@
   font-size: 24px;
   font-family: "Roboto Slab";
   color: #000000;
+
+  @media (max-width: $desktop) {
+    max-width: 200px;
+  }
 }
 
 .include-card__list {
   @include list-reset();
 
   padding-left: 14px;
+
+  @media (max-width: $desktop) {
+    padding-bottom: 30px;
+  }
 }
 
 .include-card__item {
@@ -166,6 +209,10 @@
   line-height: 34px;
   font-family: Rubik;
   color: #666666;
+
+  @media (max-width: $desktop) {
+    // padding-right: 60px;
+  }
 
   &::before {
     content: "";
@@ -190,5 +237,9 @@
 
     border-left: 2px solid red;
     // transform: rotateY(90deg);
+  }
+
+  @media (max-width: $desktop) {
+    line-height: 2;
   }
 }

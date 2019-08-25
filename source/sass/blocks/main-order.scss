@@ -1,3 +1,10 @@
+.main-container {
+  @media (max-width: $desktop) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .main-order {
   display: flex;
   justify-content: space-between;
@@ -15,6 +22,13 @@
   background-repeat: no-repeat;
   background-position: 0 -1px;
   background-size: 1170px 100%;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 20px 30px;
+  }
 }
 
 .main-order__title {
@@ -61,6 +75,10 @@
 
 .main-order__form {
   margin-left: 160px;
+
+  @media (max-width: $desktop) {
+    margin: 0 auto;
+  }
 }
 
 .margin-order__form {

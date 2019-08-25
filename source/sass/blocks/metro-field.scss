@@ -16,6 +16,10 @@
 
     background-color: #ffffff;
   }
+
+  @media (max-width: $desktop) {
+    width: 320px;
+  }
 }
 
 .metro-field__input {
@@ -45,6 +49,10 @@
 
     background-color: #ffffff;
   }
+
+  @media (max-width: $desktop) {
+    width: 320px;
+  }
 }
 
 .metro-field__checkbox {
@@ -68,6 +76,10 @@
   padding-left: 20px;
 
   border-top: 1px solid #bcbcbc;
+
+  @media (max-width: $desktop) {
+    width: 320px;
+  }
 }
 
 .metro-field__checkbox-item {

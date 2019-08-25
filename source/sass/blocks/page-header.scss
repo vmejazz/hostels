@@ -6,7 +6,11 @@
 .page-header__panel {
   position: relative;
 
-  min-width: 940px;
+  width: 940px;
+
+  @media (max-width: $desktop) {
+    max-width: 320px;
+  }
 }
 
 .page-header__info {
