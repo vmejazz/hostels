@@ -21,11 +21,11 @@
         closeModal();
       }
     })
-    document.addEventListener('click', function (evt){
-      if (evt.target.contain('.modal-callback__overlay')) {
-        console.log('Popal v overlay')
-      }
-    });
+    // document.addEventListener('click', function (evt){
+    //   if (evt.target.contain('.modal-callback__overlay')) {
+    //     console.log('Popal v overlay')
+    //   }
+    // });
   };
 
 
