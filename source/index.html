@@ -1042,6 +1042,8 @@
             </div>
           </div>
           <div class="rooms-order" id="rooms-order">
+            <ul class="rooms-order__list">
+              <li class="rooms-order__item">
                 <article class="rooms-order__card card-room">
                   <a href="" class="card-room__link">
                     <img src="./img/room1.png" alt="" class="card-room__img" width="270" height="160">
@@ -1062,6 +1064,8 @@
                   <p class="card-room__description">Цена указана на 1 человека</p>
                   <button class="card-room__button button">Забронировать</button>
                 </article>
+              </li>
+              <li class="rooms-order__item">
                 <article class="rooms-order__card card-room">
                   <a href="" class="card-room__link">
                     <img src="./img/room2.png" alt="" class="card-room__img" width="270" height="160">
@@ -1082,44 +1086,214 @@
                   <p class="card-room__description">Цена указана на 1 человека</p>
                   <button class="card-room__button button">Забронировать</button>
                 </article>
+              </li>
+              <li class="rooms-order__item">
                 <article class="rooms-order__card card-room">
-                  <a href="" class="card-room__link">
-                    <img src="./img/room3.png" alt="" class="card-room__img" width="270" height="160">
-                    <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
-                    <div class="card-room__sell"></div>
-                    <div class="card-room__sale card-room__sale--hide">
-                      <p class="card-room__sale-text">
-                        Забронируй сейчас<br>
-                        и получи скидку <b>10%</b>
-                      </p>
-                    </div>
-                  </a>
-                  <h3 class="card-room__title">Номер на 4-6 чел.</h3>
-                  <div class="card-room__price price">
-                    <p class="price__sell">800 руб / сутки</p>
-                    <p class="price__old"></p>
-                  </div>                  <p class="card-room__description">Цена указана на 1 человека</p>
-                  <button class="card-room__button button">Забронировать</button>
+                    <a href="" class="card-room__link">
+                      <img src="./img/room3.png" alt="" class="card-room__img" width="270" height="160">
+                      <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
+                      <div class="card-room__sell"></div>
+                      <div class="card-room__sale card-room__sale--hide">
+                        <p class="card-room__sale-text">
+                          Забронируй сейчас<br>
+                          и получи скидку <b>10%</b>
+                        </p>
+                      </div>
+                    </a>
+                    <h3 class="card-room__title">Номер на 4-6 чел.</h3>
+                    <div class="card-room__price price">
+                      <p class="price__sell">800 руб / сутки</p>
+                      <p class="price__old"></p>
+                    </div>                  <p class="card-room__description">Цена указана на 1 человека</p>
+                    <button class="card-room__button button">Забронировать</button>
                 </article>
+              </li>
+              <li class="rooms-order__item">
                 <article class="rooms-order__card card-room">
-                  <a href="" class="card-room__link">
-                    <img src="./img/room4.png" alt="" class="card-room__img" width="270" height="160">
-                    <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
-                    <div class="card-room__sell"></div>
-                    <div class="card-room__sale card-room__sale--show pulse">
-                      <p class="card-room__sale-text">
-                        Забронируй сейчас<br>
-                        и получи скидку <b>10%</b>
-                      </p>
-                    </div>
-                  </a>
-                  <h3 class="card-room__title">Номер на 2 человек</h3>
-                  <div class="card-room__price price">
-                    <p class="price__sell">3000 руб / сутки</p>
-                    <p class="price__old">1750 руб / сутки</p>
-                  </div>                  <p class="card-room__description">Цена указана за номер</p>
-                  <button class="card-room__button button">Забронировать</button>
+                    <a href="" class="card-room__link">
+                      <img src="./img/room4.png" alt="" class="card-room__img" width="270" height="160">
+                      <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
+                      <div class="card-room__sell"></div>
+                      <div class="card-room__sale card-room__sale--show pulse">
+                        <p class="card-room__sale-text">
+                          Забронируй сейчас<br>
+                          и получи скидку <b>10%</b>
+                        </p>
+                      </div>
+                    </a>
+                    <h3 class="card-room__title">Номер на 2 человек</h3>
+                    <div class="card-room__price price">
+                      <p class="price__sell">3000 руб / сутки</p>
+                      <p class="price__old">1750 руб / сутки</p>
+                    </div>                  <p class="card-room__description">Цена указана за номер</p>
+                    <button class="card-room__button button">Забронировать</button>
                 </article>
+              </li>
+            </ul>
+            <div class="rooms-order__modal rooms-modal">
+              <button class="rooms-modal__button--close ">
+                закрыть
+              </button>
+              <div class="rooms-modal__slider rooms-slider">
+                <div class="rooms-slider__container">
+                  <ul class="rooms-slider__list swiper-wrapper">
+                    <li class="rooms-slider__item">
+                      <div class="rooms-slider__description room">
+                        <div class="room__photos">
+                          <div class="room__big-photo">
+
+                          </div>
+                          <ul class="room__small-photos">
+                            <li class="room__small-photo">
+                              <img src="" alt="small-room-photo">
+                            </li>
+                            <li class="room__small-photo">
+                              <img src="" alt="small-room-photo">
+                            </li>
+                            <li class="room__small-photo">
+                              <img src="" alt="small-room-photo">
+                            </li>
+                            <li class="room__small-photo">
+                              <img src="" alt="small-room-photo">
+                            </li>
+                            <li class="room__small-photo">
+                              <img src="" alt="small-room-photo">
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="room__title">
+                          Номер на 2 человек
+                        </div>
+                        <div class="room__adress">
+                          Петровско-Разумовская, ул. Пролетарская, д.3
+                        </div>
+                        <div class="room__features features">
+                          <div class="features__title">
+                            Уже включено:
+                          </div>
+                          <ul class="features__list">
+                            <li class="features__item">
+                              <img src="" alt="" class="features__img">
+                              <p class="features__text">
+                                Безлимитный Wi-Fi (100 мб/с)
+                              </p>
+                            </li>
+                            <li class="features__item">
+                              <img src="" alt="" class="features__img">
+                              <p class="features__text">
+                                Безлимитный Wi-Fi (100 мб/с)
+                              </p>
+                            </li>
+                            <li class="features__item">
+                              <img src="" alt="" class="features__img">
+                              <p class="features__text">
+                                Безлимитный Wi-Fi (100 мб/с)
+                              </p>
+                            </li>
+                            <li class="features__item">
+                              <img src="" alt="" class="features__img">
+                              <p class="features__text">
+                                Безлимитный Wi-Fi (100 мб/с)
+                              </p>
+                            </li>
+                            <li class="features__item">
+                              <img src="" alt="" class="features__img">
+                              <p class="features__text">
+                                Безлимитный Wi-Fi (100 мб/с)
+                              </p>
+                            </li>
+                            <li class="features__item">
+                              <img src="" alt="" class="features__img">
+                              <p class="features__text">
+                                Безлимитный Wi-Fi (100 мб/с)
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <form action="submit" class="rooms-slider__form form-order">
+                        <div class="form__title">
+                            Заявка
+                          </div>
+                        <div class="form-order__check-in">
+                          <!-- <input type="date" id="input__check-in--default" class="form-order__chek-in--default" onchange="mydDateIn()"> -->
+                          <input type="text" id="input__check-in--style" class="form-order__chek-in--style">
+                          <!-- <input type="text" id="input__check-in--style" class="form-order__chek-in--style" value="24 июля 2019"> -->
+                          <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
+                            <use xlink:href="#calendar"></use>
+                          </svg>
+                          <label for="input__check-in--style">Дата заезда</label>
+                        </div>
+                        <div class="form-order__check-out">
+                            <!-- <input type="date" id="input__check-out--default" class="form-order__chek-in--default" onchange="myDateOut()"> -->
+                            <input type="text" id="input__check-out--style" class="form-order__check-out--style">
+                            <!-- <input type="text" id="input__check-out--style" class="form-order__chek-in--style" value="24 июля 2019"> -->
+                            <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
+                              <use xlink:href="#calendar"></use>
+                            </svg>
+                            <label for="input__check-out--style">Дата выезда</label>
+                          </div>
+                        <div class="form-order__guest">
+                            <button type="button" class="form-order__guest-button form-order__guest-button--minus">-</button>
+                          <input type="text" id="input__guest" value="1" min=1 max=30 class="form-order__guest-all">
+                          <label for="input__guest" class="form-order__guest-label">Количество человек:</label>
+                          <button type="button" class="form-order__guest-button form-order__guest-button--plus">+</button>
+                          <!-- <button class="form-order__guest-button"></button> -->
+                        </div>
+                        <div class="form-order__personal-name">
+                          <input type="text" id="input__name" class="form-order__name-input" placeholder="Ваше имя">
+                          <!-- <label for="input__name" class="form-order__name-label">Ваше имя</label> -->
+                        </div>
+                        <div class="form-order__personal-tel">
+                          <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона">
+                          <!-- <label for="input__tel" class="form-order__tel-label">Номер телефона</label> -->
+                        </div>
+                        <div class="form-order__price">
+                          <p class="form-order__price-title">
+                            <span>Цена</span>
+                            в сутки
+                          </p>
+                          <p class="form-order__price-all">
+                            <span class="text-red">3200</span><br>
+                            руб всего
+                          </p>
+                          <p class="form-order__price-person">
+                            800 руб<br>
+                            с человека
+                          </p>
+                        </div>
+                        <div class="form-order__modal modal-guest modal-guest--hide">
+                          <div class="modal-guest__adult">
+                            <label for="input__adult">Взрослых:</label>
+                            <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
+                            <input type="text" id="input__adult" value="2">
+                            <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
+                          </div>
+                          <div class="modal-guest__children">
+                            <label for="input__children">Детей:</label>
+                            <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
+                            <input type="text" id="input__children" value="0">
+                            <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
+                          </div>
+                          <div class="modal-guest__bed">
+                            <label for="input__bed">Нужна кроватка?</label>
+                            <input type="checkbox" id="input__bed" class="modal-guest__bed-checkbox">
+                            <label for="input__bed" class="modal-guest__bed-yes">Да</label>
+                          </div>
+                        </div>
+                        <button class="form-order__button button">Отправить заявку</button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+                <button class="rooms-slider__button rooms-slider__button--back">
+                  &lt
+                </button>
+                <button class="rooms-slider__button rooms-slider__button--next">
+                  &gt
+                </button>
+              </div>
+            </div>
           </div>
           <div class="main-advantage" id="main-advantage">
             <div class="main-advantage__title">
