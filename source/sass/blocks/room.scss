@@ -1,0 +1,105 @@
+.room {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+}
+
+.room__photos {
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+  height: 190px;
+  margin-bottom: 30px;
+}
+
+.room__big-photo {
+  flex-shrink: 0;
+  width: 316px;
+  height: 100%;
+  margin-right: 30px;
+
+  background-color: blue;
+  border-radius: 5px;
+}
+
+.room__small-photos {
+  @include list-reset();
+
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room__small-photo {
+  width: 84px;
+  height: 56px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+
+  background-color: #ed474e;
+  border-radius: 5px;
+}
+
+.room__title {
+  margin: 0;
+  margin-bottom: 13px;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+.room__adress {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Rubik";
+  text-align: center;
+  color: #666666;
+}
+
+.room__features {
+  @include MD-reset();
+
+  border-top: 1px solid #bcbcbc;
+}
+
+.room__small-button {
+  @include btn-reset();
+
+  position: absolute;
+  top: 17px;
+  left: 42px;
+
+  width: 24px;
+  height: 24px;
+
+  line-height: 24px;
+  color: #ffffff;
+
+  background-color: #ed343c;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  transition: 0.2s linear;;
+
+
+  &--back {
+    left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: #ed343c;
+
+    background-color: #ffffff;
+  }
+}

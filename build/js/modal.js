@@ -1,14 +1,21 @@
 (function () {
   var modalCallback = document.querySelector('.modal-callback');
-  var modalOverlay = modalCallback.querySelector('.modal-callback__overlay');
+  var modalOverlay = document.querySelector('.modal-callback__overlay');
   var mainPromotionButton = document.querySelector('.main-promotion__button');
   var modalCallbackCloseButton = modalCallback.querySelector('.modal-callback__button--close');
+  var modalRoom = document.querySelector('.rooms-order__modal');
+  var roomModalClose = modalRoom.querySelector('.rooms-modal__button--close');
 
   var modalCallbackOpenButton = document.querySelector('.callback__button');
 
   var closeModal = function (evt) {
     modalCallback.classList.remove('modal-callback--show');
     modalCallback.classList.add('modal-callback--hide');
+  }
+
+  var closeModalRoom = function (evt) {
+    modalRoom.classList.remove('rooms-order__modal--show');
+    modalRoom.classList.add('rooms-order__modal--hide');
   }
 
 
@@ -33,8 +40,11 @@
   modalCallbackOpenButton.addEventListener('click', openModal);
   modalCallbackCloseButton.addEventListener('click', closeModal);
   mainPromotionButton.addEventListener('click',openModal);
+  roomModalClose.addEventListener('click', closeModalRoom);
+
 
   document.addEventListener('keydown', function(evt){
     console.log(evt.keyCode);
   })
   })();
+

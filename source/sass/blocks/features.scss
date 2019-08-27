@@ -1,0 +1,43 @@
+.features__title {
+  @include MD-reset();
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+.features__list {
+  @include list-reset();
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.features__item {
+  width: 150px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+
+  text-align: center;
+
+  &:nth-child(3n+1) {
+    margin-left: 0;
+  }
+}
+
+.features__text {
+  @include MD-reset();
+
+  margin-top: 10px;
+
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Rubik";
+  color: #666666;
+}

@@ -39,3 +39,78 @@
     }
   }
 }
+
+.rooms-order__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  // display: none;
+  // // width: 970px;
+
+  margin: 0 auto;
+
+  // background-color: #ffffff;
+
+
+  &--show {
+    display: block;
+  }
+
+  &--hide {
+    display: none;
+  }
+}
+
+.rooms-order__overlay {
+  &::before {
+    content: "";
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #ed474e;
+    opacity: 0.9;
+  }
+}
+
+.rooms-order__container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+
+  width: 970px;
+  height: 645px;
+
+  transform: translateX(-485px) translateY(-325px);
+}
+
+.rooms-modal__button--close {
+  @include btn-reset();
+
+  position: absolute;
+  top: -30px;
+  right: 70px;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Roboto Slab";
+  color: #000000;
+
+  cursor: pointer;
+}
+
+.rooms-slider__button {
+  position: absolute;
+  top: center;
+  right: 0;
+
+  width: 40px;
+  height: 100%;
+
+  &--back {
+    left: 0;
+  }
+}

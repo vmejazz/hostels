@@ -1,0 +1,72 @@
+
+.help-popup__first,
+.help-popup__second {
+  position: absolute;
+
+  text-align: center;
+
+  background-color: #ffcc33;
+  border-radius: 5px;
+}
+
+.help-popup__text {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Rubik";
+  color: black;
+}
+
+.help-popup__first {
+  bottom: -60px;
+  left: -20px;
+
+  width: 320px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 50%;
+
+    border: 20px solid transparent;
+    border-bottom: 20px solid #ffcc33;
+    transform: translateX(20px);
+  }
+}
+
+.help-popup__second {
+  top: -110px;
+  left: -80px;
+
+  width: 200px;
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: -30px;
+
+    border: 20px solid transparent;
+    border-top: 20px solid #ffcc33;
+    transform: translateX(20px);
+  }
+}
+
+.help-popup__number {
+  position: absolute;
+  top: -24px;
+  right: -12px;
+
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+
+  font-size: 14px;
+  line-height: 32px;
+  vertical-align: center;
+  color: #ffffff;
+
+  background-color: #ec343c;
+  border-radius: 50%;
+}

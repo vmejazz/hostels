@@ -49,6 +49,11 @@
   }
 }
 
+// .form-order__check-in,
+// .form-order__check-out {
+//   width: 100;
+// }
+
 .form-order__check-in {
   position: relative;
 
@@ -64,8 +69,8 @@
     top: 0;
     left: 0;
     // z-index: 10;
+    // width: 220px;
 
-    width: 220px;
     padding-right: 200px;
 
     font-weight: 400;
@@ -108,8 +113,9 @@
   top: -5px;
   left: 0;
   // z-index: 5;
+  // width: 220px;
 
-  width: 220px;
+  width: 100%;
   height: 40px;
   padding-left: 80px;
 
@@ -137,9 +143,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    // z-index: 10;
+    z-index: 10;
+    // width: 220px;
 
-    width: 220px;
     padding-right: 200px;
 
     font-weight: 400;
@@ -153,15 +159,15 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 9;
+  z-index: 0;
 
   fill: #ec343c;
 }
 
 .form-order__guest {
   position: relative;
+  // width: 100%;
 
-  width: 100%;
   margin-top: 52px;
   margin-bottom: 20px;
   padding-left: 65px;
@@ -184,6 +190,7 @@
   font-family: "Roboto Slab";
   color: #ec343c;
 
+  background-color: transparent;
   border: none;
   outline: none;
 }
@@ -212,10 +219,15 @@
   border-radius: 50%;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
   cursor: pointer;
+
+  &--plus {
+    margin-left: 3px;
+  }
 }
 
 .form-order__name-input,
 .form-order__tel-input {
+  width: 100%;
   padding-bottom: 8px;
 
   border: none;
@@ -255,4 +267,87 @@
     background-color: #c71019;
     border-color: #c71019;
   }
+}
+
+.form-order__title {
+  @include MD-reset();
+
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Roboto Slab";
+  text-align: center;
+  color: #000000;
+}
+
+.form-order__check-in--modal,
+.form-order__check-out--modal {
+  padding-left: 20px;
+}
+
+.form-order__guest--modal {
+  padding-left: 35px;
+
+  & label {
+    left: 15px;
+  }
+}
+
+.form-order__price {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  padding-right: 40px;
+  // width: 70px;
+  padding-left: 40px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  font-family: "Rubik";
+  text-align: center;
+  color: #666666;
+}
+
+.form-order__price-title {
+  @include MD-reset();
+
+  &  span {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: "Roboto Slab";
+    color: #000000;
+  }
+}
+
+.form-order__price-all {
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Rubik";
+  color: #ec343c;
+
+  & span {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
+
+.form-order__price-person {
+  & span {
+    font-weight: 500;
+  }
+}
+
+.form-order__button--modal {
+  width: 145px;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 12.88px;
+  font-family: "Rubik";
+  color: #ec343c;
+
+  background-color: #ffffff;
 }
