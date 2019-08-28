@@ -48,6 +48,10 @@
     font-weight: 700;
     color: #ec343c;
   }
+
+  @media (max-width: $desktop) {
+    font-size: 28px;
+  }
 }
 
 .main-order__advantages {

@@ -211,7 +211,7 @@ var MetroPicker = function()
       if (option.checked && i < 3) {
         i += 1;
         oldValueInput = this.$metroInput.val()
-        this.$metroInput.val(oldValueInput + ', ' + option.title)
+        this.$metroInput.val(oldValueInput + option.title + ', ')
       }
     }.bind(this))
     this.close()
