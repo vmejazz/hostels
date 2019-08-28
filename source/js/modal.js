@@ -44,7 +44,7 @@
 
 
   document.addEventListener('keydown', function(evt){
-    console.log(evt.keyCode);
+    // console.log(evt.keyCode);
   })
   })();
 

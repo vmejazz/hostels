@@ -934,7 +934,7 @@
                 </div>
               </div>
               <button class="form-order__button button">Отправить заявку</button>
-              <div class="help-popup__first">
+              <div class="help-popup help-popup--first  soft-show help-popup--hide">
                 <p class="help-popup__text">Наша служба бронирования подберёт<br>
                   лучшую локацию для вас
                 </p>
@@ -947,7 +947,7 @@
               <a class="main-order__scroll-button" href="#metro-field">
                 &gt
               </a>
-              <div class="help-popup__second">
+              <div class="help-popup help-popup--second help-popup--hide soft-show">
                 <p class="help-popup__text">Если предпочитаете<br>
                   выбирать сами
                 </p>
@@ -1060,7 +1060,10 @@
                     </label>
                   </li>
                 </ul>
-                <button class="metro-field__checkbox-button" type="reset">Сбросить</button>
+                <div class="metro-field__checkbox-bottons">
+                  <button class="metro-field__checkbox-button" type="reset">Сбросить</button>
+                  <button class="metro-field__find-button button" type="submit">Искать</button>
+                </div>
               </div>
             </div>
           </section>
@@ -1792,6 +1795,8 @@
   <script src="./js/main.js"></script>
   <script src="./js/scrollAnchor.js"></script>
   <script src="./js/modal.js"></script>
+  <script src="./js/metro-picker.js"></script>
+  <script src="./js/help-popup.js"></script>
 </body>
 
 </html>

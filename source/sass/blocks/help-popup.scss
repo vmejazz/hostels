@@ -1,12 +1,21 @@
 
-.help-popup__first,
-.help-popup__second {
+.help-popup {
   position: absolute;
 
   text-align: center;
 
   background-color: #ffcc33;
   border-radius: 5px;
+
+  &--hide {
+    display: none;
+  }
+
+  &--show {
+    display: block;
+
+    transition: 0.2s linear;
+  }
 }
 
 .help-popup__text {
@@ -16,7 +25,7 @@
   color: black;
 }
 
-.help-popup__first {
+.help-popup--first {
   bottom: -60px;
   left: -20px;
 
@@ -34,7 +43,7 @@
   }
 }
 
-.help-popup__second {
+.help-popup--second {
   top: -110px;
   left: -80px;
 

@@ -12,7 +12,8 @@
     z-index: 5;
 
     width: 670px;
-    min-height: 470px;
+    // min-height: 470px;
+    height: 100%;
 
     background-color: #ffffff;
   }
@@ -45,9 +46,15 @@
     z-index: 5;
 
     width: 670px;
-    height: 470px;
+    padding-bottom: 20px;
+    // height: 470px;
+    // height: 100%;
 
     background-color: #ffffff;
+
+    & .metro-field__button {
+      transform: rotate(-90deg);
+    }
   }
 
   @media (max-width: $desktop) {
@@ -59,16 +66,20 @@
   &--hide {
     display: none;
   }
+
+  &--show {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .metro-field__checkbox-list {
   @include list-reset();
 
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 670px;
-  height: 360px;
   margin-right: 40px;
   margin-left: 20px;
   padding-top: 40px;
@@ -276,10 +287,11 @@
 
   background-color: #ffffff;
   border-radius: 50%;
+  outline: none;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
   transform: rotate(90deg);
 
-  transition: 0.4s linear;
+  transition: 0.2s linear;
 
   &:hover,
   &:focus {
@@ -287,4 +299,10 @@
 
     background-color: #ed343c;
   }
+}
+
+.metro-field__find-button {
+  margin-left: 80px;
+
+  font-size: 16px;
 }

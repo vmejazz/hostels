@@ -33,3 +33,33 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
+@keyframes soft_show {
+  0% {
+    transform: scale(0.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes soft_hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.01;
+  }
+}
+
+.soft-show {
+  animation-name: soft_show;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}
+
+.soft-hide {
+  animation-name: soft_hide;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}
