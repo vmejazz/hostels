@@ -22,7 +22,7 @@
 }
 .-in-range-.datepicker--cell-day.-other-month-,
 .-in-range-.datepicker--cell-year.-other-decade- {
-  color: #cccccc; 
+  color: #cccccc;
 
   background-color: rgba(92, 196, 239, 0.1);
 }
@@ -44,14 +44,14 @@
   display: -ms-flexbox;
   display:         flex;
   -webkit-flex-wrap: wrap;
-          flex-wrap: wrap; 
+          flex-wrap: wrap;
 
       -ms-flex-wrap: wrap;
 }
 
 .datepicker--cell {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
 
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,7 +91,7 @@
   background-color: rgba(92, 196, 239, 0.2);
 }
 .datepicker--cell.-disabled- {
-  color: #aeaeae; 
+  color: #aeaeae;
 
   cursor: default;
 }
@@ -120,7 +120,7 @@
 .datepicker--cell.-selected- {
   color: #ffffff;
 
-  background: #5cc4ef; 
+  background: #5cc4ef;
   border: none;
 }
 .datepicker--cell.-selected-.-current- {
@@ -141,7 +141,7 @@
   display:         flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin: 8px 0 3px; 
+  margin: 8px 0 3px;
 
       -ms-flex-wrap: wrap;
 }
@@ -158,9 +158,9 @@
   -webkit-align-items: center;
           align-items: center;
 
-  font-size: 0.8em; 
+  font-size: 0.8em;
   text-align: center;
-  color: #ff9a19;
+  color: #ec343c;
   text-transform: uppercase;
 
   -ms-flex-align: center;
@@ -217,7 +217,7 @@
 }
 .-in-range-.datepicker--cell-day.-other-month-,
 .-in-range-.datepicker--cell-year.-other-decade- {
-  color: #cccccc; 
+  color: #cccccc;
 
   background-color: rgba(92, 196, 239, 0.1);
 }
@@ -236,7 +236,7 @@
    ------------------------------------------------- */
 .datepickers-container {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
 }
 @media print {
@@ -248,7 +248,7 @@
 .datepicker {
   position: absolute;
   left: -100000px;
-  z-index: 100; 
+  z-index: 100;
 
   box-sizing: content-box;
   width: 250px;
@@ -301,7 +301,7 @@
   border-color: #d7d7d7;
   box-shadow: none;
   -webkit-transform: none;
-          transform: none; 
+          transform: none;
   opacity: 1;
 }
 
@@ -319,7 +319,7 @@
 
 .datepicker--pointer {
   position: absolute;
-  z-index: -1; 
+  z-index: -1;
 
   width: 10px;
   height: 10px;
@@ -416,7 +416,7 @@
 }
 .-in-range-.datepicker--cell-day.-other-month-,
 .-in-range-.datepicker--cell-year.-other-decade- {
-  color: #cccccc; 
+  color: #cccccc;
 
   background-color: rgba(92, 196, 239, 0.1);
 }
@@ -440,7 +440,7 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
   min-height: 32px;
-  padding: 4px; 
+  padding: 4px;
 
   border-bottom: 1px solid #efefef;
 
@@ -456,7 +456,7 @@
   display: -ms-flexbox;
   display:         flex;
   -webkit-justify-content: center;
-          justify-content: center; 
+          justify-content: center;
   -webkit-align-items: center;
           align-items: center;
 
@@ -493,12 +493,12 @@
 }
 
 .datepicker--nav-title {
-  padding: 0 8px; 
+  padding: 0 8px;
 
   border-radius: 4px;
 }
 .datepicker--nav-title i {
-  margin-left: 5px; 
+  margin-left: 5px;
 
   color: #9c9c9c;
   font-style: normal;
@@ -507,7 +507,7 @@
   background: #f0f0f0;
 }
 .datepicker--nav-title.-disabled- {
-  background: none; 
+  background: none;
   cursor: default;
 }
 
@@ -531,7 +531,7 @@
           justify-content: center;
   -webkit-align-items: center;
           align-items: center;
-  height: 32px; 
+  height: 32px;
 
   color: #4eb5e6;
 
@@ -571,7 +571,7 @@
 }
 .-in-range-.datepicker--cell-day.-other-month-,
 .-in-range-.datepicker--cell-year.-other-decade- {
-  color: #cccccc; 
+  color: #cccccc;
 
   background-color: rgba(92, 196, 239, 0.1);
 }
@@ -589,7 +589,7 @@
     Timepicker
    ------------------------------------------------- */
 .datepicker--time {
-  position: relative; 
+  position: relative;
 
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -616,7 +616,7 @@
   -webkit-flex: 0 1 153px;
       -ms-flex: 0 1 153px;
           flex: 0 1 153px;
-  max-width: 153px; 
+  max-width: 153px;
   margin-right: 10px;
 }
 
@@ -635,7 +635,7 @@
           flex: 1;
   -webkit-align-items: center;
           align-items: center;
-  margin: 0 0 0 10px; 
+  margin: 0 0 0 10px;
 
   font-size: 14px;
   text-align: center;
@@ -652,7 +652,7 @@
 .datepicker--time-current-hours,
 .datepicker--time-current-minutes {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
 
   font-size: 19px;
   line-height: 1;
@@ -680,7 +680,7 @@
 .datepicker--time-current-ampm {
   -webkit-align-self: flex-end;
           align-self: flex-end;
-  margin-bottom: 1px; 
+  margin-bottom: 1px;
   margin-left: 6px;
 
   font-size: 11px;
@@ -700,7 +700,7 @@
 
   font-size: 11px;
 
-  background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px no-repeat; 
+  background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px no-repeat;
 
   -ms-flex-align: center;
 }
@@ -794,7 +794,7 @@
 
   color: transparent;
 
-  background: transparent; 
+  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -803,7 +803,7 @@
 
   color: transparent;
 
-  background: transparent; 
+  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -812,7 +812,7 @@
 
   color: transparent;
 
-  background: transparent; 
+  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -830,7 +830,7 @@
   position: relative;
 
   width: 1em;
-  height: 1em; 
+  height: 1em;
   margin: 0 5px -1px 0;
 
   font-size: 16px;
@@ -842,7 +842,7 @@
 .datepicker--time-icon:after,
 .datepicker--time-icon:before {
   content: "";
-  position: absolute; 
+  position: absolute;
 
   background: currentColor;
 }
@@ -858,7 +858,7 @@
 }
 .datepicker--time-icon:before {
   top: calc(50% + 1px);
-  left: calc(50% - 1px); 
+  left: calc(50% - 1px);
 
   width: 0.4em;
   height: 1px;
@@ -888,7 +888,7 @@
 }
 .-in-range-.datepicker--cell-day.-other-month-,
 .-in-range-.datepicker--cell-year.-other-decade- {
-  color: #cccccc; 
+  color: #cccccc;
 
   background-color: rgba(92, 196, 239, 0.1);
 }

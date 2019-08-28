@@ -8,7 +8,7 @@ var openPopup =  function (target)
   setTimeout( function (e) {
     target.addClass('help-popup--show')
     target.removeClass('help-popup--hide')
-  }, 300)
+  }, 3000)
 }
 
 var closePopup = function(target)
@@ -17,7 +17,7 @@ var closePopup = function(target)
 
     target.removeClass('help-popup--show')
     target.addClass('help-popup--hide')
-  }, 300)
+  }, 100)
 }
 
 var showPopup = function () {

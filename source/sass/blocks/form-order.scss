@@ -223,6 +223,14 @@
   &--plus {
     margin-left: 3px;
   }
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+
+    background-color: #ec343c;
+    outline: none;
+  }
 }
 
 .form-order__name-input,
@@ -258,6 +266,7 @@
 .form-order__button {
   width: 100%;
 
+  font-size: 16px;
   color: #ffffff;
 
   background-color: #ec343c;

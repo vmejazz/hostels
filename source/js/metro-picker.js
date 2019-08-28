@@ -6,6 +6,7 @@ var MetroPicker = function()
 	this.$list      = this.$container.find('.metro-field__checkbox-list')
   this.$reset     = this.$container.find('.metro-field__checkbox-button[type=reset]')
   this.$metroInput = this.$container.find('.metro-field__input')
+  this.$startSearch = this.$container.find('.metro-field__find-button')
 
 	this.state = {
 		open: false,
@@ -57,7 +58,27 @@ var MetroPicker = function()
 		}
 
 	}.bind(this))
-	//
+  //
+
+  //
+  this.$metroInput.focus( function ()
+  {
+    this.$metroInput.val('')
+    this.state.options.map( function (option)
+    {
+      option.filtred = true;
+    })
+    if(this.state.open == false) {
+      this.open()
+    }
+  }.bind(this))
+
+  // this.$metroInput.focusout( function ()
+  // {
+  //   this.close()
+  // }.bind(this))
+  //
+
 
 
 	this.toggleStation = function(e)
@@ -121,7 +142,12 @@ var MetroPicker = function()
 		this.state.options.map( function( option ){
 			option.checked = false
 		} )
-
+    this.$metroInput.val('')
+    this.state.options.map( function (option)
+    {
+      option.filtred = true;
+    })
+    this.renderStations()
 	}
 
 	this.$reset.click( this.reset.bind(this) )
@@ -166,26 +192,6 @@ var MetroPicker = function()
 
   this.renderStations()
 
-//   this.renderFiltredStations = function()
-// 	{
-// 		var r = ''
-
-// 		this.state.options.map( function( option ){
-//       if (option.filtred) {
-//         r += '<li class="metro-field__checkbox-item">'
-//         r += '<input type="checkbox" id="'+option.title+'" value="'+option.title+'" ' + ( option.checked ? ' checked' : '' ) + '>'
-//         r += '<label class="metro-field__checkbox-label" for="'+option.title+'">'
-//           r += option.title
-//           r += ' <span class="metro-icon metro-icon--light-green"></span>'
-//         r += '</label>'
-//     r += '</li>'
-//       }
-// 		} )
-
-// 		this.$list.html( r )
-
-// }
-
   var getInputFilterStations = function (target) {
 		this.state.options.map( function( option ){
       if (option.title.toLowerCase().indexOf(target) + 1) {
@@ -196,6 +202,20 @@ var MetroPicker = function()
       }
     })
   }.bind(this);
+
+  this.$startSearch.click( function(e)
+  {
+    this.$metroInput.val('')
+    var i = 0;
+    this.state.options.map( function( option ){
+      if (option.checked && i < 3) {
+        i += 1;
+        oldValueInput = this.$metroInput.val()
+        this.$metroInput.val(oldValueInput + ', ' + option.title)
+      }
+    }.bind(this))
+    this.close()
+  }.bind(this))
 
   this.$metroInput.on('input', function(){
     console.log(this.$metroInput.val())
