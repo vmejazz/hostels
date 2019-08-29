@@ -1,3 +1,7 @@
+label {
+  user-select: none;
+}
+
 .form-order {
   position: relative;
 
@@ -63,7 +67,6 @@
   border-bottom: 1px solid #c5c5c5;
   cursor: pointer;
 
-
   & label {
     position: absolute;
     top: 0;
@@ -107,8 +110,7 @@
   border: none;
 }
 
-.form-order__chek-in--style,
-.form-order__check-out--style {
+.form-order__input--style {
   position: absolute;
   top: -5px;
   left: 0;
@@ -117,11 +119,12 @@
 
   width: 100%;
   height: 40px;
-  padding-left: 80px;
+  padding-right: 45px;
 
   font-weight: 400;
   font-size: 14px;
   font-family: "Rubik";
+  text-align: end;
   color: #ed343c;
 
   border: none;
@@ -149,9 +152,16 @@
     padding-right: 200px;
 
     font-weight: 400;
-    font-size: 14px;
+    // font-size: 14px;
     font-family: "Rubik";
     color: #666666;
+  }
+}
+
+.form-order__check-in--modal,
+.form-order__check-out--modal {
+  & label {
+    font-size: 12px;
   }
 }
 
@@ -291,9 +301,13 @@
   color: #000000;
 }
 
-.form-order__check-in--modal,
-.form-order__check-out--modal {
-  padding-left: 20px;
+.form-order__input--modal {
+  left: -28px;
+  // padding-left: 20px;
+
+  padding: 0;
+
+  font-size: 12px;
 }
 
 .form-order__guest--modal {

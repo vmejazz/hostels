@@ -25,7 +25,7 @@ var getMonthFromMap = function (mn) {
 //   }
 
 function mydDateIn() {
-  d = new Date(document.getElementById("input__check-in--default").value);
+  d = new Date(document.getElementById("input__check-in--style").value);
   dt = d.getDate();
   mn = d.getMonth();
   mn++;
@@ -34,10 +34,33 @@ function mydDateIn() {
 }
 
 function myDateOut() {
-  d = new Date(document.getElementById("input__check-out--default").value);
+  d = new Date(document.getElementById("input__check-out--style").value);
   dt = d.getDate();
   mn = d.getMonth();
   mn++;
   yy = d.getFullYear();
   document.getElementById("input__check-out--style").value = dt + " " + getMonthFromMap(mn) + " " + yy;
+}
+
+
+//
+//Для модального окна
+//
+
+function mydDateInModal() {
+  d = new Date(document.getElementById("input__check-in--modal").value);
+  dt = d.getDate();
+  mn = d.getMonth();
+  mn++;
+  yy = d.getFullYear();
+  document.getElementById("input__check-in--modal").value = dt + " " + getMonthFromMap(mn) + " " + yy;
+}
+
+function myDateOutModal() {
+  d = new Date(document.getElementById("input__check-out--modal").value);
+  dt = d.getDate();
+  mn = d.getMonth();
+  mn++;
+  yy = d.getFullYear();
+  document.getElementById("input__check-out--modal").value = dt + " " + getMonthFromMap(mn) + " " + yy;
 }

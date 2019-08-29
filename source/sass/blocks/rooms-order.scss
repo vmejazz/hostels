@@ -85,6 +85,10 @@
   height: 645px;
 
   transform: translateX(-485px) translateY(-325px);
+
+  & .form-order__modal {
+    top: 98px;
+  }
 }
 
 .rooms-modal__button--close {
