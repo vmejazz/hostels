@@ -50,6 +50,15 @@ label {
   @media (max-width: $desktop) {
     top: -300px;
     left: 60px;
+
+    &::after {
+      top: 98%;
+      right: 50%;
+
+      border: 20px solid transparent;
+      border-top: 20px solid #ec343c;
+      transform: translateX(50%);
+    }
   }
 }
 
@@ -319,6 +328,17 @@ label {
   & label {
     left: 15px;
   }
+
+  @media (max-width: $desktop) {
+    margin-left: auto;
+    padding-left: 0;
+
+    text-align: center;
+
+    & label {
+      left: 0;
+    }
+  }
 }
 
 .form-order__price {
@@ -376,4 +396,11 @@ label {
   color: #ec343c;
 
   background-color: #ffffff;
+
+  @media (max-width: $desktop) {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+  }
 }

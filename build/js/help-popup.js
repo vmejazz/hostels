@@ -5,15 +5,25 @@ var $helpPopupSecond = $scrollButton.find('.help-popup')
 
 
 
-var showPopup = function () {
+var showPopup = function (time = 3000) {
   setTimeout ( function () {
     $helpPopupFirst.addClass('help-popup--show')
-  }, 3000)
+  }, time)
 
   setTimeout ( function () {
     $helpPopupSecond.addClass('help-popup--show')
-  }, 6000)
+  }, time*2)
 }
+
+$(document).ready(function() {
+  width = $(window).width();
+  if (width >= 720) {
+    $(window).one( 'scroll', function(){
+      showPopup(500)
+    })
+  }
+})
+
 
 
 //  Старая версия, при наведении

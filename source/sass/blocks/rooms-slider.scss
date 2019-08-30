@@ -8,19 +8,21 @@
 
 .rooms-slider__container {
   width: 840px;
+
+  @media (max-width: $desktop) {
+    width: 100%;
+  }
 }
 
 .rooms-slider__description {
   width: 540px;
   margin-right: 20px;
   padding: 30px;
-}
 
-.rooms-slider__form {
-  // width: 220px;
-  height: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
+  @media (max-width: $desktop) {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .rooms-slider__list {
@@ -32,10 +34,22 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+  }
 }
 
 .rooms-slider__form {
   width: 160px;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @media (max-width: $desktop) {
+    width: 220px;
+    margin: 15px auto;
+  }
 }
 
 .rooms-slider__button {

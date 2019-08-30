@@ -11,6 +11,13 @@
   // flex-wrap: wrap;
   height: 190px;
   margin-bottom: 30px;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    align-content: center;
+    height: auto;
+    margin-bottom: 10px;
+  }
 }
 
 .room__big-photo {
@@ -19,8 +26,24 @@
   height: 100%;
   margin-right: 30px;
 
-  background-color: blue;
   border-radius: 5px;
+
+  @media (max-width: $desktop) {
+    width: 300px;
+    height: auto;
+    max-height: 200px;
+    margin: 0 auto;
+    padding: 0;
+
+    background-size: cover;
+
+    resize: vertical;
+    // width: 300px;
+    // height: auto;
+    // max-height: 180px;
+
+    object-fit: cover;
+  }
 }
 
 .room__small-photos {
@@ -30,6 +53,11 @@
 
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: $desktop) {
+    margin-top: 10px;
+    margin-left: 25px;
+  }
 }
 
 .room__small-photo {
@@ -40,6 +68,10 @@
 
   background-color: #ed474e;
   border-radius: 5px;
+
+  @media (max-width: $desktop) {
+    margin-left: 20px;
+  }
 }
 
 .room__photo-link {
@@ -62,6 +94,10 @@
   font-family: "Roboto Slab";
   text-align: center;
   color: #000000;
+
+  @media (max-width: $desktop) {
+    font-size: 20px;
+  }
 }
 
 .room__adress {

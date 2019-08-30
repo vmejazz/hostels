@@ -21,6 +21,10 @@ var openModalGuest = function (evt) {
     var guestCount = $('#input__guest').val();
     if (guestCount > 1) {
       $('#input__guest').val(--guestCount);
+      if (guestCount === 1) {
+        $('.form-order__modal').removeClass('modal-guest--show')
+        $('.form-order__modal').addClass('modal-guest--hide')
+      }
     }
     else {
       $('.form-order__modal').removeClass('modal-guest--show')

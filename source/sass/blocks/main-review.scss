@@ -183,3 +183,16 @@
   font-family: "Rubik";
   color: #666666;
 }
+
+.card-review__title {
+  max-height: 20px;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.card-review__text {
+  margin: 8px auto;
+}

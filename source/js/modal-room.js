@@ -2,7 +2,6 @@ this.$container = $('.rooms-order');
 this.$openButton = '.card-room__button'
 this.$roomModal = this.$container.find('.rooms-order__modal')
 this.$buttonClose = this.$container.find('.rooms-modal__button--close')
-console.log(this.$container)
 
 this.state = {
   open: false,
@@ -25,7 +24,6 @@ this.state = {
 
 this.open = function()
 {
-  console.log(this.$roomModal)
   this.state.open = true
   this.$roomModal.removeClass('modal-callback--hide')
   this.$roomModal.addClass('modal-callback--show')
@@ -41,7 +39,6 @@ this.close = function()
 
 this.openRoomModal = function (evt) {
   evt.preventDefault()
-  console.log(this.state.open)
   if (this.state.open == false) {
     this.open()
     // this.$roomModal.addClass('modal-callback--show')

@@ -52,7 +52,7 @@
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
-  transform: translateX(-170px) translateY(-200px);
+  transform: translateX(-50%) translateY(-50%);
   opacity: 1;
 
   &::before {
@@ -67,7 +67,7 @@
 
     background-image: url("../img/Layer_2.png");
     background-repeat: no-repeat;
-    background-position: 0 0 ;
+    background-position: 0 0;
   }
 
   &::after {
@@ -84,11 +84,26 @@
     background-repeat: no-repeat;
     background-position: 0 0 ;
   }
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    min-height: 400px;
+
+    &::after {
+      width: 280px;
+      height: 100%;
+
+      background-position: bottom right;
+      background-size: contain;
+    }
+  }
 }
 
 .modal-callback__fields {
   position: relative;
   z-index: 28;
+
+  margin-right: 50px;
 
   border-radius: 5px;
   // box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
@@ -98,18 +113,44 @@
   position: absolute;
   top: 15px;
   right: 15px;
+  z-index: 28;
 
-  width: 33px;
-  height: 33px;
+  width: 34px;
+  height: 34px;
 
   color: #ffffff;
 
   background-color: #ec343c;
   border-radius: 50%;
+
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 11px;
+    left: 15px;
+
+    width: 2px;
+    height: 10px;
+
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 .modal-callback__title {
   @include MD-reset();
+
+  margin-right: 50px;
 
   // margin-top: 30px;
   // margin-left: 30px;
@@ -126,6 +167,11 @@
   font-size: 16px;
   font-family: "Rubik";
   color: #666666;
+
+  @media (max-width: $desktop) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 
 .modal-callback__form {
@@ -177,6 +223,11 @@
   font-size: 14px;
   font-family: "Rubik";
   color: #999999;
+
+  @media (max-width: $desktop) {
+    width: 160px;
+    margin-left: 40px;
+  }
 }
 
 .modal-callback__policy {
@@ -227,10 +278,16 @@
 
   background-color: #ec343c;
 
+  user-select: none;
+
   &:hover,
   &:focus {
     background-color: #c71019;
     border-color: #c71019;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 16px;
   }
 }
 // .modal__overlay {
