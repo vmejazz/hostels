@@ -330,6 +330,7 @@ label {
   }
 
   @media (max-width: $desktop) {
+    margin-top: 30px;
     margin-left: auto;
     padding-left: 0;
 
@@ -354,6 +355,11 @@ label {
   font-family: "Rubik";
   text-align: center;
   color: #666666;
+
+  @media (max-width: $desktop) {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
 }
 
 .form-order__price-title {

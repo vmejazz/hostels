@@ -18,6 +18,7 @@
 
   @media (max-width: $desktop) {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
   }
@@ -62,7 +63,9 @@
   }
 
   @media (max-width: $desktop) {
-    position: relative;
+    position: fixed;
+
+    overflow-y: auto;
   }
 }
 
@@ -95,9 +98,9 @@
   }
 
   @media (max-width: $desktop) {
-    position: relative;
-
     width: 100%;
+    padding-top: 20px;
+    overflow-y: auto;
 
     & .form-order__modal {
       top: -300px;
@@ -118,6 +121,13 @@
   color: #000000;
 
   cursor: pointer;
+
+  @media (max-width: $desktop) {
+    top: -4px;
+    right: 10px;
+
+    font-size: 17px;
+  }
 }
 
 .rooms-slider__button {
