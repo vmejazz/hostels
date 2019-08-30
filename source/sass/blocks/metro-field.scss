@@ -271,6 +271,11 @@
 
   @media (max-width: $desktop) {
     width: 100%;
+    padding-right: 30px;
+    padding-left: 47px;
+    overflow: hidden;
+
+    font-size: 13px;
   }
 }
 

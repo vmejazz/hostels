@@ -48,3 +48,20 @@
   })
   })();
 
+//  Активность смены маленьких превью на большое
+
+$(document).ready(function() {
+  this.$container = $('.room__photos')
+  this.$bigPhoto = this.$container.find('.room__big-jmg')
+
+  this.changePhotoSrc = function (evt) {
+    console.log(evt.target.src)
+    this.$bigPhoto.attr("src", evt.target.src)
+  }
+
+  this.$container.on('click', '.room__photo-link', function (evt) {
+    evt.preventDefault()
+
+    this.changePhotoSrc(evt)
+  }.bind(this))
+})

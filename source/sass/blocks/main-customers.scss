@@ -2,6 +2,10 @@
   position: relative;
 
   margin-top: 64px;
+
+  @media (max-width: $desktop) {
+    margin-top: 20px;
+  }
 }
 
 .main-customers__title {
@@ -30,6 +34,12 @@
   margin-left: 35px;
   padding-right: 30px;
   overflow: hidden;
+
+  @media (max-width: $desktop) {
+    width: 320px;
+    margin-left: 60px;
+    padding-right: 0;
+  }
 }
 
 
@@ -68,6 +78,7 @@
 
   background-color: #ffffff;
   border-radius: 50%;
+  outline: none;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
 
   transition: 0.2s linear;

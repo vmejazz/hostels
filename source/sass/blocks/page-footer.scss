@@ -5,6 +5,11 @@
   padding-bottom: 40px;
 
   border-top: 1px solid #bcbcbc;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    align-content: center;
+  }
 }
 
 .page-footer__navigation {

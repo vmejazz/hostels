@@ -9,7 +9,17 @@ var mySwiper = new Swiper ('.main-customers__slider-container', {
     prevEl: '.main-customers__button--back',
   },
 
-  slidesPerView: 5
+  slidesPerView: 1,
+  spaceBetween: 10,
+
+  breakpointsInverse: true,
+  breakpoints: {
+    // when window width is >= 320px
+    720: {
+      slidesPerView: 5,
+      spaceBetween: 0
+    }
+  }
 })
 
 
@@ -27,5 +37,33 @@ var mySwiper = new Swiper ('.main-review__slider-container', {
     prevEl: '.main-review__button--back',
   },
 
-  slidesPerView: 3
+  slidesPerView: 3,
+
+  breakpoints: {
+    // when window width is <= 320px
+    720: {
+      slidesPerView: 1,
+      spaceBetween: 40
+    }
+  }
+})
+
+
+//mobile-menu
+$(document).ready(function() {
+  this.$menuButton = $('.page-header__navigation-button');
+  this.$menuNavigation = $('.main-navigation')
+  this.$menuButton.addClass('page-header__navigation-button--close')
+  this.$menuButton.removeClass('page-header__navigation-button--open')
+
+  this.toggleMenu = function (e) {
+    this.$menuNavigation.toggleClass('main-navigation--show')
+    this.$menuNavigation.toggleClass('main-navigation--hide')
+    this.$menuButton.toggleClass('page-header__navigation-button--open')
+    this.$menuButton.toggleClass('page-header__navigation-button--close')
+  }
+
+  this.$menuButton.on('click', function() {
+    this.toggleMenu()
+  }.bind(this))
 })

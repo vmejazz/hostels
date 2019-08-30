@@ -24,6 +24,21 @@
     background-image: url("../../img/promotion.png");
     background-repeat: no-repeat;
   }
+
+  @media (max-width: $desktop) {
+    height: 100%;
+    min-height: 462px;
+    margin-top: 10px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+
+    color: #000000;
+
+    &::before {
+      opacity: 0.3;
+    }
+  }
 }
 
 .main-promotion__title {
@@ -34,12 +49,16 @@
   font-weight: 400;
   font-size: 30px;
   font-family: "Roboto Slab";
-  color: #000000;;
+  color: #000000;
 
   &--red {
     font-weight: 700;
     font-family: "Roboto Slab";
     color: #ec343c;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 26px;
   }
 }
 
@@ -56,6 +75,12 @@
   flex-wrap: wrap;
   width: 400px;
   // padding-left: 60px;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+
+    font-size: 20px;
+  }
 }
 
 .main-promotion__avantage {
@@ -77,6 +102,22 @@
 
   &--skills {
     max-width: 280px;
+  }
+
+  @media (max-width: $desktop) {
+    color: #000000;
+
+    &--safe {
+      margin-left: 60px;
+    }
+  }
+}
+
+.main-promotion__form {
+  @media (max-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
   }
 }
 
@@ -102,6 +143,15 @@
     border-color: #ec343c;
     outline: none;
   }
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 16px;
+  }
 }
 
 .main-promotion__button {
@@ -115,6 +165,12 @@
   &:focus {
     background-color: #c71019;
     border-color: #c71019;
+  }
+
+  @media (max-width: $desktop) {
+    width: 100%;
+
+    font-size: 16px;
   }
 }
 

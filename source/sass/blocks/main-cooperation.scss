@@ -4,6 +4,11 @@
   padding-left: 60px;
 
   background-color: #f8f8f8;
+
+  @media (max-width: $desktop) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 
 .main-cooperation__title {
@@ -27,6 +32,12 @@
   .text--bold {
     font-weight: 700;
   }
+
+  @media (max-width: $desktop) {
+    padding-top: 20px;
+
+    font-size: 23px;
+  }
 }
 
 .main-cooperation__list {
@@ -42,6 +53,11 @@
 .main-cooperation__item {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }
 
 .main-cooperation__description {
@@ -50,6 +66,11 @@
 
   margin-bottom: 42px;
   padding-left: 55px;
+
+  @media (max-width: $desktop) {
+    margin: 15px 0;
+    margin-bottom: 10px;
+  }
 }
 
 .main-cooperation__icon {

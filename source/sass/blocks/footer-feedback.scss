@@ -1,3 +1,10 @@
+.footer-feedback {
+  @media (max-width: $desktop) {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
 .footer-feedback__tel {
   margin: 0;
   padding: 0;

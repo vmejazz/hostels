@@ -7,6 +7,13 @@
   max-height: 150px;
 
   list-style-image: url("../img/arrow.png");
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    max-height: 100%;
+  }
 }
 
 .footer-navigation__link {

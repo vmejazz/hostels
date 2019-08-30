@@ -97,8 +97,11 @@
       background-position: right 0;
 
       @media (max-width: $desktop) {
+        top: 50%;
+
         background-position: right center;
         background-size: 50%;
+        transform: translateY(-50%);
       }
     }
   }
@@ -240,6 +243,16 @@
   }
 
   @media (max-width: $desktop) {
-    line-height: 2;
+    margin-bottom: 8px;
+
+    line-height: 1.5;
+
+    &::before {
+      top: 5px;
+    }
+
+    &::after {
+      top: 8px;
+    }
   }
 }

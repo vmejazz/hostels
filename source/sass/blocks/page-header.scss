@@ -1,6 +1,13 @@
 .page-header__container {
+  position: relative;
+
   display: flex;
   margin-top: 34px;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    margin-top: 15px;
+  }
 }
 
 .page-header__panel {
@@ -20,6 +27,12 @@
   padding-bottom: 28px;
 
   border-bottom: 1px solid #bcbcbc;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    // flex-wrap: wrap;
+    height: 200px;
+  }
 }
 
 .page-header__achievement {
@@ -45,6 +58,16 @@
   &--client {
     padding-left: 25px;
   }
+
+  @media (max-width: $desktop) {
+    max-width: 250px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-left: 25px;
+
+    &--client {
+    }
+  }
 }
 
 .page-header__icon {
@@ -59,17 +82,42 @@
 
   &--star {
     left: 34px;
+
+    @media (max-width: $desktop) {
+      left: -14px;
+    }
   }
 }
 
 .page-header__main-logo {
   position: absolute;
   left: 20px;
+
+  @media (max-width: $desktop) {
+    position: relative;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+
+    // text-align: center;
+  }
 }
 
 .page-header__callback {
   width: 230px;
   padding-left: 34px;
+
+  @media (max-width: $desktop) {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-left: 0;
+
+    text-align: center;
+
+    border-top: 1px solid #bcbcbc;
+  }
 }
 
 .callback__tel {
@@ -82,6 +130,10 @@
   line-height: 34px;
   font-family: "Rubik";
   color: #000000;
+
+  @media (max-width: $desktop) {
+    font-size: 28px;
+  }
 }
 
 .callback__text {
@@ -96,4 +148,49 @@
   color: #000000;
 
   opacity: 0.5;
+
+  @media (max-width: $desktop) {
+    margin-top: 5px;
+
+    font-size: 15px;
+  }
+}
+.callback__button {
+  @media (max-width: $desktop) {
+    width: 100%;
+
+    font-size: 18px;
+  }
+}
+
+.page-header__navigation-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: none;
+
+  @media (max-width: $desktop) {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    color: transparent;
+
+    background: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &--open {
+      background-image: url("../img/icon-menu-close.svg");
+    };
+
+    &--close {
+      background-image: url("../img/icon-menu-open.svg");
+    }
+  }
 }

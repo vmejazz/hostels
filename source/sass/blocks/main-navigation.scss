@@ -1,3 +1,15 @@
+.main-navigation {
+  @media (max-width: $desktop) {
+    &--show {
+      display: block;
+    }
+
+    &--hide {
+      display: none;
+    }
+  }
+}
+
 .main-navigation__list {
   @include list-reset();
 
@@ -5,6 +17,22 @@
   justify-content: space-between;
   margin-top: 21px;
   padding-left: 21px;
+
+  @media (max-width: $desktop) {
+    flex-direction: column;
+    margin-top: 0;
+    padding-left: 0;
+  }
+}
+
+.main-navigation__item {
+  @media (max-width: $desktop) {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+
+    text-align: center;
+  }
 }
 
 .main-navigation__link {
@@ -13,6 +41,8 @@
 
   line-height: 20px;
   text-transform: uppercase;
+
+  outline: none;
 
   &:hover,
   &:focus {

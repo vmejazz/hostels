@@ -82,3 +82,12 @@
   font-family: "Rubik";
   color: #ffffff;
 }
+
+.room__big-photo {
+  width: 100%;
+  height: 100%;
+
+  & img {
+    width: 100%;
+  }
+}
