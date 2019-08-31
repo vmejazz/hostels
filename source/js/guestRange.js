@@ -6,12 +6,12 @@ var $adultGuestInputModal = $('#input__adult--modal')
 var $childrenGuestInputModal = $('#input__children--modal')
 
 
-var currentGuestSet = function () {
+var setCurrentGuest = function () {
   var adult = parseInt($adultGuestInput.val());
   var children = parseInt($childrenGuestInput.val());
   sum = parseInt(adult + children);
   $sumGuestInput.val(sum);
-  console.log(sum, adult, children);
+  $sumGuestInputModal.val($sumGuestInput.val())
 };
 
 var openModalGuest = function (evt) {
@@ -19,12 +19,14 @@ var openModalGuest = function (evt) {
   if (evt.target.classList.contains('form-order__guest-button--plus')) {
     $('.form-order__modal').removeClass('modal-guest--hide')
     $('.form-order__modal').addClass('modal-guest--show')
-    var guestCount = $('#input__guest').val();
-    $('#input__guest').val(++guestCount);
+    var guestCount = $sumGuestInput.val();
+    $sumGuestInput.val(++guestCount);
+    $sumGuestInputModal.val($sumGuestInput.val())
   } else if (evt.target.classList.contains('form-order__guest-button--minus')) {
-    var guestCount = $('#input__guest').val();
+    var guestCount = $sumGuestInput.val();
     if (guestCount > 1) {
-      $('#input__guest').val(--guestCount);
+      $sumGuestInput.val(--guestCount);
+      $sumGuestInputModal.val($sumGuestInput.val())
       if (guestCount === 1) {
         $('.form-order__modal').removeClass('modal-guest--show')
         $('.form-order__modal').addClass('modal-guest--hide')
@@ -37,7 +39,7 @@ var openModalGuest = function (evt) {
     }
   }
 
-  $('#input__adult').val($('#input__guest').val());
+  $('#input__adult').val($sumGuestInput.val());
   // if (evt.target.indexOf(form-order__guest-button--plus))
 };
 
@@ -55,7 +57,7 @@ var guestNumbers = function (evt) {
     }
   }
 
-  currentGuestSet();
+  setCurrentGuest();
 };
 
 var setAdultGuest = function (evt) {
