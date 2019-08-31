@@ -1,6 +1,10 @@
 var $sumGuestInput = $('#input__guest');
 var $adultGuestInput = $('#input__adult');
 var $childrenGuestInput = $('#input__children');
+var $sumGuestInputModal = $('#input__huest--modal')
+var $adultGuestInputModal = $('#input__adult--modal')
+var $childrenGuestInputModal = $('#input__children--modal')
+
 
 var currentGuestSet = function () {
   var adult = parseInt($adultGuestInput.val());
@@ -61,7 +65,6 @@ var setAdultGuest = function (evt) {
 
 $(window.document).ready(function() {
 $('.form-order__guest-button').on('click', openModalGuest);
-$('.form-order__guest-all').change(function(){alert('vbba')});
 
 $('.form-order__guest-all').change(setAdultGuest);
 $('.modal-guest__button').on('click', guestNumbers);
