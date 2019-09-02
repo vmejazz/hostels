@@ -216,6 +216,20 @@ var MetroPicker = function()
       }
     }.bind(this))
     this.close()
+
+    var chackedStations = this.getChekedStations();
+    window.roomsBackEnd.resetListRooms()
+    window.roomsBackEnd.fromBack.map( function ( elem ) {
+      // console.log(chackedStations)
+      for (var i = 0; i < chackedStations.length; i++) {
+        if (elem.metro_station === chackedStations[i].title) {
+          console.log(elem)
+          window.roomsBackEnd.addCardOnSite(elem)
+        }
+      }
+    })
+
+    window.modal.changeSmallPhotoToBig()
   }.bind(this))
 
   this.$metroInput.on('input', function(){

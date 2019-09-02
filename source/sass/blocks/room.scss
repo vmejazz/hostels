@@ -29,6 +29,7 @@
   flex-shrink: 0;
   width: 316px;
   height: 100%;
+  max-height: 200px;
   margin-right: 30px;
 
   border-radius: 5px;
@@ -52,6 +53,12 @@
   }
 }
 
+.room__big-jmg {
+  max-height: 200px;
+
+  border-radius: 5px;
+}
+
 .room__small-photos {
   @include list-reset();
 
@@ -59,6 +66,7 @@
 
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 
   @media (max-width: $desktop) {
     margin-top: 10px;
@@ -89,6 +97,8 @@
 
   & img {
     height: 100%;
+
+    border-radius: 5px;
   }
 }
 
