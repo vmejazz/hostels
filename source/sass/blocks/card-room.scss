@@ -2,6 +2,7 @@
   position: relative;
 
   width: 270px;
+  height: 100%;
   min-height: 355px;
   padding-bottom: 30px;
 
@@ -51,14 +52,19 @@
 }
 
 .card-room__title {
+  max-height: 40px;
   margin-top: 15px;
   margin-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  overflow: hidden;
 
   font-weight: 400;
   font-size: 18px;
   font-family: "Roboto Slab";
   text-align: center;
   color: #000000;
+  text-overflow: ellipsis;
 }
 
 // .card-room__sale-icon {

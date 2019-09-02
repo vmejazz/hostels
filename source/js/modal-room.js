@@ -22,25 +22,28 @@ this.state = {
 
 }
 
-this.open = function()
+this.open = function(target)
 {
-  this.state.open = true
-  this.$roomModal.removeClass('modal-callback--hide')
-  this.$roomModal.addClass('modal-callback--show')
+  this.state.open = true;
+  // this.$roomModal.removeClass('modal-callback--hide')
+  // this.$roomModal.addClass('modal-callback--show')
+  target.classList.remove('rooms-order__modal--hide')
+  target.classList.add('rooms-order__modal--show')
 
 }.bind(this)
 
-this.close = function()
+this.close = function(target)
 {
-  this.state.open = false
-  this.$roomModal.addClass('modal-callback--hide')
-  this.$roomModal.removeClass('modal-callback--show')
+  this.state.open = false;
+  console.log(target)
+  target.classList.add('rooms-order__modal--hide')
+  target.classList.remove('rooms-order__modal--show')
 }.bind(this)
 
-this.openRoomModal = function (evt) {
+this.openRoomModal = function (evt, card) {
   evt.preventDefault()
   if (this.state.open == false) {
-    this.open()
+    this.open(card)
     // this.$roomModal.addClass('modal-callback--show')
   } else {
 
@@ -48,19 +51,30 @@ this.openRoomModal = function (evt) {
 }.bind(this)
 
 this.$container.on('click', '.card-room__button', function (evt) {
-  this.openRoomModal(evt)
+  var itemCard = evt.target.parentNode.parentNode;
+  var modalCard = itemCard.querySelector('.rooms-order__modal')
+  this.openRoomModal(evt, modalCard)
 }.bind(this))
 
 this.$container.on('click', '.card-room__link', function (evt) {
-  this.openRoomModal(evt)
+  var itemCard = evt.target.parentNode.parentNode.parentNode;
+  var modalCard = itemCard.querySelector('.rooms-order__modal')
+  this.openRoomModal(evt, modalCard)
 }.bind(this))
 
-this.$buttonClose.click( function() {
-  this.close()
+// this.$buttonClose.click( function() {
+//   this.close()
+// }.bind(this))
+
+this.$container.on('click', '.rooms-modal__button--close', function (evt) {
+  var itemCard = evt.target.parentNode.parentNode.parentNode;
+  this.close(itemCard)
 }.bind(this))
 
 document.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 27 && this.state.open) {
-    this.close()
+    var itemCard = document.querySelector('.rooms-order__modal--show');
+    console.log(itemCard)
+    this.close(itemCard)
   }
 }.bind(this))

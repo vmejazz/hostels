@@ -958,7 +958,7 @@
           </section>
           <section class="metro-field" id="metro-field">
             <div class="metro-field__box">
-              <input class="metro-field__input" type="text" id="metro-input" placeholder="Выберите станцию метро из списка или введите название">
+              <input class="metro-field__input" type="text" id="metro-input" placeholder="Выберите станцию метро из списка или введите название" autocomplete="off">
               <svg class="metro-field__icon metro-field__icon--metro" width="30" height="30">
                 <use xlink:href="#metro"></use>
               </svg>
@@ -1132,24 +1132,24 @@
               </li>
               <li class="rooms-order__item">
                 <article class="rooms-order__card card-room">
-                    <a href="" class="card-room__link">
-                      <img src="./img/room4.png" alt="" class="card-room__img" width="270" height="160">
-                      <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
-                      <div class="card-room__sell"></div>
-                      <div class="card-room__sale card-room__sale--show pulse">
-                        <p class="card-room__sale-text">
-                          Забронируй сейчас<br>
-                          и получи скидку <b>10%</b>
-                        </p>
-                      </div>
-                    </a>
-                    <h3 class="card-room__title">Номер на 2 человек</h3>
-                    <div class="card-room__price price">
-                      <p class="price__sell">3000 руб / сутки</p>
-                      <p class="price__old">1750 руб / сутки</p>
+                  <a href="" class="card-room__link">
+                    <img src="./img/room4.png" alt="" class="card-room__img" width="270" height="160">
+                    <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
+                    <div class="card-room__sell"></div>
+                    <div class="card-room__sale card-room__sale--show pulse">
+                      <p class="card-room__sale-text">
+                        Забронируй сейчас<br>
+                        и получи скидку <b>10%</b>
+                      </p>
                     </div>
-                    <p class="card-room__description">Цена указана за номер</p>
-                    <button class="card-room__button button">Забронировать</button>
+                  </a>
+                  <h3 class="card-room__title">Номер на 2 человек</h3>
+                  <div class="card-room__price price">
+                    <p class="price__sell">3000 руб / сутки</p>
+                    <p class="price__old">1750 руб / сутки</p>
+                  </div>
+                  <p class="card-room__description">Цена указана за номер</p>
+                  <button class="card-room__button button">Забронировать</button>
                 </article>
               </li>
             </ul>
@@ -1880,6 +1880,215 @@
   </footer>
   <!-- FOOTER END -->
 
+  <template id="card-room__template">
+    <li class="rooms-order__item">
+      <article class="rooms-order__card card-room">
+          <a href="" class="card-room__link">
+            <img src="./img/room4.png" alt="" class="card-room__img" width="270" height="160">
+            <div class="card-room__sale-icon card-room__sale-icon--hide">%</div>
+            <div class="card-room__sell"></div>
+            <div class="card-room__sale card-room__sale--hide pulse">
+              <p class="card-room__sale-text">
+                Забронируй сейчас<br>
+                и получи скидку <b>10%</b>
+              </p>
+            </div>
+          </a>
+          <h3 class="card-room__title">Номер на 2 человек</h3>
+          <div class="card-room__price price">
+            <p class="price__sell">3000 руб / сутки</p>
+            <p class="price__old">1750 руб / сутки</p>
+          </div>
+          <p class="card-room__description">Цена указана за номер</p>
+          <button class="card-room__button button">Забронировать</button>
+      </article>
+      <div class="rooms-order__modal rooms-modal rooms-order__modal--hide">
+        <div class="rooms-order__overlay">
+          <div class="rooms-order__container">
+            <button class="rooms-modal__button--close ">
+              х закрыть
+            </button>
+            <div class="rooms-modal__slider rooms-slider">
+              <div class="rooms-slider__container">
+                <ul class="rooms-slider__list swiper-wrapper">
+                  <li class="rooms-slider__item">
+                    <div class="rooms-slider__description room">
+                      <div class="room__photos">
+                        <div class="room__big-photo">
+                          <img class="room__big-jmg" src="./img/room-modal1.jpg" alt="">
+                        </div>
+                        <ul class="room__small-photos">
+                          <li class="room__small-photo">
+                            <a href="./img/room-small1.jpg" class="room__photo-link">
+                              <img src="./img/room-small1.jpg" alt="small-room-photo">
+                              <button class="room__small-button">
+                                &lt
+                              </button>
+                            </a>
+                          </li>
+                          <li class="room__small-photo">
+                            <a href="./img/room2.jpg" class="room__photo-link">
+                              <img src="./img/room2.jpg" alt="">
+                            </a>
+                          </li>
+                          <li class="room__small-photo">
+                            <a href="./img/room3.jpg" class="room__photo-link">
+                              <img src="./img/room3.jpg" alt="">
+                            </a>
+                          </li>
+                          <li class="room__small-photo">
+                            <a href="./img/room4.jpg" class="room__photo-link">
+                              <img src="" alt="">
+                            </a>
+                          </li>
+                          <li class="room__small-photo">
+                            <a href="./img/room-small.jpg" class="room__photo-link">
+                              <img src="" alt="">
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="room__title">
+                        Номер на 2 человек
+                      </div>
+                      <div class="room__adress">
+                        Петровско-Разумовская, ул. Пролетарская, д.3
+                      </div>
+                      <div class="room__features features">
+                        <div class="features__title">
+                          Уже включено:
+                        </div>
+                        <ul class="features__list">
+                          <li class="features__item">
+                            <img src="./img/wifi.png" alt="" class="features__img">
+                            <p class="features__text">
+                              Безлимитный Wi-Fi (100 мб/с)
+                            </p>
+                          </li>
+                          <li class="features__item">
+                            <img src="./img/paint.png" alt="" class="features__img">
+                            <p class="features__text">
+                              Завтрак, чай, кофе, сахар
+                            </p>
+                          </li>
+                          <li class="features__item">
+                            <img src="./img/fridge.png" alt="" class="features__img">
+                            <p class="features__text">
+                              Кухня со своей бытовой техникой
+                            </p>
+                          </li>
+                          <li class="features__item">
+                            <img src="./img/safe.png" alt="" class="features__img">
+                            <p class="features__text">
+                              Персональный сейф
+                            </p>
+                          </li>
+                          <li class="features__item">
+                            <img src="./img/umbrella.png" alt="" class="features__img">
+                            <p class="features__text">
+                              Зонтик и сушилка для обуви
+                            </p>
+                          </li>
+                          <li class="features__item">
+                            <img src="./img/shampoo.png" alt="" class="features__img">
+                            <p class="features__text">
+                              Шампунь и гель для душа
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <form action="submit" class="rooms-slider__form form-order">
+                      <div class="form-order__title">
+                        Заявка
+                      </div>
+                      <div class="form-order__personal-name">
+                        <input type="text" id="input__name" class="form-order__name-input" placeholder="Ваше имя">
+                      </div>
+                      <div class="form-order__personal-tel">
+                        <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона">
+                      </div>
+                      <div class="form-order__guest form-order__guest--modal">
+                        <button type="button" class="form-order__guest-button form-order__guest-button--minus">-</button>
+                        <input type="text" id="input__guest--modal" value="1" min="1" max="30" class="form-order__guest-all">
+                        <label for="input__guest--modal" class="form-order__guest-label">Количество человек:</label>
+                        <button type="button" class="form-order__guest-button form-order__guest-button--plus">+</button>
+                      </div>
+                      <div class="form-order__check-in form-order__check-in--modal">
+                        <input type="text" id="input__check-in--modal" class="form-order__input--style form-order__input--modal" onchange="mydDateInModal()">
+                        <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
+                          <use xlink:href="#calendar"></use>
+                        </svg>
+                        <label for="input__check-in--modal">Дата заезда</label>
+                      </div>
+                      <div class="form-order__check-out form-order__check-out--modal">
+                          <input type="text" id="input__check-out--modal" class="form-order__input--style form-order__input--modal" onchange="mydDateOutModal()">
+                          <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
+                            <use xlink:href="#calendar"></use>
+                          </svg>
+                          <label for="input__check-out--modal">Дата выезда</label>
+                        </div>
+                      <div class="form-order__price">
+                        <p class="form-order__price-title">
+                          <span>Цена</span><br>
+                          в сутки
+                        </p>
+                        <p class="form-order__price-all">
+                          <span class="text-red">3200</span><br>
+                          руб всего
+                        </p>
+                        <p class="form-order__price-person">
+                          <span>800 руб</span><br>
+                          с человека
+                        </p>
+                      </div>
+                      <div class="form-order__modal room-slider__modal-guest modal-guest modal-guest--hide">
+                        <div class="modal-guest__adult">
+                          <label for="input__adult--modal">Взрослых:</label>
+                          <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
+                          <input type="text" id="input__adult--modal" value="1" disabled>
+                          <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
+                        </div>
+                        <div class="modal-guest__children">
+                          <label for="input__children--modal">Детей:</label>
+                          <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
+                          <input type="text" id="input__children--modal" value="0" disabled>
+                          <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
+                        </div>
+                        <div class="modal-guest__bed">
+                          <label for="input__bed--modal">Нужна кроватка?</label>
+                          <input type="checkbox" id="input__bed--modal" class="modal-guest__bed-checkbox">
+                          <label for="input__bed--modal" class="modal-guest__bed-yes">Да</label>
+                        </div>
+                      </div>
+                      <button class="form-order__button button form-order__button--modal">Забронировать</button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+              <button class="rooms-slider__button rooms-slider__button--back">
+                <span class="rooms-slider__button-circle">
+                  &lt
+                </span>
+                <span class="room-slider__button-text">
+                  Другой номер
+                </span>
+              </button>
+              <button class="rooms-slider__button rooms-slider__button--next">
+                <span class="rooms-slider__button-circle">
+                  &gt
+                </span>
+                <span class="room-slider__button-text">
+                  Другой номер
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </template>
+
   <script src="./js/jquery-3.4.1.min.js"></script>
   <script src="./js/datepicker.min.js"></script>
   <script src="./js/dateInput.js"></script>
@@ -1891,6 +2100,7 @@
   <script src="./js/metro-picker.js"></script>
   <script src="./js/help-popup.js"></script>
   <script src="./js/modal-room.js"></script>
+  <script src="./js/roomsBackEnd.js"></script>
 </body>
 
 </html>

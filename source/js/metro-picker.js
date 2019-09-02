@@ -161,36 +161,37 @@ var MetroPicker = function()
 
 //            Запрашиваем и рисуем данные с бэка
 
-	// this.getStations = function()
-	// {
-	// 	$.ajax( {
+	this.getStations = function()
+	{
+		$.ajax( {
 
-	// 		url: '/stations',
-	// 		dataType: 'json',
-	// 		method: 'get',
-	// 		context: this,
-	// 		success: function( res )
-	// 		{
-	// 			var stations = []
+			url: 'http://hostels.landingheroes.ru/stations',
+			dataType: 'json',
+			method: 'get',
+			context: this,
+			success: function( res )
+			{
+				var stations = []
 
-	// 			res.map( function( station ){
-	// 				stations.push( { title: station, checked: false } )
-	// 			} )
+				res.map( function( station ){
+					stations.push( { title: station, checked: false, filtred: true } )
+				} )
 
-	// 			this.state.options = stations
-	// 			this.renderStations()
-	// 		},
-	// 		error: function( err )
-	// 		{
-	// 			console.error(err)
-	// 		}
+				this.state.options = stations
+				this.renderStations()
+			},
+			error: function( err )
+			{
+				console.error(err)
+			}
 
-	// 	} )
-	// }
+		} )
+	}
 
-	// this.getStations()
+  //        Рисуем станции
+	this.getStations()
 
-  this.renderStations()
+  // this.renderStations()
 
   var getInputFilterStations = function (target) {
 		this.state.options.map( function( option ){
