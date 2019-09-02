@@ -78,24 +78,50 @@ var setHandlerOnSliderButtons = function () {
   var orderList = $('.rooms-order__list');
 
   orderList.on('click', '.rooms-slider__button', function (evt) {
-    var target = $( event.target ).parents('.rooms-order__modal').attr('id')
-    console.log(target)
+    var target = $( evt.target ).parents('.rooms-order__modal').attr('id')
+    var buttonPush = evt.target;
+    console.log(buttonPush)
     // this.$roomList = $(target).parents('.rooms-order__list')
 
-  this.$roomList = $('.rooms-order__item')
-  this.$newOpenModal = this.$roomList.find('.rooms-order__modal')
-  console.log(this.$newOpenModal)
-  var arrayRooms = [];
-  this.$newOpenModal.map(function (elem) {
-    arrayRooms.push (elem.div)
-  })
-  console.log(arrayRooms)
+  var roomList = $('.rooms-order__item div[id]')
+    .map( function() {
+      return this.id;
+    })
+    .get()
 
-    // console.log(target)
 
-    // this.$modal = $(target).find('.rooms-order__modal');
-    // this.$modal.removeClass('rooms-order__modal--show')
-    // this.$modal.addClass('rooms-order__modal--hide')
+
+    var getNewTarget = function (oldTarget, list, buttonWay) {
+      console.log(oldTarget, list, buttonWay)
+      if (buttonWay.classList.contains('rooms-slider__button--back')) {
+        if (list.indexOf(oldTarget) === 0) {
+          return list.length - 1
+        } else {
+          return list.indexOf(oldTarget) - 1
+        }
+      } else {
+        if (list.indexOf(oldTarget) === (list.length - 1)) {
+          return 0;
+        } else {
+          return list.indexOf(oldTarget) + 1
+        }
+      }
+    }
+
+    var newIndexForModal = '#' + roomList[getNewTarget(target, roomList, buttonPush)]
+    console.log(newIndexForModal)
+
+    var newModal = $('.rooms-order__item').find(newIndexForModal);
+
+
+    this.$modal = $('#' + target);
+    this.$modal.removeClass('rooms-order__modal--show')
+    this.$modal.addClass('rooms-order__modal--hide')
+    console.log(this.$modal)
+    newModal.removeClass('rooms-order__modal--hide')
+    newModal.addClass('rooms-order__modal--show')
+
+
     // var roomListID = [];
     // this.$roomList.find('room-order__item').map(function (elem) {
     //   console.log(elem)
