@@ -72,7 +72,7 @@
     content: "";
     position: absolute;
     // top: 0;
-    left: 20px;
+    left: 21px;
     z-index: 2;
 
     width: 24px;
@@ -80,6 +80,20 @@
 
     background-color: #ffffff;
     border-radius: 50%;
+  }
+
+  @media (max-width: $desktop) {
+    &::before {
+      left: 19px;
+    }
+
+    &--back {
+      margin-left: -13px;
+    }
+
+    &--next {
+      margin-right: -15px;
+    }
   }
 }
 
@@ -89,6 +103,10 @@
   z-index: 5;
 
   color: #ed474e;
+
+  @media (max-width: $desktop) {
+    top: -2px;
+  }
 }
 
 .room-slider__button-text {
@@ -99,6 +117,10 @@
   font-size: 12px;
   font-family: "Rubik";
   color: #ffffff;
+
+  @media (max-width: $desktop) {
+    font-size: 0;
+  }
 }
 
 .room__big-photo {
