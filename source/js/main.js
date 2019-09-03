@@ -67,3 +67,23 @@ $(document).ready(function() {
     this.toggleMenu()
   }.bind(this))
 })
+
+
+// Счётчик чисел
+var countField = $('.count-humber');
+
+function countup(className){ //className - имя класса, в котором есть число
+  var show = true;// отвечает, что если один раз счетчик сработает, больше не срабатывал
+
+  if(show){
+    show = false; //если мы видим число, то больше его не надо показывать
+    console.log(className)
+    $('.'+className).spincrement({ //вызов плагина с параметрами
+      from: 1,               //начинать с 1
+      duration: 3000,        //задержка счетчика
+      thousandSeparator: ''
+    });
+  }
+}
+
+countup('count-humber');
