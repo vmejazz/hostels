@@ -60,11 +60,8 @@ var changeSmallPhotoToBig = function () {
     this.$bigPhoto = this.$container.find('.room__big-jmg')
 
     this.changePhotoSrc = function (evt) {
-      console.log(evt.target.src)
       var parentSmallSrc = evt.target.parentNode.parentNode.parentNode.parentNode;
-      console.log(parentSmallSrc)
       var bbb = parentSmallSrc.querySelector('.room__big-jmg')
-      console.log(bbb);
       bbb.src = evt.target.src
     }
 
@@ -84,7 +81,6 @@ var setHandlerOnSliderButtons = function () {
   orderList.on('click', '.rooms-slider__button', function (evt) {
     var target = $( evt.target ).parents('.rooms-order__modal').attr('id')
     var buttonPush = evt.target;
-    console.log(buttonPush)
     // this.$roomList = $(target).parents('.rooms-order__list')
 
   var roomList = $('.rooms-order__item div[id]')
@@ -96,7 +92,6 @@ var setHandlerOnSliderButtons = function () {
 
 
     var getNewTarget = function (oldTarget, list, buttonWay) {
-      console.log(oldTarget, list, buttonWay)
       if (buttonWay.classList.contains('rooms-slider__button--back')) {
         if (list.indexOf(oldTarget) === 0) {
           return list.length - 1
@@ -113,7 +108,6 @@ var setHandlerOnSliderButtons = function () {
     }
 
     var newIndexForModal = '#' + roomList[getNewTarget(target, roomList, buttonPush)]
-    console.log(newIndexForModal)
 
     var newModal = $('.rooms-order__item').find(newIndexForModal);
 
@@ -121,7 +115,6 @@ var setHandlerOnSliderButtons = function () {
     this.$modal = $('#' + target);
     this.$modal.removeClass('rooms-order__modal--show')
     this.$modal.addClass('rooms-order__modal--hide')
-    console.log(this.$modal)
     newModal.removeClass('rooms-order__modal--hide')
     newModal.addClass('rooms-order__modal--show')
 

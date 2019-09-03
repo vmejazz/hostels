@@ -36,7 +36,6 @@ this.open = function(target)
 this.close = function(target)
 {
   this.state.open = false;
-  console.log(target)
   target.classList.add('rooms-order__modal--hide')
   target.classList.remove('rooms-order__modal--show')
   window.bodyScroll.resetScrollBody();
@@ -77,7 +76,6 @@ this.$container.on('click', '.rooms-modal__button--close', function (evt) {
 document.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 27 && this.state.open) {
     var itemCard = document.querySelector('.rooms-order__modal--show');
-    console.log(itemCard)
     this.close(itemCard)
   }
 }.bind(this))

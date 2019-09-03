@@ -9,8 +9,6 @@
   .content
   .querySelector('.rooms-order__item');
 
-  console.log(mapCardTemplate);
-
   var resetListRooms = function () {
     orderList.innerHTML = '';
   }
@@ -117,7 +115,6 @@
           res.map (function ( Obj ) {
             roomsFromBackEnd.push(Obj)
           })
-          console.log(roomsFromBackEnd);
         },
         error: function( err )
 		  	{
@@ -144,7 +141,6 @@
 
   var renderSomeCards = function ( array, maxRenderElement) {
     for (var i = 0; i < maxRenderElement && i < array.length; i++) {
-      console.log(array[i],'   ' + i)
       addCardOnSite(array[i]);
     }
   }

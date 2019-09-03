@@ -13,7 +13,6 @@
   }
 
   var resetScrollBody =function () {
-    console.log(curScrollTop)
     $('html').removeClass('noscroll');
     $('html, body').scrollTop(curScrollTop)
   }
