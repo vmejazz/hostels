@@ -138,9 +138,18 @@
     orderList.appendChild(fragment);
   };
 
-  roomsFromBackEnd.map( function ( elem ){
-    addCardOnSite(elem);
-  })
+  // roomsFromBackEnd.map( function ( elem ){
+  //   addCardOnSite(elem);
+  // })
+
+  var renderSomeCards = function ( array, maxRenderElement) {
+    for (var i = 0; i < maxRenderElement && i < array.length; i++) {
+      console.log(array[i],'   ' + i)
+      addCardOnSite(array[i]);
+    }
+  }
+
+  renderSomeCards(roomsFromBackEnd, 8);
 
   setHandlerOnSliderButtons();
 

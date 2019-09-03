@@ -12,7 +12,7 @@ var showPopup = function (time = 3000) {
 
   setTimeout ( function () {
     $helpPopupSecond.addClass('help-popup--show')
-  }, time*2)
+  }, time*3.5)
 }
 
 $(document).ready(function() {

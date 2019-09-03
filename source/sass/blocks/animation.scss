@@ -25,13 +25,13 @@
   }
 }
 
-.pulse {
-  transform-origin: 70% 170%;
-
-  animation-name: pulse_animation;
-  animation-duration: 6000ms;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes soft_show {
@@ -52,6 +52,15 @@
   }
 }
 
+.pulse {
+  transform-origin: 70% 170%;
+
+  animation-name: pulse_animation;
+  animation-duration: 6000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
 .soft-show {
   animation-name: soft_show;
   animation-duration: 500ms;
@@ -61,5 +70,11 @@
 .soft-hide {
   animation-name: soft_hide;
   animation-duration: 500ms;
+  animation-timing-function: linear;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 1200ms;
   animation-timing-function: linear;
 }

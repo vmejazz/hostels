@@ -10,6 +10,11 @@
   font-family: "Rubik";
   color: #ffffff;
 
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
   &--hide {
     display: none;
   }
@@ -31,6 +36,8 @@
 
     background-color: #ec343c;
     border: none;
+
+    pointer-events: none;
   }
 
   & label {
