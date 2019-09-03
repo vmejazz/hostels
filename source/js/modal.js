@@ -11,11 +11,13 @@
   var closeModal = function (evt) {
     modalCallback.classList.remove('modal-callback--show');
     modalCallback.classList.add('modal-callback--hide');
+    window.bodyScroll.resetScrollBody();
   }
 
   var closeModalRoom = function (evt) {
     modalRoom.classList.remove('rooms-order__modal--show');
     modalRoom.classList.add('rooms-order__modal--hide');
+    window.bodyScroll.resetScrollBody();
   }
 
 
@@ -23,6 +25,8 @@
     evt.preventDefault()
     modalCallback.classList.add('modal-callback--show');
     modalCallback.classList.remove('modal-callback--hide');
+    window.bodyScroll.StopScrollBody();
+
     document.addEventListener('keydown', function(evt){
       if (evt.keyCode === 27) {
         closeModal();

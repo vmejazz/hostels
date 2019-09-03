@@ -29,6 +29,7 @@ this.open = function(target)
   // this.$roomModal.addClass('modal-callback--show')
   target.classList.remove('rooms-order__modal--hide')
   target.classList.add('rooms-order__modal--show')
+  window.bodyScroll.StopScrollBody();
 
 }.bind(this)
 
@@ -38,6 +39,8 @@ this.close = function(target)
   console.log(target)
   target.classList.add('rooms-order__modal--hide')
   target.classList.remove('rooms-order__modal--show')
+  window.bodyScroll.resetScrollBody();
+
 }.bind(this)
 
 this.openRoomModal = function (evt, card) {
