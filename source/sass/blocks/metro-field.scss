@@ -313,7 +313,8 @@
   margin-top: 17px;
 
   line-height: 24px;
-  color: #ed343c;
+  // color: #ed343c;
+  color: transparent;
 
   background-color: #ffffff;
   border-radius: 50%;
@@ -323,11 +324,31 @@
 
   transition: 0.2s linear;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 5px;
+
+    width: 10px;
+    height: 10px;
+
+    border-right: 3px solid #ed343c;
+    border-bottom: 3px solid #ed343c;
+    // border-radius: 1px;
+    border-bottom-right-radius: 1px;
+    transform: rotate(-45deg);
+  }
+
   &:hover,
   &:focus {
-    color: #ffffff;
+    // color: #ffffff;
+    &::before {
+      // left: 5px;
 
-    background-color: #ed343c;
+      // transform: rotate(-45deg);
+    }
+    // background-color: #ed343c;
   }
 }
 
