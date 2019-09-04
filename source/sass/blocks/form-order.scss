@@ -13,6 +13,10 @@ label {
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  @media (max-width: $desktop) {
+    margin-left: 0;
+  }
 }
 
 .form-order__modal {
