@@ -90,7 +90,7 @@ countup('count-humber');
 
 //  Маска для поля ввода телефона
 
-$(function(){
+(function(){
   $('#input__tel').mask("+7 (999) 999-9999");
   $('.main-promotion__input').mask("+7 (999) 999-9999");
 })();

@@ -155,6 +155,7 @@
   window.roomsBackEnd = {
     'fromBack': roomsFromBackEnd,
     'addCardOnSite': addCardOnSite,
-    'resetListRooms': resetListRooms
+    'resetListRooms': resetListRooms,
+    'renderSomeCards': renderSomeCards
   }
 })();

@@ -7,6 +7,12 @@ var MetroPicker = function()
   this.$reset     = this.$container.find('.metro-field__checkbox-button[type=reset]')
   this.$metroInput = this.$container.find('.metro-field__input')
   this.$startSearch = this.$container.find('.metro-field__find-button')
+  this.$loadingImg = this.$container.find('.metro-field__loading')
+
+  this.showLoadingAction = function () {
+    this.$loadingImg.toggleClass('metro-field__loading--show')
+    this.$loadingImg.toggleClass('metro-field__loading--hide')
+  }.bind(this)
 
 	this.state = {
 		open: false,
@@ -88,10 +94,10 @@ var MetroPicker = function()
 
 
 			if( option.title.trim() == station.trim() ) {
-				console.log( station )
-				option.checked == true ? option.checked = false : option.checked = true
+        option.checked == true ? option.checked = false : option.checked = true
+        this.$startSearch.click();
 			}
-		} )
+		}.bind(this) )
 	}
 
 	$(document).on( 'click', '.metro-field__checkbox-label', this.toggleStation.bind(this) )
@@ -148,6 +154,9 @@ var MetroPicker = function()
       option.filtred = true;
     })
     this.renderStations()
+
+    window.roomsBackEnd.resetListRooms()
+    window.roomsBackEnd.renderSomeCards(window.roomsBackEnd.fromBack, 8)
 	}
 
 	this.$reset.click( this.reset.bind(this) )
@@ -206,6 +215,8 @@ var MetroPicker = function()
 
   this.$startSearch.click( function(e)
   {
+    this.showLoadingAction()
+    setTimeout(this.showLoadingAction, 1000)
     this.$metroInput.val('')
     var i = 0;
     this.state.options.map( function( option ){
@@ -215,7 +226,7 @@ var MetroPicker = function()
         this.$metroInput.val(oldValueInput + option.title + ', ')
       }
     }.bind(this))
-    this.close()
+    // this.close()
 
     var chackedStations = this.getChekedStations();
     window.roomsBackEnd.resetListRooms()
@@ -223,7 +234,6 @@ var MetroPicker = function()
       // console.log(chackedStations)
       for (var i = 0; i < chackedStations.length; i++) {
         if (elem.metro_station === chackedStations[i].title) {
-          console.log(elem)
           window.roomsBackEnd.addCardOnSite(elem)
         }
       }
