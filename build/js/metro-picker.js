@@ -14,6 +14,11 @@ var MetroPicker = function()
     this.$loadingImg.toggleClass('metro-field__loading--hide')
   }.bind(this)
 
+  var showLoadingCards = function () {
+    var cardsField = $(document).find('.rooms-order__preloader');
+    cardsField.toggleClass('rooms-order__preloader--loading')
+  }
+
 	this.state = {
 		open: false,
 		value: '',
@@ -95,7 +100,7 @@ var MetroPicker = function()
 
 			if( option.title.trim() == station.trim() ) {
         option.checked == true ? option.checked = false : option.checked = true
-        // this.$startSearch.click();  // активация поиска кнопки "старт search"
+        // this.$startSearch.click();       //  Отфильтровать после выбора станции
 			}
 		}.bind(this) )
 	}
@@ -130,8 +135,10 @@ var MetroPicker = function()
 			  r += '<li class="metro-field__checkbox-item">'
 		        r += '<input type="checkbox" id="'+option.title+'" value="'+option.title+'" ' + ( option.checked ? ' checked' : '' ) + '>'
 		        r += '<label class="metro-field__checkbox-label" for="'+option.title+'">'
-		          r += option.title
-		          r += ' <span class="metro-icon metro-icon--light-green"></span>'
+              r += option.title
+              option.colors.map( function (color) {
+                r += ' <span class="metro-icon metro-icon--'+color+'"></span>'
+              })
 		        r += '</label>'
         r += '</li>'
       }
@@ -183,7 +190,7 @@ var MetroPicker = function()
 				var stations = []
 
 				res.map( function( station ){
-					stations.push( { title: station, checked: false, filtred: true } )
+					stations.push( { title: station.title, checked: false, filtred: true, colors: station.line.split(',') } )
 				} )
 
 				this.state.options = stations
@@ -215,7 +222,7 @@ var MetroPicker = function()
 
   this.$startSearch.click( function(e)
   {
-    // this.showLoadingAction()         //    Анимация обновления данных
+    // this.showLoadingAction()
     // setTimeout(this.showLoadingAction, 1000)
     this.$metroInput.val('')
     var i = 0;
@@ -239,7 +246,10 @@ var MetroPicker = function()
       }
     })
 
+    showLoadingCards();
+    setTimeout(showLoadingCards, 500)
     window.modal.changeSmallPhotoToBig()
+    this.close();
   }.bind(this))
 
   this.$metroInput.on('input', function(){

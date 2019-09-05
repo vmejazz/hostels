@@ -104,6 +104,8 @@
   height: 32px;
   margin-bottom: 20px;
 
+  cursor: pointer;
+
   & input {
     position: absolute;
     top: 5px;
@@ -131,6 +133,7 @@
     background-color: #ffffff;
     border: 1px solid transparent;
     border-radius: 5px;
+    cursor: pointer;
 
     user-select: none;
 
@@ -179,23 +182,39 @@
   }
 
   &--violet {
-    background-color: #99cc33;
+    background-color: #b61d8e;
   }
 
-  &--dark-blue {
-    background-color: #0252a2;
-  }
+  // &--dark-blue {
+  //   background-color: #0252a2;
+  // }
 
   &--blue {
-    background-color: #019ee0;
+    background-color: #0252a2;
   }
 
   &--green {
     background-color: #029a55;
   }
 
-  &--orandge {
+  &--orange {
     background-color: #fbaa33;
+  }
+
+  &--pink {
+    background-color: #ffa8af;
+  }
+
+  &--red {
+    background-color: #ef1e25;
+  }
+
+  &--gray {
+    background-color: #acadaf;
+  }
+
+  &--light-blue {
+    background-color: #019ee0;
   }
 }
 

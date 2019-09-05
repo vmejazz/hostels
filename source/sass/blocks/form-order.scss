@@ -187,6 +187,10 @@ label {
   z-index: 0;
 
   fill: #ec343c;
+
+  &--modal {
+    right: -10px;
+  }
 }
 
 .form-order__guest {
@@ -317,7 +321,7 @@ label {
 }
 
 .form-order__input--modal {
-  left: -28px;
+  left: -17px;
   // padding-left: 20px;
 
   padding: 0;

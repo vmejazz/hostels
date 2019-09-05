@@ -12,14 +12,14 @@ var showPopup = function (time = 3000) {
 
   setTimeout ( function () {
     $helpPopupSecond.addClass('help-popup--show')
-  }, time*3.5)
+  }, time*2)
 }
 
 $(document).ready(function() {
   width = $(window).width();
   if (width >= 720) {
     $(window).one( 'scroll', function(){
-      showPopup(500)
+      showPopup(300)
     })
   }
 })

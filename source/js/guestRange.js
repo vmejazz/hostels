@@ -76,9 +76,11 @@ $('.modal-guest__button').on('click', guestNumbers);
 
 $('#input__check-in--style').datepicker({dateFormat: 'd MM yyyy'})
 $('#input__check-out--style').datepicker({dateFormat: 'd MM yyyy'})
-$('#input__check-in--modal').datepicker({dateFormat: 'd MM yyyy'})
-$('#input__check-out--modal').datepicker({dateFormat: 'd MM yyyy'})
-
+// $('#input__check-in--modal').datepicker({dateFormat: 'd MM yyyy'})
+// $('#input__check-out--modal').datepicker({dateFormat: 'd MM yyyy'})
+$(document).on('cardRendered', '.form-order__check-in--modal input', function () {
+  console.log(rendered)
+})
 
 
 $('#minMaxExample').datepicker({

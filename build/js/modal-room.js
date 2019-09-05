@@ -31,6 +31,17 @@ this.open = function(target)
   target.classList.add('rooms-order__modal--show')
   window.bodyScroll.StopScrollBody();
 
+  var modalOpened = $(document).find('.rooms-order__modal--show')
+  $(document).on('click', '.rooms-order__overlay', function () {
+    this.state.open = false;
+    modalOpened.addClass('rooms-order__modal--hide')
+    modalOpened.removeClass('rooms-order__modal--show')
+    window.bodyScroll.resetScrollBody();
+  }.bind(this)).on('click', 'div', function (e) {
+    e.stopPropagation();
+  })
+
+
 }.bind(this)
 
 this.close = function(target)

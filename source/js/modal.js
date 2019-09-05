@@ -32,11 +32,8 @@
         closeModal();
       }
     })
-    // document.addEventListener('click', function (evt){
-    //   if (evt.target.contain('.modal-callback__overlay')) {
-    //     console.log('Popal v overlay')
-    //   }
-    // });
+
+    $(document).on('click', '.modal-callback__overlay', closeModal).on('click', 'div', function (e) { e.stopPropagation();})
   };
 
 

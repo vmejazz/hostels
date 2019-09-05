@@ -69,6 +69,12 @@
     cardElement.querySelector('.room__title').innerHTML = elem.title;
     cardElement.querySelector('.room__adress').innerHTML = elem.metro_station + ', ' + elem.address.slice(10);
     cardElement.querySelector('.room__big-jmg').src = elem.thumbnail;
+    var inputIdIn = 'check-in__id-' + elem.id;
+    cardElement.querySelector('.form-order__check-in--modal input').id = inputIdIn;
+    cardElement.querySelector('.form-order__check-in--modal label').htmlFor = inputIdIn;
+    var inputIdOut = 'check-out__id-' + elem.id;
+    cardElement.querySelector('.form-order__check-out--modal input').id = inputIdOut;
+    cardElement.querySelector('.form-order__check-out--modal label').htmlFor = inputIdOut;
 
     if (elem.sale_price !== '-') {
       cardElement.querySelector('.price__sell').innerHTML = elem.sale_price + ' руб / сутки';
@@ -132,6 +138,8 @@
     var fragment = document.createDocumentFragment();
 
     fragment.appendChild(renderCard(card));
+    $(fragment).find('.form-order__check-in--modal input').datepicker({dateFormat: 'd MM yyyy'})
+    $(fragment).find('.form-order__check-out--modal input').datepicker({dateFormat: 'd MM yyyy'})
     orderList.appendChild(fragment);
   };
 
