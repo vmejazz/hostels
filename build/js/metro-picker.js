@@ -95,7 +95,7 @@ var MetroPicker = function()
 
 			if( option.title.trim() == station.trim() ) {
         option.checked == true ? option.checked = false : option.checked = true
-        this.$startSearch.click();
+        // this.$startSearch.click();  // активация поиска кнопки "старт search"
 			}
 		}.bind(this) )
 	}
@@ -215,8 +215,8 @@ var MetroPicker = function()
 
   this.$startSearch.click( function(e)
   {
-    this.showLoadingAction()
-    setTimeout(this.showLoadingAction, 1000)
+    // this.showLoadingAction()         //    Анимация обновления данных
+    // setTimeout(this.showLoadingAction, 1000)
     this.$metroInput.val('')
     var i = 0;
     this.state.options.map( function( option ){
