@@ -884,16 +884,16 @@
                 </li>
               </ul>
             </div>
-            <form action="submit" class="margin-order__form form-order">
+            <form id="main-form" class="margin-order__form form-order">
               <div class="form-order__check-in">
-                <input type="text" id="input__check-in--style" class="form-order__input--style" onchange="mydDateIn()">
+                <input type="text" id="input__check-in--style" name="date-from" class="form-order__input--style">
                 <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
                   <use xlink:href="#calendar"></use>
                 </svg>
                 <label for="input__check-in--style">Дата заезда</label>
               </div>
               <div class="form-order__check-out">
-                  <input type="text" id="input__check-out--style" class="form-order__input--style" onchange="mydDateOut()">
+                  <input type="text" id="input__check-out--style" name="date-till" class="form-order__input--style">
                   <svg class="form-order__icon form-order__icon--calendar" width="24" height="24">
                     <use xlink:href="#calendar"></use>
                   </svg>
@@ -901,37 +901,46 @@
                 </div>
               <div class="form-order__guest">
                   <button type="button" class="form-order__guest-button form-order__guest-button--minus">-</button>
-                <input type="text" id="input__guest" value="1" min=1 max=30 class="form-order__guest-all" disabled>
+                <input type="text" id="input__guest" name="persons" value="1" min=1 max=30 class="form-order__guest-all" readonly>
                 <label for="input__guest" class="form-order__guest-label">Количество человек:</label>
                 <button type="button" class="form-order__guest-button form-order__guest-button--plus">+</button>
                 <!-- <button class="form-order__guest-button"></button> -->
               </div>
               <div class="form-order__personal-name">
-                <input type="text" id="input__name" class="form-order__name-input" placeholder="Ваше имя">
+                <input type="text" id="input__name" name="fio" class="form-order__name-input" placeholder="Ваше имя">
               </div>
               <div class="form-order__personal-tel">
-                <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона" autocomplete="off">
+                <input type="text" id="input__tel" name="phone" class="form-order__tel-input" placeholder="Номер телефона" autocomplete="off">
               </div>
               <div class="form-order__modal modal-guest modal-guest--hide">
                 <div class="modal-guest__adult">
                   <label for="input__adult">Взрослых:</label>
                   <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
-                  <input type="text" id="input__adult" value="2" disabled>
+                  <input type="text" id="input__adult" name="persons" value="2" readonly>
                   <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
                 </div>
                 <div class="modal-guest__children">
                   <label for="input__children">Детей:</label>
                   <button type="button" class="modal-guest__button modal-guest__button--minus">-</button>
-                  <input type="text" id="input__children" value="0" disabled>
+                  <input type="text" id="input__children" name="children" value="0" readonly>
                   <button type="button" class="modal-guest__button modal-guest__button--plus">+</button>
                 </div>
                 <div class="modal-guest__bed">
                   <label for="input__bed">Нужна кроватка?</label>
-                  <input type="checkbox" id="input__bed" class="modal-guest__bed-checkbox">
+                  <input type="checkbox" id="input__bed" name="bed" class="modal-guest__bed-checkbox">
                   <label for="input__bed" class="modal-guest__bed-yes">Да</label>
                 </div>
               </div>
-              <button class="form-order__button button">Отправить заявку</button>
+              <button class="form-order__button button">
+                <span class="text">Отправить заявку</span>
+                <span class="preloder">
+                  <span class="spinner">
+                    <span class="bounce1"></span>
+                    <span class="bounce2"></span>
+                    <span class="bounce3"></span>
+                  </span>
+                </span>
+              </button>
               <div class="help-popup help-popup--first help-popup--hide fade-in">
                 <p class="help-popup__text">Наша служба бронирования подберёт<br>
                   лучшую локацию для вас
@@ -2138,6 +2147,9 @@
   <script src="./js/help-popup.js"></script>
   <script src="./js/modal-room.js"></script>
   <script src="./js/roomsBackEnd.js"></script>
+  <script src="./js/jquery.json-serialize.min.js"></script>
+  <script src="./js/validate-us.min.js"></script>
+  <script src="./js/forms.js"></script>
 </body>
 
 </html>
