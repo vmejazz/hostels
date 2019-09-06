@@ -59,7 +59,6 @@ var MetroPicker = function()
 	}
 
 	$('body').on( 'click', function(e){
-		console.log( e.target )
 		if( !$(e.target).is('.metro-field__checkbox-label, input, .metro-field__find-button button,.metro-field__checkbox-list') ) {
 			this.close()
 		}

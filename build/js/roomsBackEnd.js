@@ -82,6 +82,15 @@
     var inputIdOut = 'check-out__id-' + elem.id;
     cardElement.querySelector('.form-order__check-out--modal input').id = inputIdOut;
     cardElement.querySelector('.form-order__check-out--modal label').htmlFor = inputIdOut;
+    var bedID = 'room-bed__id-' + elem.id;
+    cardElement.querySelector('.modal-guest__bed input').id = bedID;
+    cardElement.querySelectorAll('.modal-guest__bed label').forEach ( function ( elem ) {
+      elem.htmlFor = bedID;
+    })
+
+    // cardElement.querySelectorall('.modal-guest__bed label').map( function ( elem ) {
+    //   elem.htmlFor = bedID;
+    // })
 
     if (elem.sale_price !== '-') {
       cardElement.querySelector('.price__sell').innerHTML = elem.sale_price + ' руб / сутки';
