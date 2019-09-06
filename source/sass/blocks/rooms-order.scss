@@ -67,6 +67,7 @@
   @media (max-width: $desktop) {
     position: fixed;
 
+    overflow-x: hidden;
     overflow-y: auto;
   }
 }
@@ -101,7 +102,8 @@
 
   @media (max-width: $desktop) {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 30px;
+    overflow-x: hidden;
     overflow-y: auto;
 
     & .form-order__modal {
@@ -125,7 +127,7 @@
   cursor: pointer;
 
   @media (max-width: $desktop) {
-    top: -4px;
+    top: 8px;
     right: 10px;
 
     font-size: 17px;

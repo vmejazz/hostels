@@ -108,6 +108,7 @@ label {
   cursor: pointer;
   & label {
     font-size: 14px;
+
     cursor: pointer;
   }
 }
@@ -235,6 +236,10 @@ label {
   // z-index: 10;
 
   width: 100%;
+
+  @media (max-width: $desktop) {
+    top: -25px;
+  }
 }
 
 .form-order__guest-button {
@@ -293,12 +298,12 @@ label {
 
 .form-order__tel-input {
   margin-top: 20px;
-
 }
 
 .form-order__button {
   width: 100%;
   margin-top: 30px;
+
   font-size: 16px;
   color: #ffffff;
 
@@ -313,8 +318,6 @@ label {
   .preloder {
     display: none;
   }
-
-
 }
 
 .is-loading .form-order__button {
@@ -363,7 +366,7 @@ label {
   }
 
   @media (max-width: $desktop) {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-left: auto;
     padding-left: 0;
 
@@ -458,20 +461,23 @@ label {
 
 .form-field__alert {
   position: absolute;
-  color: #c71019;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 12px;
   /* background-color: #fff; */
   z-index: 1;
+
   margin-top: -3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  font-size: 12px;
   line-height: 1;
+  color: #c71019;
 }
 
 .form-order__check-out .form-field__alert,
-.form-order__check-in .form-field__alert
-{
-  width: 195px;
-  background-color: white;
+.form-order__check-in .form-field__alert {
   z-index: 11;
+
+  width: 195px;
+
+  background-color: white;
 }
