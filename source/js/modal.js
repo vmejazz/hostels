@@ -1,5 +1,5 @@
 (function () {
-  var modalCallback = document.querySelector('.modal-callback');
+  var modalCallback = document.querySelector('.modal-callback,#footer-callback');
   var modalOverlay = document.querySelector('.modal-callback__overlay');
   var mainPromotionButton = document.querySelector('.main-promotion__button');
   var modalCallbackCloseButton = modalCallback.querySelector('.modal-callback__button--close');
@@ -131,4 +131,3 @@ window.modal = {
   'changeSmallPhotoToBig': changeSmallPhotoToBig,
   'setHandlerOnSliderButtons': setHandlerOnSliderButtons
 }
-

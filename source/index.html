@@ -801,33 +801,34 @@
         <nav class="page-header__main-navigation main-navigation main-navigation--hide">
           <ul class="main-navigation__list">
             <li class="main-navigation__item">
+              <a href="#main-order" class="main-navigation__link">
+                О нас
+              </a>
+            </li>
+            <li class="main-navigation__item">
               <a href="#metro-field" class="main-navigation__link">
-                Адреса хостелов
+                Подобрать номер
               </a>
             </li>
             <li class="main-navigation__item">
               <a href="#main-advantage" class="main-navigation__link">
-                Что включено?
+                Почему мы
+              </a>
+            </li>
+
+            <li class="main-navigation__item">
+              <a href="#main-promotion" class="main-navigation__link">
+                Для групп
               </a>
             </li>
             <li class="main-navigation__item">
-              <a href="#rooms-order" class="main-navigation__link">
-                Номера и цены
-              </a>
-            </li>
-            <li class="main-navigation__item">
-              <a href="#" class="main-navigation__link">
-                Фотографии
+              <a href="#main-corporativ" class="main-navigation__link">
+                Корпоративным клиентам
               </a>
             </li>
             <li class="main-navigation__item">
               <a href="#main-review" class="main-navigation__link">
                 Отзывы
-              </a>
-            </li>
-            <li class="main-navigation__item">
-              <a href="#" class="main-navigation__link">
-                О нас
               </a>
             </li>
           </ul>
@@ -847,7 +848,7 @@
   <!-- MAIN START -->
   <main class="page-main">
     <div class="container main-container">
-          <section class="main-order">
+          <section class="main-order" id="main-order">
             <div class="main-order__description">
               <h2 class="main-order__title">
                   <span class="main-order__title--red">Гостиничный сервис</span> по цене хостела
@@ -1420,7 +1421,7 @@
               </div>
             </div>
           </section>
-          <section class="main-promotion">
+          <section class="main-promotion" id="main-promotion">
                 <h3 class="main-promotion__title">
                   <span class="main-promotion__title--red">Специальные условия</span> для групповых заездов
                 </h3>
@@ -1468,7 +1469,7 @@
                     …мы готовы разместить в наших хостелах в Москве каждый день
                   </p>
                 </div>
-                <div class="main-corporativ__card card-corporativ card-corporativ--partner">
+                <div onClick="location.href='https://hostelsrus.ru/franshiza/'" class="main-corporativ__card card-corporativ card-corporativ--partner">
                   <h4 class="card-corporativ__title">
                       Узнай,<br>
                       как стать<br>
@@ -1705,7 +1706,7 @@
                           <p class="card-review__town">
                             Саратов
                           </p>
-                          <button class="card-review__button button">
+                          <button class="card-review__button button hidden">
                             Читать
                           </button>
                         </div>
@@ -1731,7 +1732,7 @@
                           <p class="card-review__town">
                             Москва
                           </p>
-                          <button class="card-review__button button">
+                          <button class="card-review__button button hidden">
                             Читать
                           </button>
                         </div>
@@ -1757,7 +1758,7 @@
                           <p class="card-review__town">
                             Киров
                           </p>
-                          <button class="card-review__button button">
+                          <button class="card-review__button button hidden">
                             Читать
                           </button>
                         </div>
@@ -1818,7 +1819,7 @@
     <div class="container page-footer__container">
       <ul class="page-footer__navigation footer-navigation__list">
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="#main-order" class="footer-navigation__link">
             Забронировать
           </a>
         </li>
@@ -1828,32 +1829,32 @@
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="#main-promotion" class="footer-navigation__link">
             Группам
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="#" class="footer-navigation__link" id="footer-callback">
             Заказать звонок
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="https://hostelsrus.ru/franshiza/" target="_blank" class="footer-navigation__link">
             Франшиза
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="https://hostelsrus.ru/blagotvoritelnost/" target="_blank" class="footer-navigation__link">
             Благотворительность
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="https://hostelsrus.ru/learning/" target="_blank" class="footer-navigation__link">
             Обучение
           </a>
         </li>
         <li class="footer-navigation__item">
-          <a href="" class="footer-navigation__link">
+          <a href="https://hostelsrus.ru/rabota/" terget="_blank" class="footer-navigation__link">
             Работа
           </a>
         </li>
@@ -1916,6 +1917,7 @@
             </div>
           </a>
           <h3 class="card-room__title">Номер на 2 человек</h3>
+          <span class="metro-field__checkbox-label">Окружная</span>
           <div class="card-room__price price">
             <p class="price__sell">3000 руб / сутки</p>
             <p class="price__old">1750 руб / сутки</p>
