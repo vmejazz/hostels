@@ -74,7 +74,9 @@ $('.modal-guest__button').on('click', guestNumbers);
 
 
 
-$('#input__check-in--style').datepicker({dateFormat: 'd MM yyyy'})
+$('#input__check-in--style').datepicker({dateFormat: 'd MM yyyy', onSelect: function( formattedDate, date, inst ){
+  $( inst.el ).trigger('change')
+}})
 $('#input__check-out--style').datepicker({dateFormat: 'd MM yyyy'})
 // $('#input__check-in--modal').datepicker({dateFormat: 'd MM yyyy'})
 // $('#input__check-out--modal').datepicker({dateFormat: 'd MM yyyy'})

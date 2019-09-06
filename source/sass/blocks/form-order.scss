@@ -471,5 +471,7 @@ label {
 .form-order__check-out .form-field__alert,
 .form-order__check-in .form-field__alert
 {
-
+  width: 195px;
+  background-color: white;
+  z-index: 11;
 }
