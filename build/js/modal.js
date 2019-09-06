@@ -47,6 +47,18 @@
   document.addEventListener('keydown', function(evt){
     // console.log(evt.keyCode);
   })
+
+  var modalSuccessShow = function () {
+    var modal = $(document).find('.modal-success');
+    modal.toggleClass('modal-success--show')
+    modal.toggleClass('modal-success--hide')
+  }
+
+  $(document).on('click', '.form-order__button', function(evt){
+    evt.preventDefault();
+    modalSuccessShow();
+    setTimeout(modalSuccessShow, 2000)
+  })
   })();
 
 //  Активность смены маленьких превью на большое
