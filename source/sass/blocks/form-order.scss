@@ -17,10 +17,13 @@ label {
   @media (max-width: $desktop) {
     margin-left: 0;
   }
+  > div {
+    position: relative;
+  }
 }
 
 .form-order__modal {
-  position: absolute;
+  position: absolute !important;
   top: 48px;
   left: -140px;
 
@@ -104,6 +107,7 @@ label {
 
   cursor: pointer;
   & label {
+    font-size: 14px;
     cursor: pointer;
   }
 }
@@ -289,12 +293,12 @@ label {
 
 .form-order__tel-input {
   margin-top: 20px;
-  margin-bottom: 30px;
+
 }
 
 .form-order__button {
   width: 100%;
-
+  margin-top: 30px;
   font-size: 16px;
   color: #ffffff;
 
@@ -305,6 +309,26 @@ label {
     background-color: #c71019;
     border-color: #c71019;
   }
+
+  .preloder {
+    display: none;
+  }
+
+
+}
+
+.is-loading .form-order__button {
+  .preloder {
+    display: block;
+  }
+  .text {
+    display: none;
+  }
+}
+
+.form-alert {
+  display: block;
+  margin-top: 25px;
 }
 
 .form-order__title {
@@ -423,3 +447,31 @@ label {
 // .modal-guest__bed-checkbox {
 //   width: 16px;
 // }
+
+.has-error {
+  border-bottom-color: #c71019 !important;
+}
+
+.has-success {
+  border-bottom-color: #10c72c !important;
+}
+
+.form-field__alert {
+  position: absolute;
+  color: #c71019;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  /* background-color: #fff; */
+  z-index: 1;
+  margin-top: -3px;
+  line-height: 1;
+}
+
+.form-order__check-out .form-field__alert,
+.form-order__check-in .form-field__alert
+{
+  width: 195px;
+  background-color: white;
+  z-index: 11;
+}

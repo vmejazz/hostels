@@ -30,9 +30,14 @@
   }
 
   &:hover + svg,
-  &:focus + svg {
+  &:focus + svg,
+   {
     fill: #ec343c;
   }
+}
+
+.metro-field__box--active .metro-field__icon {
+  fill: #ec343c;
 }
 
 .metro-field__box {
@@ -114,7 +119,21 @@
   }
 
   & input:checked + label {
+    position: relative;
     background-color: #eaeaea;
+    border-color: transparent;
+    &::after {
+      content: '×';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 30px;
+      width: 15px;
+      margin: auto;
+      right: 5px;
+      color: #999;
+      cursor: pointer;
+    }
   }
 
   & label {

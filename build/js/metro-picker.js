@@ -58,10 +58,17 @@ var MetroPicker = function()
 		this.$container.trigger('stateChange')
 	}
 
+	$('body').on( 'click', function(e){
+		console.log( e.target )
+		if( !$(e.target).is('.metro-field__checkbox-label, input, .metro-field__find-button button,.metro-field__checkbox-list') ) {
+			this.close()
+		}
+	}.bind(this) )
+
 	//
 	this.$button.on('click', function(e){
 		e.preventDefault()
-
+		e.stopPropagation()
 		if(this.state.open) {
 			this.close()
 		} else {
@@ -70,10 +77,11 @@ var MetroPicker = function()
 
 	}.bind(this))
   //
-
+	this.$metroInput.click(function(e){console.log(e);e.stopPropagation()})
   //
-  this.$metroInput.focus( function ()
+  this.$metroInput.focus( function (e)
   {
+		e.preventDefault()
     this.$metroInput.val('')
     this.state.options.map( function (option)
     {
@@ -94,6 +102,8 @@ var MetroPicker = function()
 
 	this.toggleStation = function(e)
 	{
+		e.stopPropagation()
+
 		var station = $(e.currentTarget).text()
 		this.state.options.map( function(option){
 
@@ -148,9 +158,9 @@ var MetroPicker = function()
 
 	}
 
-	this.reset = function()
+	this.reset = function(e)
 	{
-
+		e.stopPropagation()
 		$('.metro-field__checkbox-item > input').prop( 'checked', false )
 		this.state.options.map( function( option ){
 			option.checked = false
@@ -222,6 +232,7 @@ var MetroPicker = function()
 
   this.$startSearch.click( function(e)
   {
+		e.stopPropagation()
     // this.showLoadingAction()
     // setTimeout(this.showLoadingAction, 1000)
     this.$metroInput.val('')
@@ -240,7 +251,8 @@ var MetroPicker = function()
     window.roomsBackEnd.fromBack.map( function ( elem ) {
       // console.log(chackedStations)
       for (var i = 0; i < chackedStations.length; i++) {
-        if (elem.metro_station === chackedStations[i].title) {
+			// /	console.log( elem )
+        if (elem.metro.title === chackedStations[i].title) {
           window.roomsBackEnd.addCardOnSite(elem)
         }
       }

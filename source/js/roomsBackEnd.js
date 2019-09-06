@@ -66,6 +66,13 @@
     cardElement.querySelector('.price__old').innerHTML = elem.price + ' руб / сутки';
     cardElement.querySelector('.card-room__description').innerHTML = elem.price_for;
     cardElement.querySelector('.card-room__img').src = elem.thumbnail;
+
+    var stations = ''
+    elem.metro.line.split(',').map( function(color){
+      stations += '<span class="metro-icon metro-icon--'+color+'"></span>'
+    } )
+
+    cardElement.querySelector('.metro-field__checkbox-label').innerHTML = elem.metro.title + stations
     cardElement.querySelector('.room__title').innerHTML = elem.title;
     cardElement.querySelector('.room__adress').innerHTML = elem.metro_station + ', ' + elem.address.slice(10);
     cardElement.querySelector('.room__big-jmg').src = elem.thumbnail;
@@ -92,9 +99,10 @@
     } else {
       cardElement.querySelector('.card-room__description').innerHTML = elem.price_for;
     }
-
-    var mapImages = elem.images.split(',');
-
+    var mapImages = []
+    if( elem.images ) {
+      mapImages = elem.images.split(',');
+    }
     cardElement.querySelector('.room__small-photos').innerHTML = "";
     smallPhotoRoomList(elem.thumbnail, cardElement.querySelector('.room__small-photos'));
     mapImages.map( function ( elem ){
