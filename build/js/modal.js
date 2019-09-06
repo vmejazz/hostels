@@ -8,6 +8,12 @@
 
   var modalCallbackOpenButton = document.querySelector('.callback__button');
 
+  var modalSuccessShow = function () {
+    var modal = $(document).find('.modal-success');
+    modal.toggleClass('modal-success--show')
+    modal.toggleClass('modal-success--hide')
+  }
+
   var closeModal = function (evt) {
     modalCallback.classList.remove('modal-callback--show');
     modalCallback.classList.add('modal-callback--hide');
@@ -34,6 +40,12 @@
     })
 
     $(document).on('click', '.modal-callback__overlay', closeModal).on('click', 'div', function (e) { e.stopPropagation();})
+
+    $(document).on('click', '.modal-callback__button', function(evt){
+      evt.preventDefault();
+      modalSuccessShow();
+      setTimeout(modalSuccessShow, 2000)
+    })
   };
 
 
@@ -47,12 +59,6 @@
   document.addEventListener('keydown', function(evt){
     // console.log(evt.keyCode);
   })
-
-  var modalSuccessShow = function () {
-    var modal = $(document).find('.modal-success');
-    modal.toggleClass('modal-success--show')
-    modal.toggleClass('modal-success--hide')
-  }
 
   $(document).on('click', '.form-order__button', function(evt){
     evt.preventDefault();
