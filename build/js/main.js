@@ -69,7 +69,7 @@ $(document).ready(function() {
 })
 
 
-// Счётчик чисел
+// Счётчик чисел в шапке сайта
 var countField = $('.count-humber');
 
 function countup(className){ //className - имя класса, в котором есть число
