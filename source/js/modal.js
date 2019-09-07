@@ -60,11 +60,13 @@
     // console.log(evt.keyCode);
   })
 
-  $(document).on('click', '.form-order__button', function(evt){
-    evt.preventDefault();
-    modalSuccessShow();
-    setTimeout(modalSuccessShow, 2000)
-  })
+
+  //    Клик по баттону отправки формы
+  // $(document).on('click', '.form-order__button', function(evt){
+  //   evt.preventDefault();
+  //   modalSuccessShow();
+  //   setTimeout(modalSuccessShow, 2000)
+  // })
   })();
 
 //  Активность смены маленьких превью на большое
