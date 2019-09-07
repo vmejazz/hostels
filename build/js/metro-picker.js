@@ -260,6 +260,7 @@ var MetroPicker = function()
     showLoadingCards();
     setTimeout(showLoadingCards, 500)
     window.modal.changeSmallPhotoToBig()
+    window.guestRange.guestNumberHandler();
     this.close();
   }.bind(this))
 

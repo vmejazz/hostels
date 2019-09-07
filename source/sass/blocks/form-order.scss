@@ -210,6 +210,8 @@ label {
   font-size: 14px;
   font-family: "Rubik";
   color: #666666;
+
+  user-select: none;
 }
 
 .form-order__guest-all {
@@ -227,15 +229,19 @@ label {
   background-color: transparent;
   border: none;
   outline: none;
+
+  pointer-events: none;
 }
 
 .form-order__guest-label {
   position: absolute;
   top: -35px;
   left: 38px;
-  // z-index: 10;
 
   width: 100%;
+  // z-index: 10;
+
+  pointer-events: none;
 
   @media (max-width: $desktop) {
     top: -25px;
