@@ -1,49 +1,12 @@
 this.$container = $('.rooms-order');
-this.$openButton = '.card-room__button'
-this.$roomModal = this.$container.find('.rooms-order__modal')
-this.$buttonClose = this.$container.find('.rooms-modal__button--close')
 
 this.state = {
-  open: false,
-  options: [
-    {
-      Id: 1,
-      address: '',
-      features: [
-        {
-          wifi: true,
-          shampoo: true,
-          parking: false
-        }
-      ]
-    }
-  ]
-
-
+  open: false
 }
 
-this.open = function(target)
-{
-  this.state.open = true;
-  // this.$roomModal.removeClass('modal-callback--hide')
-  // this.$roomModal.addClass('modal-callback--show')
-  target.classList.remove('rooms-order__modal--hide')
-  target.classList.add('rooms-order__modal--show')
-  window.bodyScroll.StopScrollBody();
-
-  var modalOpened = $(document).find('.rooms-order__modal--show')
-  $(document).on('click', '.rooms-order__overlay', function () {
-    this.state.open = false;
-    modalOpened.addClass('rooms-order__modal--hide')
-    modalOpened.removeClass('rooms-order__modal--show')
-    window.bodyScroll.resetScrollBody();
-  }.bind(this)).on('click', 'div', function (e) {
-    e.stopPropagation();
-  })
-
-
-}.bind(this)
-
+// *
+// * Закрываем модальное окно
+// *
 this.close = function(target)
 {
   this.state.open = false;
@@ -51,39 +14,70 @@ this.close = function(target)
   target.classList.remove('rooms-order__modal--show')
   window.bodyScroll.resetScrollBody();
 
+  $(document).off('click', '.rooms-order__overlay', checkOverlayfield)
+
 }.bind(this)
 
-this.openRoomModal = function (evt, card) {
-  evt.preventDefault()
-  if (this.state.open == false) {
-    this.open(card)
-    // this.$roomModal.addClass('modal-callback--show')
-  } else {
-
+// *
+// * Проверяем попадание клика на поле overlay
+// *
+var checkOverlayfield = function (evt) {
+  if (evt.target.classList.contains('rooms-order__overlay')) {
+    var modalOpened = $(evt.target).parents('.rooms-order__modal--show').get(0)
+    this.close(modalOpened)
   }
+  evt.stopPropagation();
+}.bind(this);
+
+// *
+// * Открываем модальное окно
+// *
+this.open = function(target)
+{
+  this.state.open = true;
+  target.classList.remove('rooms-order__modal--hide')
+  target.classList.add('rooms-order__modal--show')
+  window.bodyScroll.StopScrollBody();     //  останавливаем прокрутку основного сайта
+
+  // *
+  // * Обработчик клика по overlay
+  // *
+  $(document).on('click', '.rooms-order__overlay', checkOverlayfield)
+
 }.bind(this)
 
+// *
+// * Обработчик клика кнопки Забронировать карточки
+// *
 this.$container.on('click', '.card-room__button', function (evt) {
   var itemCard = evt.target.parentNode.parentNode;
   var modalCard = itemCard.querySelector('.rooms-order__modal')
-  this.openRoomModal(evt, modalCard)
+  // this.openRoomModal(evt, modalCard)
+  this.open(modalCard)
 }.bind(this))
 
+// *
+// * Обработчик клика кнопки Забронировать карточки
+// *
 this.$container.on('click', '.card-room__link', function (evt) {
+  evt.preventDefault();
   var itemCard = evt.target.parentNode.parentNode.parentNode;
   var modalCard = itemCard.querySelector('.rooms-order__modal')
-  this.openRoomModal(evt, modalCard)
+  // this.openRoomModal(evt, modalCard)
+  this.open(modalCard)
 }.bind(this))
 
-// this.$buttonClose.click( function() {
-//   this.close()
-// }.bind(this))
-
+// *
+// * Обработчик клика кнопки закрыть, модального окна
+// *
 this.$container.on('click', '.rooms-modal__button--close', function (evt) {
   var itemCard = evt.target.parentNode.parentNode.parentNode;
   this.close(itemCard)
 }.bind(this))
 
+// *
+// * Обработчик клика ESC при открытом модальном окне
+// *
 document.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 27 && this.state.open) {
     var itemCard = document.querySelector('.rooms-order__modal--show');

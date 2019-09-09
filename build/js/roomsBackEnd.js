@@ -1,42 +1,23 @@
 (function () {
-  this.$container = $('#rooms-order')
   var orderList = document.querySelector('.rooms-order__list');
   var roomsFromBackEnd = [];
-  var smallPhotoTemplate = document.querySelector('#small-photo__template')
+  var smallPhotoTemplate = document.querySelector('#small-photo__template')     //  Ищем шаблон для малых фоток
   .content
   .querySelector('.room__small-photo');
-  var mapCardTemplate = document.querySelector('#card-room__template')
+  var mapCardTemplate = document.querySelector('#card-room__template')      //..  Ищем шаблон для карточки номера
   .content
   .querySelector('.rooms-order__item');
 
+  // *
+  // * Очищаем список карточек
+  // *
   var resetListRooms = function () {
     orderList.innerHTML = '';
   }
-  // this.renderCards = function (e) {
-  //   var r = ''
 
-  //   window.roomsBackEnd.fromBack.map( function (elem) {
-
-
-
-  //   })
-  // }
-
-  // this.checkSaleState = function (elem) {
-  //   if (elem.sale_price = ) {
-
-  //   }
-  // }
-
-  // this.smallPhotoRoom = function (imgArray, cardElement) {
-  //   console.log(imgArray)
-  //   var smallPhotoField = cardElement.querySelectorAll('.small-room-photo');
-  //   Array.from(smallPhotoField)
-  //   imgArray.map( function (elem) {
-
-  //   })
-  // }
-
+  // *
+  // * Устанавливаем правильный адрес главной фото на карточку
+  // *
   var setPhotoSrc = function ( imageSrc) {
     var smallPhotoElement = smallPhotoTemplate.cloneNode(true);
 
@@ -45,17 +26,19 @@
     return smallPhotoElement;
   }
 
+  // *
+  // * Добавляем элемент малой фотки в модаль
+  // *
   var smallPhotoRoomList = function (elem, photoList ) {
     var fragment = document.createDocumentFragment();
 
     fragment.appendChild(setPhotoSrc(elem));
     photoList.appendChild(fragment);
-
   }
 
-
-
-
+  // *
+  // * Основной рендеринг всех данных по номеру
+  // *
   this.renderCard = function (elem) {
     var cardElement = mapCardTemplate.cloneNode(true);
 
@@ -88,10 +71,6 @@
       elem.htmlFor = bedID;
     })
 
-    // cardElement.querySelectorall('.modal-guest__bed label').map( function ( elem ) {
-    //   elem.htmlFor = bedID;
-    // })
-
     if (elem.sale_price !== '-') {
       cardElement.querySelector('.price__sell').innerHTML = elem.sale_price + ' руб / сутки';
       cardElement.querySelector('.card-room__sale-icon').classList.remove('card-room__sale-icon--hide');
@@ -123,6 +102,9 @@
     return cardElement;
   }
 
+  // *
+  // * Запрос на бэк для получения всех данных по номерам
+  // *
   this.getRoomsFromBackEnd = function () {
     orderList.innerHTML = '';
 
@@ -149,33 +131,38 @@
     return roomsFromBackEnd;
   }
 
+  // *
+  // * активация запроса данных с бэка
+  // *
   getRoomsFromBackEnd();
 
+  // *
+  // * Добавляем карточку номера в ДОМ сайта
+  // *
   var addCardOnSite = function (card) {
     var fragment = document.createDocumentFragment();
 
     fragment.appendChild(renderCard(card));
-    $(fragment).find('.form-order__check-in--modal input').datepicker({dateFormat: 'd MM yyyy'})
-    $(fragment).find('.form-order__check-out--modal input').datepicker({dateFormat: 'd MM yyyy'})
+    $(fragment).find('.form-order__check-in--modal input').datepicker({dateFormat: 'd MM yyyy'})      //  Активируем календарь для карточки
+    $(fragment).find('.form-order__check-out--modal input').datepicker({dateFormat: 'd MM yyyy'})     //  Активируем календарь для карточки
     orderList.appendChild(fragment);
   };
 
-  // roomsFromBackEnd.map( function ( elem ){
-  //   addCardOnSite(elem);
-  // })
-
+  // *
+  // * Отрисовка определенного количества карточек
+  // *
   var renderSomeCards = function ( array, maxRenderElement) {
     for (var i = 0; i < maxRenderElement && i < array.length; i++) {
       addCardOnSite(array[i]);
     }
   }
 
-  renderSomeCards(roomsFromBackEnd, 8);
+  renderSomeCards(roomsFromBackEnd, 8);   // * Отрисовка определенного количества карточек
 
-  setHandlerOnSliderButtons();
+  window.modal.setHandlerOnSliderButtons();     //  Устанавливаем обработчик на кнопки слайдеры
 
 
-  window.modal.changeSmallPhotoToBig()
+  window.modal.changeSmallPhotoToBig()      //      вешаем обработчик смены адреса большой фотки при клике по маленькой фото
 
   window.roomsBackEnd = {
     'fromBack': roomsFromBackEnd,

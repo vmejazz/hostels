@@ -9,6 +9,9 @@ var MetroPicker = function()
   this.$startSearch = this.$container.find('.metro-field__find-button')
   this.$loadingImg = this.$container.find('.metro-field__loading')
 
+  // *
+  // * Показать окно загрузки
+  // *
   this.showLoadingAction = function () {
     this.$loadingImg.toggleClass('metro-field__loading--show')
     this.$loadingImg.toggleClass('metro-field__loading--hide')
@@ -19,6 +22,9 @@ var MetroPicker = function()
     cardsField.toggleClass('rooms-order__preloader--loading')
   }
 
+  // *
+  // * Объект с данными о станциях метро
+  // *
 	this.state = {
 		open: false,
 		value: '',
@@ -44,27 +50,38 @@ var MetroPicker = function()
         filtred: true
 			}
 		]
-	}
+  }
 
+  // *
+  // * Открывает список станций
+  // *
 	this.open = function()
 	{
 		this.state.open = true
 		this.$container.trigger('stateChange')
 	}
 
+  // *
+  // * Закрывает список станций
+  // *
 	this.close = function()
 	{
 		this.state.open = false
 		this.$container.trigger('stateChange')
 	}
 
+  // *
+  // * Клик по любой области вне списка станций, закрывает список
+  // *
 	$('body').on( 'click', function(e){
 		if( !$(e.target).is('.metro-field__checkbox-label, input, .metro-field__find-button button,.metro-field__checkbox-list') ) {
 			this.close()
 		}
 	}.bind(this) )
 
-	//
+	// *
+  // * Кнопка открытия/скрытия списка станций
+  // *
 	this.$button.on('click', function(e){
 		e.preventDefault()
 		e.stopPropagation()
@@ -74,10 +91,11 @@ var MetroPicker = function()
 			this.open()
 		}
 
-	}.bind(this))
-  //
-	this.$metroInput.click(function(e){console.log(e);e.stopPropagation()})
-  //
+  }.bind(this))
+
+  // *
+  // * Открывает список станций при клике на поле ввода + визуально очищает его
+  // *
   this.$metroInput.focus( function (e)
   {
 		e.preventDefault()
@@ -91,14 +109,9 @@ var MetroPicker = function()
     }
   }.bind(this))
 
-  // this.$metroInput.focusout( function ()
-  // {
-  //   this.close()
-  // }.bind(this))
-  //
-
-
-
+  // *
+  // * Меняем состояние выбора станции
+  // *
 	this.toggleStation = function(e)
 	{
 		e.stopPropagation()
@@ -114,9 +127,14 @@ var MetroPicker = function()
 		}.bind(this) )
 	}
 
+  // *
+  // * Обработчик по клику на названии стации, менять состояние
+  // *
 	$(document).on( 'click', '.metro-field__checkbox-label', this.toggleStation.bind(this) )
 
-
+  // *
+  // * Изменяет состояние бокса с метро
+  // *
 	$('.metro-field__box').on( 'stateChange', function(){
 
 		if( this.state.open ) {
@@ -135,6 +153,9 @@ var MetroPicker = function()
 
 	}.bind(this))
 
+  // *
+  // * Отрисовка списка станций
+  // *
 	this.renderStations = function()
 	{
 		var r = ''
@@ -157,6 +178,9 @@ var MetroPicker = function()
 
 	}
 
+  // *
+  // * Сброс всех выбранных станций
+  // *
 	this.reset = function(e)
 	{
 		e.stopPropagation()
@@ -169,14 +193,23 @@ var MetroPicker = function()
     {
       option.filtred = true;
     })
-    this.renderStations()
 
-    window.roomsBackEnd.resetListRooms()
-    window.roomsBackEnd.renderSomeCards(window.roomsBackEnd.fromBack, 8)
+    this.renderStations()     //  отрисовка станций
+    window.roomsBackEnd.resetListRooms()      //  стираем все карточки с отелями
+    window.roomsBackEnd.renderSomeCards(window.roomsBackEnd.fromBack, 8)      //  рисуем первые 8 карточек
+    window.modal.changeSmallPhotoToBig()      //     обработчик смены маленьких фото на большие
+    this.close()     // закрываем окно списка станций
 	}
 
+  // *
+  // * Обработчик на кнопку reset
+  // *
 	this.$reset.click( this.reset.bind(this) )
 
+
+  // *
+  // * Возвращает все выбранные станции
+  // *
 	this.getChekedStations = function()
 	{
 		return this.state.options.filter( function( option ) {
@@ -184,8 +217,9 @@ var MetroPicker = function()
 		} )
   }
 
-//            Запрашиваем и рисуем данные с бэка
-
+  // *
+  // * Запрашиваем / рисуем станции с бэка
+  // *
 	this.getStations = function()
 	{
 		$.ajax( {
@@ -213,11 +247,14 @@ var MetroPicker = function()
 		} )
 	}
 
-  //        Рисуем станции
-	this.getStations()
+  // *
+  // * Запуск запроса станций на бэк
+  // *
+  this.getStations()
 
-  // this.renderStations()
-
+  // *
+  // * Быстрая фильтрация списка станций из строки ввода
+  // *
   var getInputFilterStations = function (target) {
 		this.state.options.map( function( option ){
       if (option.title.toLowerCase().indexOf(target) + 1) {
@@ -229,11 +266,12 @@ var MetroPicker = function()
     })
   }.bind(this);
 
+  // *
+  // * Запуск нахождения/отрисовки карточек отеля, по выбранным станциям метро
+  // *
   this.$startSearch.click( function(e)
   {
 		e.stopPropagation()
-    // this.showLoadingAction()
-    // setTimeout(this.showLoadingAction, 1000)
     this.$metroInput.val('')
     var i = 0;
     this.state.options.map( function( option ){
@@ -243,27 +281,27 @@ var MetroPicker = function()
         this.$metroInput.val(oldValueInput + option.title + ', ')
       }
     }.bind(this))
-    // this.close()
 
-    var chackedStations = this.getChekedStations();
-    window.roomsBackEnd.resetListRooms()
-    window.roomsBackEnd.fromBack.map( function ( elem ) {
-      // console.log(chackedStations)
+    var chackedStations = this.getChekedStations();     //  получаем список выбранных станций
+    window.roomsBackEnd.resetListRooms()      //  очищаем все карточки
+    window.roomsBackEnd.fromBack.map( function ( elem ) {     //  сравниваем карточку и выбранную станцию, при совпадении рисуем
       for (var i = 0; i < chackedStations.length; i++) {
-			// /	console.log( elem )
         if (elem.metro.title === chackedStations[i].title) {
           window.roomsBackEnd.addCardOnSite(elem)
         }
       }
     })
 
-    showLoadingCards();
-    setTimeout(showLoadingCards, 500)
-    window.modal.changeSmallPhotoToBig()
-    window.guestRange.guestNumberHandler();
+    showLoadingCards();     //  показываем preloader загрузки карточек
+    setTimeout(showLoadingCards, 500)     //  закрываем preloader загрузки карточек
+    window.modal.changeSmallPhotoToBig()      //  вешаем обработчик смены маленьких фото на модальном окне
+    window.guestRange.guestNumberHandler();     //  вешаем обработчик окна выбора гостей
     this.close();
   }.bind(this))
 
+  // *
+  // * Обработчик на поле ввода, для запуска фильтрации станций метро по вводимым данным
+  // *
   this.$metroInput.on('input', function(){
     console.log(this.$metroInput.val())
     var target = this.$metroInput.val().toLowerCase()

@@ -1,151 +1,122 @@
 (function () {
-  var modalCallback = document.querySelector('.modal-callback,#footer-callback');
-  var modalOverlay = document.querySelector('.modal-callback__overlay');
-  var mainPromotionButton = document.querySelector('.main-promotion__button');
-  var modalCallbackCloseButton = modalCallback.querySelector('.modal-callback__button--close');
-  var modalRoom = document.querySelector('.rooms-order__modal');
-  var roomModalClose = modalRoom.querySelector('.rooms-modal__button--close');
+  var modalCallback = document.querySelector('.modal-callback,#footer-callback');     //  Модальное окно обратной связи
+  var mainPromotionButton = document.querySelector('.main-promotion__button');      //  Кнопка "обратная связь" на слайде Promotion
+  var modalCallbackCloseButton = modalCallback.querySelector('.modal-callback__button--close');     //  Кнопка закрытия модального окна обратной связи
+  var modalCallbackOpenButton = document.querySelector('.callback__button');      //  Кнопка "обратная связь" в шапке
 
-  var modalCallbackOpenButton = document.querySelector('.callback__button');
-
+  // *
+  // * Функция открытия модального окна успешной отправки формы
+  // *
   var modalSuccessShow = function () {
     var modal = $(document).find('.modal-success');
     modal.toggleClass('modal-success--show')
     modal.toggleClass('modal-success--hide')
   }
 
+  // *
+  // * Функция закрытия модального окна обратной связи
+  // *
   var closeModal = function (evt) {
     modalCallback.classList.remove('modal-callback--show');
     modalCallback.classList.add('modal-callback--hide');
     window.bodyScroll.resetScrollBody();
   }
 
-  var closeModalRoom = function (evt) {
-    modalRoom.classList.remove('rooms-order__modal--show');
-    modalRoom.classList.add('rooms-order__modal--hide');
-    window.bodyScroll.resetScrollBody();
+  var callbackButtonClick = function (evt) {
+    evt.preventDefault();
+    modalSuccessShow();
+    setTimeout(modalSuccessShow, 2000)
   }
 
-
+  // *
+  // * Функция открытия модального окна обратной связи
+  // *
   var openModal = function (evt) {
     evt.preventDefault()
     modalCallback.classList.add('modal-callback--show');
     modalCallback.classList.remove('modal-callback--hide');
     window.bodyScroll.StopScrollBody();
 
-    document.addEventListener('keydown', function(evt){
+    document.addEventListener('keydown', function(evt){     //  Обработчик на клавишу ESC
       if (evt.keyCode === 27) {
         closeModal();
       }
     })
 
-    $(document).on('click', '.modal-callback__overlay', closeModal).on('click', 'div', function (e) { e.stopPropagation();})
+    $(document).on('click', '.modal-callback__overlay', closeModal).on('click', 'div', function (e) { e.stopPropagation();})      //..  Обработчик попадания на overlay
 
-    $(document).on('click', '.modal-callback__button', function(evt){
-      evt.preventDefault();
-      modalSuccessShow();
-      setTimeout(modalSuccessShow, 2000)
-    })
+    $(document).on('click', '.modal-callback__button', callbackButtonClick)     //..  Обработчик кнопки "отправить заявку" окна обратной связи
   };
-
-
 
   modalCallbackOpenButton.addEventListener('click', openModal);
   modalCallbackCloseButton.addEventListener('click', closeModal);
   mainPromotionButton.addEventListener('click',openModal);
-  roomModalClose.addEventListener('click', closeModalRoom);
-
-
-  document.addEventListener('keydown', function(evt){
-    // console.log(evt.keyCode);
-  })
-
-
-  //    Клик по баттону отправки формы
-  // $(document).on('click', '.form-order__button', function(evt){
-  //   evt.preventDefault();
-  //   modalSuccessShow();
-  //   setTimeout(modalSuccessShow, 2000)
-  // })
   })();
 
-//  Активность смены маленьких превью на большое
-
+// *
+// *  Активность смены маленьких превью на большое
+// *
 var changeSmallPhotoToBig = function () {
   $(document).ready(function() {
     this.$container = $('.room__photos')
-    this.$bigPhoto = this.$container.find('.room__big-jmg')
 
     this.changePhotoSrc = function (evt) {
-      var parentSmallSrc = evt.target.parentNode.parentNode.parentNode.parentNode;
-      var bbb = parentSmallSrc.querySelector('.room__big-jmg')
-      bbb.src = evt.target.src
+      var roomPhotoField = $(evt.target).parents('.room__photos');
+      var roomBigPhoto = roomPhotoField.find('.room__big-jmg')
+      roomBigPhoto.attr('src', evt.target.src)
     }
 
     this.$container.on('click', '.room__photo-link', function (evt) {
       evt.preventDefault()
-
       this.changePhotoSrc(evt)
     }.bind(this))
   })
 }
 
-//    Оживляем модальный слайдер
-
+// *
+// // *   Оживляем модальный слайдер
+// *
 var setHandlerOnSliderButtons = function () {
   var orderList = $('.rooms-order__list');
 
-  orderList.on('click', '.rooms-slider__button', function (evt) {
+  orderList.on('click', '.rooms-slider__button', function (evt) {     //  Вешаем обработчик на кнопки слайдеры
     var target = $( evt.target ).parents('.rooms-order__modal').attr('id')
     var buttonPush = evt.target;
-    // this.$roomList = $(target).parents('.rooms-order__list')
 
-  var roomList = $('.rooms-order__item div[id]')
-    .map( function() {
-      return this.id;
-    })
-    .get()
+    var roomList = $('.rooms-order__item div[id]')      //    Создаем массив из отсортированных комнат по ID
+      .map( function() {
+        return this.id;
+      })
+      .get()
 
+      var getNewTarget = function (oldTarget, list, buttonWay) {     //  Условия выбора правильного элемента из массива отсортированных комнат
+        var indexOldTarget = list.indexOf(oldTarget);
 
-
-    var getNewTarget = function (oldTarget, list, buttonWay) {
-      if (buttonWay.classList.contains('rooms-slider__button--back')) {
-        if (list.indexOf(oldTarget) === 0) {
-          return list.length - 1
+        if (buttonWay.classList.contains('rooms-slider__button--back')) {
+          if (indexOldTarget === 0) {
+            return list.length - 1
+          } else {
+            return indexOldTarget - 1
+          }
         } else {
-          return list.indexOf(oldTarget) - 1
-        }
-      } else {
-        if (list.indexOf(oldTarget) === (list.length - 1)) {
-          return 0;
-        } else {
-          return list.indexOf(oldTarget) + 1
+          if (indexOldTarget === (list.length - 1)) {
+            return 0;
+          } else {
+            return indexOldTarget + 1
+          }
         }
       }
-    }
 
-    var newIndexForModal = '#' + roomList[getNewTarget(target, roomList, buttonPush)]
+      var newIndexForModal = '#' + roomList[getNewTarget(target, roomList, buttonPush)]
+      var newModal = $('.rooms-order__item').find(newIndexForModal);
 
-    var newModal = $('.rooms-order__item').find(newIndexForModal);
-
-
-    this.$modal = $('#' + target);
-    this.$modal.removeClass('rooms-order__modal--show')
-    this.$modal.addClass('rooms-order__modal--hide')
-    newModal.removeClass('rooms-order__modal--hide')
-    newModal.addClass('rooms-order__modal--show')
-
-
-    // var roomListID = [];
-    // this.$roomList.find('room-order__item').map(function (elem) {
-    //   console.log(elem)
-    // })
-    // this.$roomModal = this.$roomList.find('rooms-order__modal')
-
+      this.$modal = $('#' + target);
+      this.$modal.removeClass('rooms-order__modal--show')
+      this.$modal.addClass('rooms-order__modal--hide')
+      newModal.removeClass('rooms-order__modal--hide')
+      newModal.addClass('rooms-order__modal--show')
   })
 }
-
-
 
 window.modal = {
   'changeSmallPhotoToBig': changeSmallPhotoToBig,
