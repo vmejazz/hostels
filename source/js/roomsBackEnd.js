@@ -43,6 +43,7 @@
     var cardElement = mapCardTemplate.cloneNode(true);
 
     cardElement.id =  'room-id__' + elem.id;
+    cardElement.querySelector('.form-order').id = 'form-id__' + elem.id;
     cardElement.querySelector('.rooms-order__modal').id = 'modal-id__' + elem.id;
     cardElement.querySelector('.card-room__title').innerHTML = elem.title;
     cardElement.querySelector('.price__sell').innerHTML = elem.sale_price + ' руб / сутки';

@@ -2054,10 +2054,10 @@
                         Заявка
                       </div>
                       <div class="form-order__personal-name">
-                        <input type="text" id="input__name" class="form-order__name-input" placeholder="Ваше имя">
+                        <input type="text" id="input__name" class="form-order__name-input" placeholder="Ваше имя" name="fio">
                       </div>
                       <div class="form-order__personal-tel">
-                        <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона">
+                        <input type="text" id="input__tel" class="form-order__tel-input" placeholder="Номер телефона" name="phone">
                       </div>
                       <div class="form-order__guest form-order__guest--modal">
                         <button type="button" class="form-order__guest-button form-order__guest-button--minus">-</button>
@@ -2066,14 +2066,14 @@
                         <button type="button" class="form-order__guest-button form-order__guest-button--plus">+</button>
                       </div>
                       <div class="form-order__check-in form-order__check-in--modal">
-                        <input type="text" id="input__check-in--modal" class="form-order__input--style form-order__input--modal" onchange="mydDateInModal()">
+                        <input type="text" id="input__check-in--modal" class="form-order__input--style form-order__input--modal" name="date-from">
                         <svg class="form-order__icon form-order__icon--calendar form-order__icon--modal" width="24" height="24">
                           <use xlink:href="#calendar"></use>
                         </svg>
                         <label for="input__check-in--modal">Дата заезда</label>
                       </div>
                       <div class="form-order__check-out form-order__check-out--modal">
-                          <input type="text" id="input__check-out--modal" class="form-order__input--style form-order__input--modal" onchange="mydDateOutModal()">
+                          <input type="text" id="input__check-out--modal" class="form-order__input--style form-order__input--modal" name="date-till">
                           <svg class="form-order__icon form-order__icon--calendar form-order__icon--modal" width="24" height="24">
                             <use xlink:href="#calendar"></use>
                           </svg>

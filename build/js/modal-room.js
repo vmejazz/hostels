@@ -16,6 +16,10 @@ this.close = function(target)
 
   $(document).off('click', '.rooms-order__overlay', checkOverlayfield)
 
+  forms[0].id = 'main-form';     //  Вешаем валидатор формы на главную
+  validateUs( forms )
+
+
 }.bind(this)
 
 // *
@@ -35,9 +39,13 @@ var checkOverlayfield = function (evt) {
 this.open = function(target)
 {
   this.state.open = true;
+  console.log(target)
   target.classList.remove('rooms-order__modal--hide')
   target.classList.add('rooms-order__modal--show')
   window.bodyScroll.StopScrollBody();     //  останавливаем прокрутку основного сайта
+
+  forms[0].id = 'form' + target.id.substr(5);     //  Вешаем валидатор формы на открое модальное окно
+  validateUs( forms )
 
   // *
   // * Обработчик клика по overlay

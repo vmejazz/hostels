@@ -115,6 +115,11 @@ var setHandlerOnSliderButtons = function () {
       this.$modal.addClass('rooms-order__modal--hide')
       newModal.removeClass('rooms-order__modal--hide')
       newModal.addClass('rooms-order__modal--show')
+
+      newModal = newModal.get(0)
+      console.log(newModal)
+      forms[0].id = 'form' + newModal.id.substr(5);     //  Вешаем валидатор формы на открое модальное окно
+      validateUs( forms )
   })
 }
 

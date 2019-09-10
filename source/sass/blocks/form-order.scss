@@ -365,6 +365,7 @@ label {
 }
 
 .form-order__guest--modal {
+  margin-top: 63px;
   padding-left: 35px;
 
   & label {
@@ -483,7 +484,10 @@ label {
 .form-order__check-in .form-field__alert {
   z-index: 11;
 
-  width: 195px;
+  width: 130px;
+
+  font-size: 12px;
+  // width: 195px;
 
   background-color: white;
 }
