@@ -82,9 +82,11 @@
     }
 
     if (elem.price_for === '1') {
-      cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана на 1 человека';
+      cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана за 1 человека';
     } else if ( elem.price_for === '2') {
-      cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана на 2 человек';
+      cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана за 2 человек';
+    } else if (elem.price_for === '3') {
+      cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана за 3 человек';
     } else {
       cardElement.querySelector('.card-room__description').innerHTML = elem.price_for;
     }

@@ -10,9 +10,10 @@
   border-radius: 5px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
   .metro-field__checkbox-label {
-    text-align: center;
     display: block;
     margin-bottom: 15px;
+
+    text-align: center;
   }
 }
 
@@ -57,14 +58,15 @@
 }
 
 .card-room__title {
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 40px;
   margin-top: 15px;
   margin-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
+  // display: flex;
+  overflow: hidden;
   //overflow: hidden;
 
   font-weight: 400;
@@ -144,13 +146,15 @@
 
 .card-room__price {
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .card-room__description {
+  height: 13px;
   margin: 0;
-  margin-top: 10px;
-  margin-bottom: 18px;
+  margin-top: 15px;
+  margin-bottom: 12px;
+  overflow: hidden;
 
   font-weight: 400;
   font-size: 12px;
