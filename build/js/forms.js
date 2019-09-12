@@ -53,7 +53,22 @@ var email = {
 }/*
  * 04 date
  */
-var date = {
+var dateIn = {
+  value: '',
+  validate: {
+    required: {
+      error: 'Это поле обязательно для заполнения'
+    },
+    pattern: {
+      reg: /\d{1,2}\s(Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь) \d{4}/,
+      error: 'Введите дату в корректном формате (например: 17 Август 2019)'
+    }
+  }
+}
+/*
+ * 05 date
+ */
+var dateOut = {
   value: '',
   validate: {
     required: {
@@ -76,8 +91,8 @@ var date = {
    {
      id: 'main-form',
      fields: {
-       'date-from' : date,
-       'date-till' : date,
+       'date-from' : dateIn,
+       'date-till' : dateOut,
        'fio'  : fio,
        'phone' : phone
      },
