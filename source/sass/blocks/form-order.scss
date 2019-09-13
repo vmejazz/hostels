@@ -388,9 +388,9 @@ label {
 .form-order__price {
   margin-top: 35px;
   margin-bottom: 35px;
-  padding-right: 40px;
+  padding-right: 30px;
   // width: 70px;
-  padding-left: 40px;
+  padding-left: 30px;
 
   font-weight: 400;
   font-size: 12px;
@@ -423,7 +423,12 @@ label {
   font-family: "Rubik";
   color: #ec343c;
 
+
   & span {
+    display: inline-block;
+    max-height: 24px;
+    overflow: hidden;
+
     font-weight: 500;
     font-size: 24px;
   }
@@ -436,6 +441,9 @@ label {
 }
 
 .form-order__button--modal {
+  position: fixed;
+  bottom: 20px;
+
   width: 145px;
 
   font-weight: 400;
@@ -447,6 +455,8 @@ label {
   background-color: #ffffff;
 
   @media (max-width: $desktop) {
+    position: static;
+
     display: block;
     margin-right: auto;
     margin-bottom: 20px;

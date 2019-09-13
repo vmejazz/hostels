@@ -1,3 +1,7 @@
+.features {
+  position: relative;
+}
+
 .features__title {
   @include MD-reset();
 
@@ -20,6 +24,8 @@
 
 .features__list {
   @include list-reset();
+  // position: sticky;
+  // bottom: 20px;
 
   display: flex;
   flex-wrap: wrap;
