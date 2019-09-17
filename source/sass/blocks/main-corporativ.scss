@@ -91,6 +91,7 @@
 
   &--partner {
     position: relative;
+
     cursor: pointer;
     &::after {
       content: "";
@@ -113,6 +114,12 @@
         background-position: 140px bottom;
         background-size: contain;
         opacity: 0.8;
+      }
+    }
+
+    &:hover {
+      &::after {
+        background-position: right 2px;
       }
     }
   }
