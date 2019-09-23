@@ -118,11 +118,11 @@
       }
     }
 
-    &:hover {
-      &::after {
-        background-position: right 2px;
-      }
-    }
+    // &:hover {
+    //   &::after {
+    //     background-position: right 2px;
+    //   }
+    // }
   }
 
   @media (max-width: $desktop) {

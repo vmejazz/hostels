@@ -87,6 +87,8 @@
 .modal-guest__bed {
   position: relative;
 
+  display: none;      // Пока выключить
+
   text-align: center;
 
   & input {

@@ -4,7 +4,7 @@
   width: 670px;
   height: 60px;
   margin: 0 auto;
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 
   &--active {
     position: absolute;
@@ -23,6 +23,17 @@
   }
 }
 
+.metro-field__title {
+  @include MD-reset();
+
+  margin-top: -10px;
+  margin-bottom: 20px;
+
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
+
 .metro-field__input {
   &:hover,
   &:focus {
@@ -30,8 +41,7 @@
   }
 
   &:hover + svg,
-  &:focus + svg,
-   {
+  &:focus + svg, {
     fill: #ec343c;
   }
 }
@@ -41,9 +51,17 @@
 }
 
 .metro-field__box {
+  position: absolute;
+
   border-color: rgba(0, 0, 0, 0.09);
   border-radius: 5px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.09);
+
+  @media (max-width: $desktop) {
+    width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
   &--active {
     position: absolute;
@@ -98,7 +116,7 @@
   border-top: 1px solid #bcbcbc;
 
   @media (max-width: $desktop) {
-    width: 320px;
+    width: 280px;
   }
 }
 
@@ -120,18 +138,22 @@
 
   & input:checked + label {
     position: relative;
+
     background-color: #eaeaea;
     border-color: transparent;
     &::after {
-      content: '×';
+      content: "×";
       position: absolute;
       top: 0;
-      bottom: 0;
-      height: 30px;
-      width: 15px;
-      margin: auto;
       right: 5px;
-      color: #999;
+      bottom: 0;
+
+      width: 15px;
+      height: 30px;
+      margin: auto;
+
+      color: #999999;
+
       cursor: pointer;
     }
   }

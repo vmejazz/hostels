@@ -28,7 +28,8 @@ label {
   left: -140px;
 
   width: 148px;
-  height: 290px;
+  // height: 290px;   // Пока попросили выключить
+  // min-height: 240px;
 
   font-weight: 400;
   font-size: 14px;
@@ -56,7 +57,8 @@ label {
   }
 
   @media (max-width: $desktop) {
-    top: -300px;
+    // top: -300px;
+    top: -230px;
     left: 60px;
 
     &::after {

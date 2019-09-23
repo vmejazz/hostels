@@ -89,3 +89,17 @@
     // height: 58px;
   }
 }
+
+.main-cooperation__button {
+  display: block;
+  min-width: 300px;
+  height: 40px;
+  margin: 0 auto;
+
+  font-weight: 500;
+  font-size: 16px;
+
+  @media (max-width: $desktop) {
+    margin-top: 15px;
+  }
+}

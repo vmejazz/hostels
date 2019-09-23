@@ -39,13 +39,14 @@ var checkOverlayfield = function (evt) {
 this.open = function(target)
 {
   this.state.open = true;
-  console.log(target)
   target.classList.remove('rooms-order__modal--hide')
   target.classList.add('rooms-order__modal--show')
   window.bodyScroll.StopScrollBody();     //  останавливаем прокрутку основного сайта
 
   forms[0].id = 'form' + target.id.substr(5);     //  Вешаем валидатор формы на открое модальное окно
   validateUs( forms )
+
+  window.guestRange.setTotalPrice(1);
 
   // *
   // * Обработчик клика по overlay

@@ -83,23 +83,26 @@
 
     if (elem.price_for === '1') {
       cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана за 1 человека';
-      cardElement.querySelector('.form-order__price-person').innerHTML = 'Цена указана за 1 человека';
+      cardElement.querySelector('.form-order__price-person span').innerHTML = elem.price + ' руб';
     } else if ( elem.price_for === '2') {
       cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана за 2 человек';
-      cardElement.querySelector('.form-order__price-person').innerHTML = 'Цена указана за номер';
+      cardElement.querySelector('.form-order__price-person span').innerHTML = elem.price + ' руб';
+      // cardElement.querySelector('.form-order__price-person').innerHTML = 'Цена указана за номер';
     } else if (elem.price_for === '3') {
       cardElement.querySelector('.card-room__description').innerHTML = 'Цена указана за 3 человек';
-      cardElement.querySelector('.form-order__price-person').innerHTML = 'Цена указана за номер';
+      cardElement.querySelector('.form-order__price-person span').innerHTML = elem.price + ' руб';
+      // cardElement.querySelector('.form-order__price-person').innerHTML = 'Цена указана за номер';
     } else {
       cardElement.querySelector('.card-room__description').innerHTML = elem.price_for;
       cardElement.querySelector('.form-order__price-person').innerHTML = elem.price_for;
     }
 
-    if (elem.sale_price === '-') {
-      cardElement.querySelector('.form-order__price-all span').innerHTML = elem.price;
-    } else {
-      cardElement.querySelector('.form-order__price-all span').innerHTML = elem.sale_price;
-    }
+    // if (elem.sale_price === '-') {
+    //   cardElement.querySelector('.form-order__price-all span').innerHTML = elem.price;
+    // } else {
+    //   cardElement.querySelector('.form-order__price-all span').innerHTML = elem.sale_price;
+    //   cardElement.querySelector('.form-order__price-person span').innerHTML = elem.sale_price + ' руб';
+    // }
 
     var mapImages = []
     if( elem.images ) {

@@ -3,6 +3,7 @@
   var mainPromotionButton = document.querySelector('.main-promotion__button');      //  Кнопка "обратная связь" на слайде Promotion
   var modalCallbackCloseButton = modalCallback.querySelector('.modal-callback__button--close');     //  Кнопка закрытия модального окна обратной связи
   var modalCallbackOpenButton = document.querySelector('.callback__button');      //  Кнопка "обратная связь" в шапке
+  var partnerButton = document.querySelector('.main-cooperation__button');      //.. Кнопка "стать партнёром"
 
   // *
   // * Функция открытия модального окна успешной отправки формы
@@ -51,6 +52,7 @@
   modalCallbackOpenButton.addEventListener('click', openModal);
   modalCallbackCloseButton.addEventListener('click', closeModal);
   mainPromotionButton.addEventListener('click',openModal);
+  partnerButton.addEventListener('click', openModal);
   })();
 
 // *
@@ -115,9 +117,9 @@ var setHandlerOnSliderButtons = function () {
       this.$modal.addClass('rooms-order__modal--hide')
       newModal.removeClass('rooms-order__modal--hide')
       newModal.addClass('rooms-order__modal--show')
+      window.guestRange.setTotalPrice(newModal.find('#input__guest--modal').val());
 
       newModal = newModal.get(0)
-      console.log(newModal)
       forms[0].id = 'form' + newModal.id.substr(5);     //  Вешаем валидатор формы на открое модальное окно
       validateUs( forms )
   })

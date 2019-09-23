@@ -1,3 +1,20 @@
+//  *
+//  * Обновляем поле цены, от количества людей
+//  *
+var setTotalPrice = function (totalHuman) {
+  var checkModal = document.querySelector('.rooms-order__modal--show');
+  if (checkModal) {
+    var priceForAll = checkModal.querySelector('.form-order__price-all span');
+    var priceForPersonField = checkModal.querySelector('.form-order__price-person span').innerHTML;
+    var r = /\d+/;
+    priceForPersonField = priceForPersonField.match(r);
+    priceForPerson = priceForPersonField[0];
+    priceForAll.innerHTML = priceForPerson * totalHuman;
+  } else {
+    return;
+  }
+};
+
 // *
 // * Обновляем общее количество гостей
 // *
@@ -7,6 +24,7 @@ var setCurrentGuest = function (sumGuestInput, adultInput, childrenInput) {
   var children = parseInt(childrenInput.val());
   sum = parseInt(adult + children);
   sumGuestInput.val(sum);
+  setTotalPrice(sum);
 };
 
 // *
@@ -42,6 +60,7 @@ var openModalGuest = function (evt) {
   }
 
   $currentAdultGuest.val($currentSumGuest.val());
+  setTotalPrice($currentAdultGuest.val());
 };
 
 // *
@@ -72,6 +91,8 @@ var guestNumbers = function (evt) {
       }
 
   }
+
+
 
   setCurrentGuest($currentSumGuest, $currentAdultGuest, currentChildrenGuest);
 };
@@ -111,5 +132,6 @@ $('#input__check-out--style').datepicker({
 })
 
 window.guestRange = {
-  'guestNumberHandler': guestNumberHandler
+  'guestNumberHandler': guestNumberHandler,
+  'setTotalPrice': setTotalPrice
 };
