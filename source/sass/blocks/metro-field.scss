@@ -4,7 +4,7 @@
   width: 670px;
   height: 60px;
   margin: 0 auto;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
 
   &--active {
     position: absolute;
@@ -28,10 +28,15 @@
 
   margin-top: -10px;
   margin-bottom: 20px;
+  // font-weight: 500;
+  // font-size: 18px;
+  // text-align: center;
 
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: "Roboto Slab";
   text-align: center;
+  color: #000000;
 }
 
 .metro-field__input {
