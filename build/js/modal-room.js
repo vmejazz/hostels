@@ -53,6 +53,28 @@ this.open = function(target)
   // *
   $(document).on('click', '.rooms-order__overlay', checkOverlayfield)
 
+
+  //  *
+  //  * Модуль открытия/закрытия большого превью картинки
+  //  *
+  var closeBigImage = (evt, newModal) => {
+    evt.stopPropagation();
+    newModal.querySelector('.rooms-order__overlay-image').classList.remove('rooms-order__overlay-image--show');
+  };
+
+  var openBigImage = (evt, newModal) => {
+    var bigImageOverlay = newModal.querySelector('.rooms-order__overlay-image img');
+    bigImageOverlay.src = newModal.querySelector('.room__big-jmg').src
+    newModal.querySelector('.rooms-order__overlay-image').classList.add('rooms-order__overlay-image--show');
+    newModal.querySelector('.rooms-order__overlay-image').addEventListener('click', () => {
+      closeBigImage(evt, newModal);
+    });
+  };
+
+  target.querySelector('.room__big-jmg').addEventListener('click', (evt) => {
+    openBigImage(evt, target);
+  });
+
 }.bind(this)
 
 // *

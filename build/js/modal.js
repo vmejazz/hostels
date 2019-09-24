@@ -117,7 +117,27 @@ var setHandlerOnSliderButtons = function () {
       this.$modal.addClass('rooms-order__modal--hide')
       newModal.removeClass('rooms-order__modal--hide')
       newModal.addClass('rooms-order__modal--show')
-      window.guestRange.setTotalPrice(newModal.find('#input__guest--modal').val());
+
+      //  *
+      //  * Модуль открытия/закрытия большого превью картинки
+      //  *
+      var closeBigImage = (evt) => {
+        evt.stopPropagation();
+        newModal.querySelector('.rooms-order__overlay-image').classList.remove('rooms-order__overlay-image--show');
+      };
+
+      var openBigImage = () => {
+        var bigImageOverlay = newModal.querySelector('.rooms-order__overlay-image img');
+        bigImageOverlay.src = newModal.querySelector('.room__big-jmg').src
+        newModal.querySelector('.rooms-order__overlay-image').classList.add('rooms-order__overlay-image--show');
+        newModal.querySelector('.rooms-order__overlay-image').addEventListener('click', closeBigImage);
+      };
+
+      newModal.find('.room__big-jmg').on('click', openBigImage);
+
+
+
+      window.guestRange.setTotalPrice(newModal.find('#input__guest--modal').val());   //    Считаем правильную цену от кол-ва людей
 
       newModal = newModal.get(0)
       forms[0].id = 'form' + newModal.id.substr(5);     //  Вешаем валидатор формы на открое модальное окно

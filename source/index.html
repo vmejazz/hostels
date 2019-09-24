@@ -790,7 +790,11 @@
       <div class="page-header__panel">
         <div class="page-header__info">
           <a class="page-header__main-logo" href="./index.html" id="page-header__main-logo">
-            <img class="page-header__img" src="./img/hostelrys.png" alt="Логотип Хостелы.Рус" width="214" height="52">
+            <picture>
+              <source type="image/webp"
+                      srcset="./img/hostelrys.webp">
+              <img class="page-header__img" src="./img/hostelrys.png" alt="Логотип Хостелы.Рус" width="214" height="52">
+            </picture>
           </a>
           <div class="page-header__achievement page-header__achievement--client">
             <svg class="page-header__icon page-header__icon--heart" width="25" height="22">
@@ -1191,12 +1195,12 @@
                           <div class="rooms-slider__description room">
                             <div class="room__photos">
                               <div class="room__big-photo">
-                                <img class="room__big-jmg" src="./img/room-modal1.jpg" alt="">
+                                <img class="room__big-jmg" src="" alt="">
                               </div>
                               <ul class="room__small-photos">
                                 <li class="room__small-photo">
                                   <a href="./img/room-small1.jpg" class="room__photo-link">
-                                    <img src="./img/room-small1.jpg" alt="small-room-photo">
+                                    <img src="" alt="small-room-photo">
                                     <button class="room__small-button">
                                       &lt
                                     </button>
@@ -1204,12 +1208,12 @@
                                 </li>
                                 <li class="room__small-photo">
                                   <a href="./img/room2.jpg" class="room__photo-link">
-                                    <img src="./img/room2.jpg" alt="">
+                                    <img src="" alt="">
                                   </a>
                                 </li>
                                 <li class="room__small-photo">
                                   <a href="./img/room3.jpg" class="room__photo-link">
-                                    <img src="./img/room3.jpg" alt="">
+                                    <img src="" alt="">
                                   </a>
                                 </li>
                                 <li class="room__small-photo">
@@ -1360,6 +1364,18 @@
                         Другой номер
                       </span>
                     </button>
+                  </div>
+                </div>
+              </div>
+              <div class="rooms-order__overlay-image">
+                <div class="rooms-order__container">
+                  <button class="rooms-modal__button--close ">
+                    х закрыть
+                  </button>
+                  <div class="rooms-modal__slider rooms-slider">
+                    <div class="rooms-slider__container">
+                      <img src="" alt="" class="rooms-slider__photo-on-screen">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1982,7 +1998,7 @@
                     <div class="rooms-slider__description room">
                       <div class="room__photos">
                         <div class="room__big-photo">
-                          <img class="room__big-jmg" src="./img/room-modal1.jpg" alt="">
+                          <img class="room__big-jmg" src="" alt="">
                         </div>
                         <ul class="room__small-photos">
                           <!-- <li class="room__small-photo">
@@ -2149,6 +2165,18 @@
                   Другой номер
                 </span>
               </button>
+            </div>
+          </div>
+        </div>
+        <div class="rooms-order__overlay-image">
+          <div class="rooms-order__container rooms-order__container-image">
+            <button class="rooms-modal__button--close ">
+              х закрыть
+            </button>
+            <div class="rooms-modal__slider rooms-slider">
+              <div class="rooms-slider__container">
+                <img src="" alt="" class="rooms-slider__photo-on-screen">
+              </div>
             </div>
           </div>
         </div>

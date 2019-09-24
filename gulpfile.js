@@ -43,7 +43,7 @@ gulp.task("server", function () {
     cors: true,
     ui: false,
     port: 443,
-    https: true
+    // https: true
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));

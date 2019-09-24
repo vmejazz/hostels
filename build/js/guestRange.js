@@ -5,6 +5,10 @@ var setTotalPrice = function (totalHuman) {
   var checkModal = document.querySelector('.rooms-order__modal--show');
   if (checkModal) {
     var priceForAll = checkModal.querySelector('.form-order__price-all span');
+    var perconPrice = checkModal.querySelector('.form-order__price-person span');
+    if (perconPrice === null) {
+      return;
+    }
     var priceForPersonField = checkModal.querySelector('.form-order__price-person span').innerHTML;
     var r = /\d+/;
     priceForPersonField = priceForPersonField.match(r);

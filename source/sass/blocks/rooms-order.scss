@@ -85,6 +85,19 @@
   }
 }
 
+.rooms-order__overlay-image {
+  &::before {
+    content: "";
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: transparent;
+    // opacity: 0.9;
+  }
+}
+
 .rooms-order__container {
   position: fixed;
   top: 50%;
@@ -110,6 +123,17 @@
       // top: -300px;
       top: -230px;
     }
+  }
+}
+
+.rooms-order__container-image {
+  @media (max-width: $desktop) {
+    display: none;
+    width: auto;
+    max-height: 350px;
+    padding-top: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 
