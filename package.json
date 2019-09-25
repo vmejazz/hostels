@@ -49,5 +49,8 @@
   ],
   "engines": {
     "node": "8.15"
+  },
+  "dependencies": {
+    "compression": "^1.7.4"
   }
 }

@@ -21,7 +21,7 @@
     width: 1034px;
     height: 462px;
 
-    background-image: url("../../img/promotion.png");
+    background-image: url("../../img/promotion.webp");
     background-repeat: no-repeat;
   }
 
@@ -40,6 +40,12 @@
 
       opacity: 0.3;
     }
+  }
+}
+
+.no-webp .main-promotion {
+  &::before {
+    background-image: url("../../img/promotion.png");
   }
 }
 

@@ -6,6 +6,7 @@ var sourcemap = require("gulp-sourcemaps");
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
+var compression = require("compression");
 var server = require("browser-sync").create();
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
@@ -43,7 +44,11 @@ gulp.task("server", function () {
     cors: true,
     ui: false,
     port: 443,
-    // https: true
+    middleware: function(req,res,next) {
+      var gzip = compression();
+      gzip(req,res,next);
+    },
+    https: true
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
